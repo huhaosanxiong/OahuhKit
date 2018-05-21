@@ -13,16 +13,15 @@ class WebViewController: BaseViewController {
 
     var webView : WKWebView!
     
+    var urlString = ""
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-//        webView.snp.makeConstraints { make in
-//            make.edges.equalTo(self.view)
-//        }
-        DLog(webView)
+
     }
 
     override func initSubviews() {
@@ -33,7 +32,7 @@ class WebViewController: BaseViewController {
         
         view.addSubview(webView)
         
-        let url = URL.init(string: "http://www.baidu.com")
+        let url = URL.init(string: urlString)
         
         let request = URLRequest.init(url: url!)
         

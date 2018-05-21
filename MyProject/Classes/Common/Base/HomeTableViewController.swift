@@ -20,7 +20,7 @@ class HomeTableViewController: BaseViewController {
         // Do any additional setup after loading the view.
         
         let dataArray = Observable.just([
-            SectionModel(model: "", items: ["UICollectionView分组头悬停"])
+            SectionModel(model: "", items: ["1.UICollectionView分组头悬停"])
             ])
         
         //Config
@@ -44,7 +44,7 @@ class HomeTableViewController: BaseViewController {
                 
                 switch indexPath.row {
                 case 0:
-                    let vc = WebViewController()
+                    let vc = HoverCollectionController()
                     self.navigationController?.pushViewController(vc, animated: true)
                     break
                     
