@@ -25,6 +25,11 @@
 		E1CDE32420B2BA2D009E04D1 /* HoverCollectionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE32320B2BA2D009E04D1 /* HoverCollectionFlowLayout.swift */; };
 		E1CDE32620B2BA82009E04D1 /* HoverCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE32520B2BA82009E04D1 /* HoverCollectionReusableView.swift */; };
 		E1CDE32B20B2C787009E04D1 /* QMUIConfigurationTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE32A20B2C787009E04D1 /* QMUIConfigurationTemplate.m */; };
+		E1CDE33120BCF7F4009E04D1 /* GithubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE33020BCF7F4009E04D1 /* GithubViewModel.swift */; };
+		E1CDE33320BCFC9F009E04D1 /* GithubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE33220BCFC9F009E04D1 /* GithubModel.swift */; };
+		E1CDE33520BD03EE009E04D1 /* GithubSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE33420BD03EE009E04D1 /* GithubSearchService.swift */; };
+		E1CDE33720BD07A2009E04D1 /* RxSwift+Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE33620BD07A2009E04D1 /* RxSwift+Observable.swift */; };
+		E1CDE33920BD46DA009E04D1 /* GithubRepoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE33820BD46DA009E04D1 /* GithubRepoListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +56,11 @@
 		E1CDE32520B2BA82009E04D1 /* HoverCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoverCollectionReusableView.swift; sourceTree = "<group>"; };
 		E1CDE32920B2C787009E04D1 /* QMUIConfigurationTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMUIConfigurationTemplate.h; sourceTree = "<group>"; };
 		E1CDE32A20B2C787009E04D1 /* QMUIConfigurationTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMUIConfigurationTemplate.m; sourceTree = "<group>"; };
+		E1CDE33020BCF7F4009E04D1 /* GithubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubViewModel.swift; sourceTree = "<group>"; };
+		E1CDE33220BCFC9F009E04D1 /* GithubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubModel.swift; sourceTree = "<group>"; };
+		E1CDE33420BD03EE009E04D1 /* GithubSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubSearchService.swift; sourceTree = "<group>"; };
+		E1CDE33620BD07A2009E04D1 /* RxSwift+Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Observable.swift"; sourceTree = "<group>"; };
+		E1CDE33820BD46DA009E04D1 /* GithubRepoListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +136,7 @@
 		E1A0FEBD20B272F500044403 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				E1CDE33620BD07A2009E04D1 /* RxSwift+Observable.swift */,
 				E1CDE31A20B27BCF009E04D1 /* UITableView+Extension.swift */,
 			);
 			path = Category;
@@ -160,6 +171,7 @@
 			children = (
 				E1CDE31720B2775F009E04D1 /* Base */,
 				E1CDE32020B2B8EF009E04D1 /* HoverCollection */,
+				E1CDE33B20BD5EAE009E04D1 /* GithubRepoSearch */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -229,6 +241,17 @@
 			name = QMUIConfigurationTemplate;
 			path = Pods/QMUIKit/QMUIConfigurationTemplate;
 			sourceTree = SOURCE_ROOT;
+		};
+		E1CDE33B20BD5EAE009E04D1 /* GithubRepoSearch */ = {
+			isa = PBXGroup;
+			children = (
+				E1CDE33020BCF7F4009E04D1 /* GithubViewModel.swift */,
+				E1CDE33220BCFC9F009E04D1 /* GithubModel.swift */,
+				E1CDE33420BD03EE009E04D1 /* GithubSearchService.swift */,
+				E1CDE33820BD46DA009E04D1 /* GithubRepoListController.swift */,
+			);
+			path = GithubRepoSearch;
+			sourceTree = "<group>";
 		};
 		F2D71636B289D8EEF113ADD0 /* Pods */ = {
 			isa = PBXGroup;
@@ -397,20 +420,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1CDE33920BD46DA009E04D1 /* GithubRepoListController.swift in Sources */,
 				E1CDE31F20B2B8DD009E04D1 /* HoverCollectionController.swift in Sources */,
 				E1CDE31320B27499009E04D1 /* BaseViewController.swift in Sources */,
 				E1CDE32B20B2C787009E04D1 /* QMUIConfigurationTemplate.m in Sources */,
 				E1CDE31D20B29C01009E04D1 /* WebViewController.swift in Sources */,
 				E1CDE31620B27747009E04D1 /* NavigationController.swift in Sources */,
 				E1A0FEA720B26E9700044403 /* AppDelegate.swift in Sources */,
+				E1CDE33720BD07A2009E04D1 /* RxSwift+Observable.swift in Sources */,
 				E1A0FEC720B272F600044403 /* Log.swift in Sources */,
 				E1CDE31920B27786009E04D1 /* HomeTableViewController.swift in Sources */,
 				E1A0FED220B273C400044403 /* ImageAsset.swift in Sources */,
 				E1CDE32620B2BA82009E04D1 /* HoverCollectionReusableView.swift in Sources */,
+				E1CDE33320BCFC9F009E04D1 /* GithubModel.swift in Sources */,
+				E1CDE33520BD03EE009E04D1 /* GithubSearchService.swift in Sources */,
 				E1CDE32420B2BA2D009E04D1 /* HoverCollectionFlowLayout.swift in Sources */,
 				E1A0FEC620B272F600044403 /* ThirdReference.swift in Sources */,
 				E1CDE31B20B27BCF009E04D1 /* UITableView+Extension.swift in Sources */,
 				E1CDE32220B2B96D009E04D1 /* HoverCollectionViewCell.swift in Sources */,
+				E1CDE33120BCF7F4009E04D1 /* GithubViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

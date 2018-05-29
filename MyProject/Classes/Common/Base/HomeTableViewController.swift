@@ -20,8 +20,13 @@ class HomeTableViewController: BaseViewController {
         // Do any additional setup after loading the view.
         
         let dataArray = Observable.just([
-            SectionModel(model: "", items: ["1.UICollectionView分组头悬停"])
+            SectionModel(model: "", items: ["1.UICollectionView组头悬停",
+                                            "2.Github搜寻仓库"])
             ])
+        
+        let className = ["HoverCollectionController",
+                         "GithubRepoListController"]
+        
         
         //Config
         let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, String>>(configureCell: { (dataSource, tableView, indexPath, model) -> UITableViewCell in
@@ -42,16 +47,19 @@ class HomeTableViewController: BaseViewController {
                 
                 DLog("indexPath = \(indexPath),title = \(model)")
                 
-                switch indexPath.row {
-                case 0:
-                    let vc = HoverCollectionController()
-                    self.navigationController?.pushViewController(vc, animated: true)
-                    break
-                    
-                default:
-                    break
-                    
+                let nameSpace = Bundle.main.infoDictionary!["CFBundleExecutable"]
+                guard let ns = nameSpace as? String else{
+                    return
                 }
+                
+                let myClass: AnyClass? = NSClassFromString(ns + "." + className[indexPath.row])
+                guard let myClassType = myClass as? UIViewController.Type else{
+                    return
+                }
+                
+                let vc = myClassType.init()
+                self.navigationController?.pushViewController(vc, animated: true)
+
             }).disposed(by: disposeBag)
         
         

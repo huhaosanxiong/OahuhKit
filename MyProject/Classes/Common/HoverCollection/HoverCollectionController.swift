@@ -22,10 +22,18 @@ class HoverCollectionController: BaseViewController {
     
     override func initSubviews() {
         
-        //去除存在导航栏时内内边距自动调整功能，防止对自定义的Collection View分区头停留功能造成影响
-//        self.automaticallyAdjustsScrollViewInsets = false
+        let version = (UIDevice.current.systemVersion as NSString).doubleValue
+        var layout : UICollectionViewFlowLayout
+        if version >= 9.0 {
+            //iOS9.0 以后有系统方法
+            layout = UICollectionViewFlowLayout()
+            //分组头悬停
+            layout.sectionHeadersPinToVisibleBounds = true
+            
+        }else{
+            layout = HoverCollectionFlowLayout()
+        }
         
-        let layout = HoverCollectionFlowLayout()
         
         collectionView = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: layout)
         
