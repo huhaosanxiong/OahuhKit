@@ -28,7 +28,11 @@ class HoverCollectionController: BaseViewController {
             //iOS9.0 以后有系统方法
             layout = UICollectionViewFlowLayout()
             //分组头悬停
-            layout.sectionHeadersPinToVisibleBounds = true
+            if #available(iOS 9.0, *) {
+                layout.sectionHeadersPinToVisibleBounds = true
+            } else {
+                // Fallback on earlier versions
+            }
             
         }else{
             layout = HoverCollectionFlowLayout()
@@ -40,7 +44,11 @@ class HoverCollectionController: BaseViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = UIColor.white
-        collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentBehavior.never
+        if #available(iOS 11.0, *) {
+            collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentBehavior.never
+        } else {
+            // Fallback on earlier versions
+        }
         view.addSubview(collectionView)
         
         collectionView.register(HoverCollectionViewCell.self, forCellWithReuseIdentifier: "HoverCollectionViewCell")

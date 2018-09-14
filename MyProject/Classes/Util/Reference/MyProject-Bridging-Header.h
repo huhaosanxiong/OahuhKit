@@ -10,6 +10,6 @@
 #define MyProject_Bridging_Header_h
 
 #import <QMUIKit/QMUIKit.h>
-
+#import <Lottie/Lottie.h>
 
 #endif /* MyProject_Bridging_Header_h */

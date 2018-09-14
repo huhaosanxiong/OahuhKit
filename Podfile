@@ -10,14 +10,19 @@ target 'MyProject' do
     pod 'Kingfisher' , '~> 4.6.0'
     pod 'HandyJSON'
     
+    #rx
     pod 'RxSwift'
     pod 'RxCocoa'
     pod 'RxBlocking'
     pod 'RxDataSources'
     pod 'Moya/RxSwift', '~> 11.0'
+    
     pod 'Hero'
     pod 'Material'
     pod 'SnapKit'
+    pod 'Charts'
+    
+    pod 'lottie-ios'
     
     #Objective-C
     pod 'QMUIKit'

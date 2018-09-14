@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B404B0CE3251BA57247102DA /* Pods_MyProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752FA93416E6F1B96DF0B76B /* Pods_MyProject.framework */; };
+		E18E4C2D2112FCAC00743420 /* BubbleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18E4C2C2112FCAC00743420 /* BubbleViewController.swift */; };
+		E18E4C302113008A00743420 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18E4C2F2113008A00743420 /* BubbleView.swift */; };
 		E1A0FEA720B26E9700044403 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0FEA620B26E9700044403 /* AppDelegate.swift */; };
 		E1A0FEC620B272F600044403 /* ThirdReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0FEBF20B272F500044403 /* ThirdReference.swift */; };
 		E1A0FEC720B272F600044403 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0FEC120B272F500044403 /* Log.swift */; };
@@ -15,6 +17,10 @@
 		E1A0FED120B273C400044403 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A0FECC20B273C300044403 /* LaunchScreen.storyboard */; };
 		E1A0FED220B273C400044403 /* ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0FECE20B273C400044403 /* ImageAsset.swift */; };
 		E1A0FED320B273C400044403 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1A0FECF20B273C400044403 /* Info.plist */; };
+		E1A805B3214B5C740027AE5A /* LottieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A805B2214B5C740027AE5A /* LottieViewController.swift */; };
+		E1A805B7214B5E070027AE5A /* TwitterHeart.json in Resources */ = {isa = PBXBuildFile; fileRef = E1A805B5214B5E070027AE5A /* TwitterHeart.json */; };
+		E1A805B8214B5E070027AE5A /* Switch.json in Resources */ = {isa = PBXBuildFile; fileRef = E1A805B6214B5E070027AE5A /* Switch.json */; };
+		E1AB80992100357200C24D7D /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB80982100357200C24D7D /* ChartsViewController.swift */; };
 		E1CDE31320B27499009E04D1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE31220B27499009E04D1 /* BaseViewController.swift */; };
 		E1CDE31620B27747009E04D1 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE31520B27747009E04D1 /* NavigationController.swift */; };
 		E1CDE31920B27786009E04D1 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE31820B27786009E04D1 /* HomeTableViewController.swift */; };
@@ -36,6 +42,8 @@
 		17208B5683E5E7FA2E692542 /* Pods-MyProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyProject/Pods-MyProject.release.xcconfig"; sourceTree = "<group>"; };
 		752FA93416E6F1B96DF0B76B /* Pods_MyProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC02DA62A7FADD8A7DE0839E /* Pods-MyProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyProject/Pods-MyProject.debug.xcconfig"; sourceTree = "<group>"; };
+		E18E4C2C2112FCAC00743420 /* BubbleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleViewController.swift; sourceTree = "<group>"; };
+		E18E4C2F2113008A00743420 /* BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
 		E1A0FEA320B26E9700044403 /* MyProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A0FEA620B26E9700044403 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1A0FEBF20B272F500044403 /* ThirdReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdReference.swift; sourceTree = "<group>"; };
@@ -44,6 +52,10 @@
 		E1A0FECD20B273C300044403 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1A0FECE20B273C400044403 /* ImageAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAsset.swift; sourceTree = "<group>"; };
 		E1A0FECF20B273C400044403 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1A805B2214B5C740027AE5A /* LottieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieViewController.swift; sourceTree = "<group>"; };
+		E1A805B5214B5E070027AE5A /* TwitterHeart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TwitterHeart.json; sourceTree = "<group>"; };
+		E1A805B6214B5E070027AE5A /* Switch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Switch.json; sourceTree = "<group>"; };
+		E1AB80982100357200C24D7D /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		E1CDE31220B27499009E04D1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E1CDE31420B274D8009E04D1 /* MyProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		E1CDE31520B27747009E04D1 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -81,6 +93,15 @@
 				752FA93416E6F1B96DF0B76B /* Pods_MyProject.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E18E4C2E2112FCB500743420 /* Bubble */ = {
+			isa = PBXGroup;
+			children = (
+				E18E4C2C2112FCAC00743420 /* BubbleViewController.swift */,
+				E18E4C2F2113008A00743420 /* BubbleView.swift */,
+			);
+			path = Bubble;
 			sourceTree = "<group>";
 		};
 		E1A0FE9A20B26E9700044403 = {
@@ -172,6 +193,9 @@
 				E1CDE31720B2775F009E04D1 /* Base */,
 				E1CDE32020B2B8EF009E04D1 /* HoverCollection */,
 				E1CDE33B20BD5EAE009E04D1 /* GithubRepoSearch */,
+				E1AB809A2100357900C24D7D /* Charts */,
+				E18E4C2E2112FCB500743420 /* Bubble */,
+				E1A805B4214B5C7F0027AE5A /* Lottie */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -202,12 +226,30 @@
 		E1A0FED420B273D300044403 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				E1A805B6214B5E070027AE5A /* Switch.json */,
+				E1A805B5214B5E070027AE5A /* TwitterHeart.json */,
 				E1A0FECA20B273C300044403 /* Assets.xcassets */,
 				E1A0FECB20B273C300044403 /* Base.lproj */,
 				E1A0FECE20B273C400044403 /* ImageAsset.swift */,
 				E1A0FECF20B273C400044403 /* Info.plist */,
 			);
 			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		E1A805B4214B5C7F0027AE5A /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				E1A805B2214B5C740027AE5A /* LottieViewController.swift */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		E1AB809A2100357900C24D7D /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				E1AB80982100357200C24D7D /* ChartsViewController.swift */,
+			);
+			path = Charts;
 			sourceTree = "<group>";
 		};
 		E1CDE31720B2775F009E04D1 /* Base */ = {
@@ -323,6 +365,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A805B8214B5E070027AE5A /* Switch.json in Resources */,
+				E1A805B7214B5E070027AE5A /* TwitterHeart.json in Resources */,
 				E1A0FED020B273C400044403 /* Assets.xcassets in Resources */,
 				E1A0FED120B273C400044403 /* LaunchScreen.storyboard in Resources */,
 				E1A0FED320B273C400044403 /* Info.plist in Resources */,
@@ -358,6 +402,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MyProject/Pods-MyProject-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
@@ -374,10 +419,12 @@
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
@@ -394,6 +441,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -421,12 +469,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1CDE33920BD46DA009E04D1 /* GithubRepoListController.swift in Sources */,
+				E1AB80992100357200C24D7D /* ChartsViewController.swift in Sources */,
 				E1CDE31F20B2B8DD009E04D1 /* HoverCollectionController.swift in Sources */,
 				E1CDE31320B27499009E04D1 /* BaseViewController.swift in Sources */,
+				E1A805B3214B5C740027AE5A /* LottieViewController.swift in Sources */,
 				E1CDE32B20B2C787009E04D1 /* QMUIConfigurationTemplate.m in Sources */,
 				E1CDE31D20B29C01009E04D1 /* WebViewController.swift in Sources */,
 				E1CDE31620B27747009E04D1 /* NavigationController.swift in Sources */,
 				E1A0FEA720B26E9700044403 /* AppDelegate.swift in Sources */,
+				E18E4C302113008A00743420 /* BubbleView.swift in Sources */,
 				E1CDE33720BD07A2009E04D1 /* RxSwift+Observable.swift in Sources */,
 				E1A0FEC720B272F600044403 /* Log.swift in Sources */,
 				E1CDE31920B27786009E04D1 /* HomeTableViewController.swift in Sources */,
@@ -438,6 +489,7 @@
 				E1A0FEC620B272F600044403 /* ThirdReference.swift in Sources */,
 				E1CDE31B20B27BCF009E04D1 /* UITableView+Extension.swift in Sources */,
 				E1CDE32220B2B96D009E04D1 /* HoverCollectionViewCell.swift in Sources */,
+				E18E4C2D2112FCAC00743420 /* BubbleViewController.swift in Sources */,
 				E1CDE33120BCF7F4009E04D1 /* GithubViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,6 +630,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XJHRVPW773;
 				INFOPLIST_FILE = MyProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -598,6 +651,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XJHRVPW773;
 				INFOPLIST_FILE = MyProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

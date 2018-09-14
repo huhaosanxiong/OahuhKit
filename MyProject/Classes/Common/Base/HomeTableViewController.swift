@@ -18,14 +18,21 @@ class HomeTableViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.title = "ProjectList"
         
         let dataArray = Observable.just([
             SectionModel(model: "", items: ["1.UICollectionView组头悬停",
-                                            "2.Github搜寻仓库"])
+                                            "2.Github搜寻仓库",
+                                            "3.Charts",
+                                            "4.蚂蚁森林能量收取",
+                                            "5.Lottie"])
             ])
         
         let className = ["HoverCollectionController",
-                         "GithubRepoListController"]
+                         "GithubRepoListController",
+                         "ChartsViewController",
+                         "BubbleViewController",
+                         "LottieViewController"]
         
         
         //Config
@@ -61,7 +68,6 @@ class HomeTableViewController: BaseViewController {
                 self.navigationController?.pushViewController(vc, animated: true)
 
             }).disposed(by: disposeBag)
-        
         
     }
     

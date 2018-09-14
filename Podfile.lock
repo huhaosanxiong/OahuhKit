@@ -1,9 +1,13 @@
 PODS:
   - Alamofire (4.7.2)
+  - Charts (3.1.1):
+    - Charts/Core (= 3.1.1)
+  - Charts/Core (3.1.1)
   - Differentiator (3.0.2)
   - HandyJSON (4.1.1)
   - Hero (1.2.0)
   - Kingfisher (4.6.4)
+  - lottie-ios (2.5.0)
   - Material (2.14.0):
     - Material/Core (= 2.14.0)
   - Material/Core (2.14.0):
@@ -262,9 +266,11 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Charts
   - HandyJSON
   - Hero
   - Kingfisher (~> 4.6.0)
+  - lottie-ios
   - Material
   - MJRefresh
   - Moya/RxSwift (~> 11.0)
@@ -279,10 +285,12 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - Charts
     - Differentiator
     - HandyJSON
     - Hero
     - Kingfisher
+    - lottie-ios
     - Material
     - MJRefresh
     - Motion
@@ -298,10 +306,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
   Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
   HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
   Hero: 33dadf2cd1c98af71e213dcbc2902e6e03622a4e
   Kingfisher: 68498a706e46c2a050b0c9572f100e5db407f6e0
+  lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
   Material: c5bea030f57d4b903c5284200bb612d571c9ec03
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   Motion: 9f74d115d7f72bb5380a8e3cde2f8a1fc898ac36
@@ -315,6 +325,6 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: cf1cd75d1b10e9548d12aebe01947fc87031b290
+PODFILE CHECKSUM: aa1e2b5674e14e774e15e78751f7834e873ee978
 
 COCOAPODS: 1.5.0.beta.1
