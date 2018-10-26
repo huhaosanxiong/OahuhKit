@@ -58,7 +58,7 @@ class GithubRepoListController: BaseViewController {
 
         viewModel.navigationTitle.asObservable().subscribe(onNext: { title in
             debugPrint(title)
-            self.titleView.title = title
+            self.navigationItem.title = title
         }).disposed(by: disposeBag)
         
         //点击跳转

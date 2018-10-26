@@ -15,13 +15,16 @@ class WebViewController: BaseViewController {
     
     var urlString = ""
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-
+        webView.addObserver(self, forKeyPath: "title", options: .new, context: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        webView.removeObserver(self, forKeyPath: "title")
     }
 
     override func initSubviews() {
@@ -40,8 +43,14 @@ class WebViewController: BaseViewController {
         
         
         
-        
     }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "title" {
+            self.navigationItem.title = self.webView.title
+        }
+    }
+    
     
     override func setNavigationItemsIsInEditMode(_ isInEditMode: Bool, animated: Bool) {
         super.setNavigationItemsIsInEditMode(isInEditMode, animated: animated)

@@ -25,14 +25,16 @@ class HomeTableViewController: BaseViewController {
                                             "2.Github搜寻仓库",
                                             "3.Charts",
                                             "4.蚂蚁森林能量收取",
-                                            "5.Lottie"])
+                                            "5.Lottie",
+                                            "6.RxSwift+List+Refresh"])
             ])
         
         let className = ["HoverCollectionController",
                          "GithubRepoListController",
                          "ChartsViewController",
                          "BubbleViewController",
-                         "LottieViewController"]
+                         "LottieViewController",
+                         "GithubRepoListRefreshController"]
         
         
         //Config

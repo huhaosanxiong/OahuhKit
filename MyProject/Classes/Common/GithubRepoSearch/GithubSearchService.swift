@@ -45,6 +45,7 @@ import Foundation
 
 enum GithubAPI {
     case repositories(String) //查询
+    case searchRepo(page: Int)
 }
 
 let GithubProvider = MoyaProvider<GithubAPI>()
@@ -58,14 +59,18 @@ extension GithubAPI: TargetType {
     
     var path: String {
         switch self {
-        case .repositories:
+        case .repositories ,
+             .searchRepo:
             return "/search/repositories"
+            
         }
+        
     }
     
     var method: Moya.Method {
         switch self {
-        case .repositories:
+        case .repositories,
+             .searchRepo:
             return .get
         }
     }
@@ -81,8 +86,16 @@ extension GithubAPI: TargetType {
             param["q"] = str
             param["sort"] = "stars"
             param["order"] = "desc"
-//            param["per_page"] = 20
+            param["per_page"] = 20
             return .requestParameters(parameters: param, encoding: URLEncoding.default)
+            
+        case .searchRepo(let page):
+            var parameter :[String: Any] = [:]
+            parameter["q"] = "language:swift"
+            parameter["sort"] = "stars"
+            parameter["page"] = page
+            parameter["per_page"] = 10
+            return .requestParameters(parameters: parameter, encoding: URLEncoding.default)
         }
     }
     

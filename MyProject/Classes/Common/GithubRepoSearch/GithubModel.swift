@@ -13,10 +13,7 @@ struct GithubResultModel: HandyJSON {
     var total_count: Int = 0
     var incomplete_results: Bool = false
     var items: [GithubRepository] = []
-    
-    init() {
-        
-    }
+
 }
 
 //单个仓库模型
@@ -28,9 +25,6 @@ struct GithubRepository: HandyJSON {
     var description: String!
     var owner: [String: Any]!
     
-    init() {
-        
-    }
 }
 
 
