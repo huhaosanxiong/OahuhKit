@@ -26,7 +26,8 @@ class HomeTableViewController: BaseViewController {
                                             "3.Charts",
                                             "4.蚂蚁森林能量收取",
                                             "5.Lottie",
-                                            "6.RxSwift+List+Refresh"])
+                                            "6.RxSwift+List+Refresh",
+                                            "7.ViewControllerMaskTransitionAnimate"])
             ])
         
         let className = ["HoverCollectionController",
@@ -34,7 +35,8 @@ class HomeTableViewController: BaseViewController {
                          "ChartsViewController",
                          "BubbleViewController",
                          "LottieViewController",
-                         "GithubRepoListRefreshController"]
+                         "GithubRepoListRefreshController",
+                         "PushTransitionViewController"]
         
         
         //Config
@@ -47,6 +49,9 @@ class HomeTableViewController: BaseViewController {
         })
         //绑定
         dataArray.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+        
+        //导航栏转场动画代理
+        let delegate = TransitionProcotol()
         
         //点击
         Observable.zip(tableView.rx.modelSelected(String.self),tableView.rx.itemSelected)
@@ -63,6 +68,15 @@ class HomeTableViewController: BaseViewController {
                 
                 let myClass: AnyClass? = NSClassFromString(ns + "." + className[indexPath.row])
                 guard let myClassType = myClass as? UIViewController.Type else{
+                    return
+                }
+                
+                if className[indexPath.row] == "PushTransitionViewController" {
+                    let vc = myClassType.init()
+                    let nav = UINavigationController.init(rootViewController: vc)
+                    nav.delegate = delegate
+                    nav.isNavigationBarHidden = true
+                    self.present(nav, animated: true, completion: nil)
                     return
                 }
                 

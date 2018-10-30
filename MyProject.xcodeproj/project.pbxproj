@@ -20,6 +20,11 @@
 		E1A0FED020B273C400044403 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1A0FECA20B273C300044403 /* Assets.xcassets */; };
 		E1A0FED120B273C400044403 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A0FECC20B273C300044403 /* LaunchScreen.storyboard */; };
 		E1A0FED220B273C400044403 /* ImageAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0FECE20B273C400044403 /* ImageAsset.swift */; };
+		E1A77D9D2187090C00B6117D /* PushTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A77D9C2187090C00B6117D /* PushTransitionViewController.swift */; };
+		E1A77DA021870A9000B6117D /* PopTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A77D9F21870A9000B6117D /* PopTransitionViewController.swift */; };
+		E1A77DA221870EF000B6117D /* TransitionProcotol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A77DA121870EF000B6117D /* TransitionProcotol.swift */; };
+		E1A77DA421870F7200B6117D /* PushAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A77DA321870F7200B6117D /* PushAnimation.swift */; };
+		E1A77DA621870FD700B6117D /* PopAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A77DA521870FD700B6117D /* PopAnimation.swift */; };
 		E1A805B3214B5C740027AE5A /* LottieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A805B2214B5C740027AE5A /* LottieViewController.swift */; };
 		E1A805B7214B5E070027AE5A /* TwitterHeart.json in Resources */ = {isa = PBXBuildFile; fileRef = E1A805B5214B5E070027AE5A /* TwitterHeart.json */; };
 		E1A805B8214B5E070027AE5A /* Switch.json in Resources */ = {isa = PBXBuildFile; fileRef = E1A805B6214B5E070027AE5A /* Switch.json */; };
@@ -59,6 +64,11 @@
 		E1A0FECD20B273C300044403 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E1A0FECE20B273C400044403 /* ImageAsset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAsset.swift; sourceTree = "<group>"; };
 		E1A0FECF20B273C400044403 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1A77D9C2187090C00B6117D /* PushTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransitionViewController.swift; sourceTree = "<group>"; };
+		E1A77D9F21870A9000B6117D /* PopTransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopTransitionViewController.swift; sourceTree = "<group>"; };
+		E1A77DA121870EF000B6117D /* TransitionProcotol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionProcotol.swift; sourceTree = "<group>"; };
+		E1A77DA321870F7200B6117D /* PushAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushAnimation.swift; sourceTree = "<group>"; };
+		E1A77DA521870FD700B6117D /* PopAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimation.swift; sourceTree = "<group>"; };
 		E1A805B2214B5C740027AE5A /* LottieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieViewController.swift; sourceTree = "<group>"; };
 		E1A805B5214B5E070027AE5A /* TwitterHeart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TwitterHeart.json; sourceTree = "<group>"; };
 		E1A805B6214B5E070027AE5A /* Switch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Switch.json; sourceTree = "<group>"; };
@@ -215,6 +225,7 @@
 				E18E4C2E2112FCB500743420 /* Bubble */,
 				E1A805B4214B5C7F0027AE5A /* Lottie */,
 				E1007B852182EF7800E72898 /* GithubListRefresh */,
+				E1A77D9E2187091200B6117D /* TransitionAnimate */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -253,6 +264,18 @@
 				E1A0FECF20B273C400044403 /* Info.plist */,
 			);
 			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		E1A77D9E2187091200B6117D /* TransitionAnimate */ = {
+			isa = PBXGroup;
+			children = (
+				E1A77D9C2187090C00B6117D /* PushTransitionViewController.swift */,
+				E1A77D9F21870A9000B6117D /* PopTransitionViewController.swift */,
+				E1A77DA121870EF000B6117D /* TransitionProcotol.swift */,
+				E1A77DA321870F7200B6117D /* PushAnimation.swift */,
+				E1A77DA521870FD700B6117D /* PopAnimation.swift */,
+			);
+			path = TransitionAnimate;
 			sourceTree = "<group>";
 		};
 		E1A805B4214B5C7F0027AE5A /* Lottie */ = {
@@ -489,9 +512,11 @@
 				E1CDE33920BD46DA009E04D1 /* GithubRepoListController.swift in Sources */,
 				E1AB80992100357200C24D7D /* ChartsViewController.swift in Sources */,
 				E1CDE31F20B2B8DD009E04D1 /* HoverCollectionController.swift in Sources */,
+				E1A77D9D2187090C00B6117D /* PushTransitionViewController.swift in Sources */,
 				E1CDE31320B27499009E04D1 /* BaseViewController.swift in Sources */,
 				E1A805B3214B5C740027AE5A /* LottieViewController.swift in Sources */,
 				E1CDE32B20B2C787009E04D1 /* QMUIConfigurationTemplate.m in Sources */,
+				E1A77DA421870F7200B6117D /* PushAnimation.swift in Sources */,
 				E1CDE31D20B29C01009E04D1 /* WebViewController.swift in Sources */,
 				E1CDE31620B27747009E04D1 /* NavigationController.swift in Sources */,
 				E1A0FEA720B26E9700044403 /* AppDelegate.swift in Sources */,
@@ -501,15 +526,18 @@
 				E1A0FEC720B272F600044403 /* Log.swift in Sources */,
 				E1CDE31920B27786009E04D1 /* HomeTableViewController.swift in Sources */,
 				E1A0FED220B273C400044403 /* ImageAsset.swift in Sources */,
+				E1A77DA021870A9000B6117D /* PopTransitionViewController.swift in Sources */,
 				E1CDE32620B2BA82009E04D1 /* HoverCollectionReusableView.swift in Sources */,
 				E1CDE33320BCFC9F009E04D1 /* GithubModel.swift in Sources */,
 				E1007B892182F31800E72898 /* RepoListViewModel.swift in Sources */,
+				E1A77DA221870EF000B6117D /* TransitionProcotol.swift in Sources */,
 				E1007B842182EF6F00E72898 /* GithubRepoListRefreshController.swift in Sources */,
 				E1CDE33520BD03EE009E04D1 /* GithubSearchService.swift in Sources */,
 				E1CDE32420B2BA2D009E04D1 /* HoverCollectionFlowLayout.swift in Sources */,
 				E1007B872182F28000E72898 /* MJRefreshableTool.swift in Sources */,
 				E1A0FEC620B272F600044403 /* ThirdReference.swift in Sources */,
 				E1CDE31B20B27BCF009E04D1 /* UITableView+Extension.swift in Sources */,
+				E1A77DA621870FD700B6117D /* PopAnimation.swift in Sources */,
 				E1CDE32220B2B96D009E04D1 /* HoverCollectionViewCell.swift in Sources */,
 				E18E4C2D2112FCAC00743420 /* BubbleViewController.swift in Sources */,
 				E1CDE33120BCF7F4009E04D1 /* GithubViewModel.swift in Sources */,
