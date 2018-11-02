@@ -68,6 +68,9 @@ class HahamxViewController: BaseViewController, Refreshable {
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
     }
     
+    deinit {
+        DLog("dealloc")
+    }
     
     /*
      // MARK: - Navigation
@@ -86,7 +89,6 @@ extension HahamxViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         let height = hahaViewModel.cellHeightArray[indexPath.row]
-        
         return height
     }
 }

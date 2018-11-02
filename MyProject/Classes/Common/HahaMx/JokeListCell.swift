@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import Gifu
 
 let SCREENWIDTH = UIScreen.main.bounds.size.width
 
 class JokeListCell: UITableViewCell {
     
-    static let widthRatio = 0.5
+    static let widthRatio = 0.8
     
     let avatarImageView: UIImageView = {
         let imageView = UIImageView()
@@ -61,16 +60,12 @@ class JokeListCell: UITableViewCell {
         
         didSet{
             
-            let imagePath = imageDomain + model.pic.path + imageQuality.normal.quality + model.pic.name
+            let imagePath = imageDomain + model.pic.path + imageQuality.middle.quality + model.pic.name
             
             avatarImageView.kf.setImage(with: URL(string: model.user_pic))
             usernameLabel.text = model.user_name
             publishTimeLabel.text = model.time
             contentLabel.text = model.content
-            
-            if model.pic.animated {
-//                contentImageView.
-            }
             contentImageView.kf.setImage(with: URL(string: imagePath))
         }
     }
@@ -118,10 +113,8 @@ class JokeListCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    override func prepareForReuse() {
+        DLog("prepareForReuse")
     }
 
 }

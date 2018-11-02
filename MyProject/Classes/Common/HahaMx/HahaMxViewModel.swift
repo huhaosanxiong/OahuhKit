@@ -40,7 +40,7 @@ class HahaListViewModel: NSObject, RefreshProtocol {
                 var heightArray: [CGFloat] = []
                 for mod in model.joke {
                     
-                    let aspectRatio = mod.pic.width / mod.pic.height
+                    let aspectRatio = (mod.pic.width == 0 || mod.pic.height == 0) ? 1 : mod.pic.width / mod.pic.height
                     let avatarHeight = 30.0
                     let contentHeight = self?.getlabelHeight(fontSize: 14, text: mod.content, maxWidth: Float(SCREENWIDTH-10*2)).height
                     let imageHeight = (Float(JokeListCell.widthRatio) * Float(SCREENWIDTH)) / aspectRatio

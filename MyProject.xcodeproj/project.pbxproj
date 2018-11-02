@@ -12,6 +12,11 @@
 		E1007B872182F28000E72898 /* MJRefreshableTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1007B862182F28000E72898 /* MJRefreshableTool.swift */; };
 		E1007B892182F31800E72898 /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1007B882182F31800E72898 /* RepoListViewModel.swift */; };
 		E1007B8B218305FA00E72898 /* GithubRepoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1007B8A218305FA00E72898 /* GithubRepoListCell.swift */; };
+		E1801EF0218C64D40065366E /* HahaMxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1801EEB218C64D40065366E /* HahaMxViewModel.swift */; };
+		E1801EF1218C64D40065366E /* HahaMxAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1801EEC218C64D40065366E /* HahaMxAPIService.swift */; };
+		E1801EF2218C64D40065366E /* HahaMaxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1801EED218C64D40065366E /* HahaMaxModel.swift */; };
+		E1801EF3218C64D40065366E /* JokeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1801EEE218C64D40065366E /* JokeListCell.swift */; };
+		E1801EF4218C64D40065366E /* HahamxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1801EEF218C64D40065366E /* HahamxViewController.swift */; };
 		E18E4C2D2112FCAC00743420 /* BubbleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18E4C2C2112FCAC00743420 /* BubbleViewController.swift */; };
 		E18E4C302113008A00743420 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18E4C2F2113008A00743420 /* BubbleView.swift */; };
 		E1A0FEA720B26E9700044403 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0FEA620B26E9700044403 /* AppDelegate.swift */; };
@@ -54,6 +59,11 @@
 		E1007B862182F28000E72898 /* MJRefreshableTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshableTool.swift; sourceTree = "<group>"; };
 		E1007B882182F31800E72898 /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
 		E1007B8A218305FA00E72898 /* GithubRepoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoListCell.swift; sourceTree = "<group>"; };
+		E1801EEB218C64D40065366E /* HahaMxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HahaMxViewModel.swift; sourceTree = "<group>"; };
+		E1801EEC218C64D40065366E /* HahaMxAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HahaMxAPIService.swift; sourceTree = "<group>"; };
+		E1801EED218C64D40065366E /* HahaMaxModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HahaMaxModel.swift; sourceTree = "<group>"; };
+		E1801EEE218C64D40065366E /* JokeListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokeListCell.swift; sourceTree = "<group>"; };
+		E1801EEF218C64D40065366E /* HahamxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HahamxViewController.swift; sourceTree = "<group>"; };
 		E18E4C2C2112FCAC00743420 /* BubbleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleViewController.swift; sourceTree = "<group>"; };
 		E18E4C2F2113008A00743420 /* BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
 		E1A0FEA320B26E9700044403 /* MyProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +130,18 @@
 				E1007B8A218305FA00E72898 /* GithubRepoListCell.swift */,
 			);
 			path = GithubListRefresh;
+			sourceTree = "<group>";
+		};
+		E1801EEA218C64D40065366E /* HahaMx */ = {
+			isa = PBXGroup;
+			children = (
+				E1801EEB218C64D40065366E /* HahaMxViewModel.swift */,
+				E1801EEC218C64D40065366E /* HahaMxAPIService.swift */,
+				E1801EED218C64D40065366E /* HahaMaxModel.swift */,
+				E1801EEE218C64D40065366E /* JokeListCell.swift */,
+				E1801EEF218C64D40065366E /* HahamxViewController.swift */,
+			);
+			path = HahaMx;
 			sourceTree = "<group>";
 		};
 		E18E4C2E2112FCB500743420 /* Bubble */ = {
@@ -226,6 +248,7 @@
 				E1A805B4214B5C7F0027AE5A /* Lottie */,
 				E1007B852182EF7800E72898 /* GithubListRefresh */,
 				E1A77D9E2187091200B6117D /* TransitionAnimate */,
+				E1801EEA218C64D40065366E /* HahaMx */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -517,6 +540,7 @@
 				E1A805B3214B5C740027AE5A /* LottieViewController.swift in Sources */,
 				E1CDE32B20B2C787009E04D1 /* QMUIConfigurationTemplate.m in Sources */,
 				E1A77DA421870F7200B6117D /* PushAnimation.swift in Sources */,
+				E1801EF0218C64D40065366E /* HahaMxViewModel.swift in Sources */,
 				E1CDE31D20B29C01009E04D1 /* WebViewController.swift in Sources */,
 				E1CDE31620B27747009E04D1 /* NavigationController.swift in Sources */,
 				E1A0FEA720B26E9700044403 /* AppDelegate.swift in Sources */,
@@ -525,10 +549,14 @@
 				E1007B8B218305FA00E72898 /* GithubRepoListCell.swift in Sources */,
 				E1A0FEC720B272F600044403 /* Log.swift in Sources */,
 				E1CDE31920B27786009E04D1 /* HomeTableViewController.swift in Sources */,
+				E1801EF1218C64D40065366E /* HahaMxAPIService.swift in Sources */,
+				E1801EF3218C64D40065366E /* JokeListCell.swift in Sources */,
 				E1A0FED220B273C400044403 /* ImageAsset.swift in Sources */,
+				E1801EF4218C64D40065366E /* HahamxViewController.swift in Sources */,
 				E1A77DA021870A9000B6117D /* PopTransitionViewController.swift in Sources */,
 				E1CDE32620B2BA82009E04D1 /* HoverCollectionReusableView.swift in Sources */,
 				E1CDE33320BCFC9F009E04D1 /* GithubModel.swift in Sources */,
+				E1801EF2218C64D40065366E /* HahaMaxModel.swift in Sources */,
 				E1007B892182F31800E72898 /* RepoListViewModel.swift in Sources */,
 				E1A77DA221870EF000B6117D /* TransitionProcotol.swift in Sources */,
 				E1007B842182EF6F00E72898 /* GithubRepoListRefreshController.swift in Sources */,
