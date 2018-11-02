@@ -27,7 +27,8 @@ class HomeTableViewController: BaseViewController {
                                             "4.蚂蚁森林能量收取",
                                             "5.Lottie",
                                             "6.RxSwift+List+Refresh",
-                                            "7.ViewControllerMaskTransitionAnimate"])
+                                            "7.ViewControllerMaskTransitionAnimate",
+                                            "8.https://www.haha.mx"])
             ])
         
         let className = ["HoverCollectionController",
@@ -36,7 +37,8 @@ class HomeTableViewController: BaseViewController {
                          "BubbleViewController",
                          "LottieViewController",
                          "GithubRepoListRefreshController",
-                         "PushTransitionViewController"]
+                         "PushTransitionViewController",
+                         "HahamxViewController"]
         
         
         //Config

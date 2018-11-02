@@ -59,6 +59,11 @@ extension Refreshable where Self : UIViewController {
         scrollView.mj_footer = MJRefreshBackNormalFooter(refreshingBlock: { action() })
         return scrollView.mj_footer
     }
+    
+    func initAutoRefreshFooter(_ scrollView: UIScrollView, _ action: @escaping () -> Void) -> MJRefreshFooter {
+        scrollView.mj_footer = MJRefreshAutoFooter(refreshingBlock: { action() })
+        return scrollView.mj_footer
+    }
 }
 
 extension Refreshable where Self : UIScrollView {

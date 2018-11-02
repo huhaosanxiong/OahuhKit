@@ -51,18 +51,16 @@ public extension Observable {
                 throw RxSwiftMoyaError.NoResponse
             }
             
-            let data = json
+            /**/
             DLog(json)
-            if let data = data as? [String:Any] {
-                let object = JSONDeserializer<H>.deserializeFrom(dict: data)
-                if object != nil {
-                    return object!
-                }else {
-                    throw RxSwiftMoyaError.ParseJSONError
-                }
+            let object = JSONDeserializer<H>.deserializeFrom(dict: json)
+            if object != nil {
+                return object!
             }else {
                 throw RxSwiftMoyaError.ParseJSONError
             }
+            /**/
+
             /* github的api 没有code msg等字段，所以按上面特殊处理，实际情况按照公司接口规范来写
             //判断返回code
             if let code = json[RESP_CODE] as? Int {
