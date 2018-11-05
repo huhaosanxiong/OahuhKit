@@ -12,6 +12,9 @@
 		E1007B872182F28000E72898 /* MJRefreshableTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1007B862182F28000E72898 /* MJRefreshableTool.swift */; };
 		E1007B892182F31800E72898 /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1007B882182F31800E72898 /* RepoListViewModel.swift */; };
 		E1007B8B218305FA00E72898 /* GithubRepoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1007B8A218305FA00E72898 /* GithubRepoListCell.swift */; };
+		E12C5766218FF5AF00CFE480 /* QMUIConfigurationTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = E12C5765218FF5AF00CFE480 /* QMUIConfigurationTemplate.m */; };
+		E12C5768218FF5F100CFE480 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C5767218FF5F100CFE480 /* APIProvider.swift */; };
+		E12C576A218FF60A00CFE480 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C5769218FF60A00CFE480 /* Resource.swift */; };
 		E1801EF0218C64D40065366E /* HahaMxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1801EEB218C64D40065366E /* HahaMxViewModel.swift */; };
 		E1801EF1218C64D40065366E /* HahaMxAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1801EEC218C64D40065366E /* HahaMxAPIService.swift */; };
 		E1801EF2218C64D40065366E /* HahaMaxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1801EED218C64D40065366E /* HahaMaxModel.swift */; };
@@ -43,7 +46,6 @@
 		E1CDE32220B2B96D009E04D1 /* HoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE32120B2B96D009E04D1 /* HoverCollectionViewCell.swift */; };
 		E1CDE32420B2BA2D009E04D1 /* HoverCollectionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE32320B2BA2D009E04D1 /* HoverCollectionFlowLayout.swift */; };
 		E1CDE32620B2BA82009E04D1 /* HoverCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE32520B2BA82009E04D1 /* HoverCollectionReusableView.swift */; };
-		E1CDE32B20B2C787009E04D1 /* QMUIConfigurationTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE32A20B2C787009E04D1 /* QMUIConfigurationTemplate.m */; };
 		E1CDE33120BCF7F4009E04D1 /* GithubViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE33020BCF7F4009E04D1 /* GithubViewModel.swift */; };
 		E1CDE33320BCFC9F009E04D1 /* GithubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE33220BCFC9F009E04D1 /* GithubModel.swift */; };
 		E1CDE33520BD03EE009E04D1 /* GithubSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE33420BD03EE009E04D1 /* GithubSearchService.swift */; };
@@ -59,6 +61,10 @@
 		E1007B862182F28000E72898 /* MJRefreshableTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshableTool.swift; sourceTree = "<group>"; };
 		E1007B882182F31800E72898 /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
 		E1007B8A218305FA00E72898 /* GithubRepoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoListCell.swift; sourceTree = "<group>"; };
+		E12C5764218FF5AF00CFE480 /* QMUIConfigurationTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMUIConfigurationTemplate.h; sourceTree = "<group>"; };
+		E12C5765218FF5AF00CFE480 /* QMUIConfigurationTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMUIConfigurationTemplate.m; sourceTree = "<group>"; };
+		E12C5767218FF5F100CFE480 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
+		E12C5769218FF60A00CFE480 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		E1801EEB218C64D40065366E /* HahaMxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HahaMxViewModel.swift; sourceTree = "<group>"; };
 		E1801EEC218C64D40065366E /* HahaMxAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HahaMxAPIService.swift; sourceTree = "<group>"; };
 		E1801EED218C64D40065366E /* HahaMaxModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HahaMaxModel.swift; sourceTree = "<group>"; };
@@ -93,8 +99,6 @@
 		E1CDE32120B2B96D009E04D1 /* HoverCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoverCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1CDE32320B2BA2D009E04D1 /* HoverCollectionFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoverCollectionFlowLayout.swift; sourceTree = "<group>"; };
 		E1CDE32520B2BA82009E04D1 /* HoverCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoverCollectionReusableView.swift; sourceTree = "<group>"; };
-		E1CDE32920B2C787009E04D1 /* QMUIConfigurationTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMUIConfigurationTemplate.h; sourceTree = "<group>"; };
-		E1CDE32A20B2C787009E04D1 /* QMUIConfigurationTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMUIConfigurationTemplate.m; sourceTree = "<group>"; };
 		E1CDE33020BCF7F4009E04D1 /* GithubViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubViewModel.swift; sourceTree = "<group>"; };
 		E1CDE33220BCFC9F009E04D1 /* GithubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubModel.swift; sourceTree = "<group>"; };
 		E1CDE33420BD03EE009E04D1 /* GithubSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubSearchService.swift; sourceTree = "<group>"; };
@@ -130,6 +134,15 @@
 				E1007B8A218305FA00E72898 /* GithubRepoListCell.swift */,
 			);
 			path = GithubListRefresh;
+			sourceTree = "<group>";
+		};
+		E12C5763218FF5AF00CFE480 /* QMUIConfigurationTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				E12C5764218FF5AF00CFE480 /* QMUIConfigurationTemplate.h */,
+				E12C5765218FF5AF00CFE480 /* QMUIConfigurationTemplate.m */,
+			);
+			path = QMUIConfigurationTemplate;
 			sourceTree = "<group>";
 		};
 		E1801EEA218C64D40065366E /* HahaMx */ = {
@@ -233,6 +246,7 @@
 		E1A0FEC220B272F500044403 /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
+				E12C5767218FF5F100CFE480 /* APIProvider.swift */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -256,6 +270,7 @@
 		E1A0FEC420B272F500044403 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E12C5769218FF60A00CFE480 /* Resource.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -263,7 +278,7 @@
 		E1A0FEC520B272F500044403 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				E1CDE32820B2C787009E04D1 /* QMUIConfigurationTemplate */,
+				E12C5763218FF5AF00CFE480 /* QMUIConfigurationTemplate */,
 			);
 			path = ThirdParty;
 			sourceTree = "<group>";
@@ -338,16 +353,6 @@
 			);
 			path = HoverCollection;
 			sourceTree = "<group>";
-		};
-		E1CDE32820B2C787009E04D1 /* QMUIConfigurationTemplate */ = {
-			isa = PBXGroup;
-			children = (
-				E1CDE32920B2C787009E04D1 /* QMUIConfigurationTemplate.h */,
-				E1CDE32A20B2C787009E04D1 /* QMUIConfigurationTemplate.m */,
-			);
-			name = QMUIConfigurationTemplate;
-			path = Pods/QMUIKit/QMUIConfigurationTemplate;
-			sourceTree = SOURCE_ROOT;
 		};
 		E1CDE33B20BD5EAE009E04D1 /* GithubRepoSearch */ = {
 			isa = PBXGroup;
@@ -532,13 +537,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E12C576A218FF60A00CFE480 /* Resource.swift in Sources */,
 				E1CDE33920BD46DA009E04D1 /* GithubRepoListController.swift in Sources */,
 				E1AB80992100357200C24D7D /* ChartsViewController.swift in Sources */,
+				E12C5766218FF5AF00CFE480 /* QMUIConfigurationTemplate.m in Sources */,
 				E1CDE31F20B2B8DD009E04D1 /* HoverCollectionController.swift in Sources */,
 				E1A77D9D2187090C00B6117D /* PushTransitionViewController.swift in Sources */,
 				E1CDE31320B27499009E04D1 /* BaseViewController.swift in Sources */,
 				E1A805B3214B5C740027AE5A /* LottieViewController.swift in Sources */,
-				E1CDE32B20B2C787009E04D1 /* QMUIConfigurationTemplate.m in Sources */,
 				E1A77DA421870F7200B6117D /* PushAnimation.swift in Sources */,
 				E1801EF0218C64D40065366E /* HahaMxViewModel.swift in Sources */,
 				E1CDE31D20B29C01009E04D1 /* WebViewController.swift in Sources */,
@@ -555,6 +561,7 @@
 				E1801EF4218C64D40065366E /* HahamxViewController.swift in Sources */,
 				E1A77DA021870A9000B6117D /* PopTransitionViewController.swift in Sources */,
 				E1CDE32620B2BA82009E04D1 /* HoverCollectionReusableView.swift in Sources */,
+				E12C5768218FF5F100CFE480 /* APIProvider.swift in Sources */,
 				E1CDE33320BCFC9F009E04D1 /* GithubModel.swift in Sources */,
 				E1801EF2218C64D40065366E /* HahaMaxModel.swift in Sources */,
 				E1007B892182F31800E72898 /* RepoListViewModel.swift in Sources */,
