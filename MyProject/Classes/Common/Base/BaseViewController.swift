@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseViewController: QMUICommonViewController {
+class BaseViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -44,6 +44,12 @@ class BaseViewController: QMUICommonViewController {
         }
         
         bindViewModel()
+        
+        initSubviews()
+    }
+    
+    func initSubviews() {
+        
     }
 
     func bindViewModel() {

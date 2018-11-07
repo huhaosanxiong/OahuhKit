@@ -29,7 +29,7 @@ class ChartsViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         
-        self.titleView.title = "Charts"
+        self.navigationItem.title = "Charts"
         
     }
     

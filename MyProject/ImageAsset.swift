@@ -13,6 +13,10 @@ return result
 }
 }
 enum Asset {
+  static let img1125 = ImageAsset(name: "IMG_1125")
+  static let img1145 = ImageAsset(name: "IMG_1145")
+  static let background = ImageAsset(name: "background")
+  static let wallhaven578223 = ImageAsset(name: "wallhaven-578223")
 }
 extension Image {
 convenience init!(asset: ImageAsset) {
