@@ -1,2 +1,2 @@
 # MyProject
-随记
+Run 'pod install'
