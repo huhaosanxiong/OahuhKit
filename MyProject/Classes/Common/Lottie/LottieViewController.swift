@@ -88,7 +88,7 @@ extension Reactive where Base: LOTAnimatedSwitch {
         )
     }
     func controlPropertyWithDefaultEvents<T>(
-        editingEvents: UIControlEvents = [.allEditingEvents, .valueChanged],
+        editingEvents: UIControl.Event = [.allEditingEvents, .valueChanged],
         getter: @escaping (Base) -> T,
         setter: @escaping (Base, T) -> ()
         ) -> ControlProperty<T> {

@@ -28,7 +28,8 @@ class HomeTableViewController: BaseViewController {
                                             "5.Lottie",
                                             "6.RxSwift+List+Refresh",
                                             "7.ViewControllerMaskTransitionAnimate",
-                                            "8.https://www.haha.mx"])
+                                            "8.https://www.haha.mx",
+                                            "9.FoldingCell"])
             ])
         
         let className = ["HoverCollectionController",
@@ -38,14 +39,15 @@ class HomeTableViewController: BaseViewController {
                          "LottieViewController",
                          "GithubRepoListRefreshController",
                          "PushTransitionViewController",
-                         "HahamxViewController"]
+                         "HahamxViewController",
+                         "FoldingCellViewController"]
         
         
         //Config
         let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, String>>(configureCell: { (dataSource, tableView, indexPath, model) -> UITableViewCell in
             
             let cell = tableView.cell(ofType: UITableViewCell.self)
-            cell.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+            cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
             cell.textLabel?.text = model
             return cell
         })
@@ -98,10 +100,6 @@ class HomeTableViewController: BaseViewController {
         }
     }
     
-    override func setNavigationItemsIsInEditMode(_ isInEditMode: Bool, animated: Bool) {
-        super.setNavigationItemsIsInEditMode(isInEditMode, animated: animated)
-        self.titleView.title = "ProjectList"
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

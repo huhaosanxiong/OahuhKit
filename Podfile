@@ -21,7 +21,7 @@ target 'MyProject' do
     pod 'Material'
     pod 'SnapKit'
     pod 'Charts'
-    
+    pod 'FoldingCell'
     pod 'lottie-ios'
     
     #Objective-C

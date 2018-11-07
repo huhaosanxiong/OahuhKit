@@ -12,7 +12,7 @@ class GithubRepoListCell: UITableViewCell {
     
     let avatarImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = UIViewContentMode.scaleAspectFill
+        imageView.contentMode = UIView.ContentMode.scaleAspectFill
         imageView.layer.masksToBounds = true
         return imageView
     }()
@@ -43,7 +43,7 @@ class GithubRepoListCell: UITableViewCell {
     }
     
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.addSubview(avatarImageView)

@@ -16,6 +16,7 @@ class HoverCollectionController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationItem.title = "HoverCollection"
         // Do any additional setup after loading the view.
     }
     
@@ -45,25 +46,20 @@ class HoverCollectionController: BaseViewController {
         collectionView.dataSource = self
         collectionView.backgroundColor = UIColor.white
         if #available(iOS 11.0, *) {
-            collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentBehavior.never
+            collectionView.contentInsetAdjustmentBehavior = UIScrollView.ContentInsetAdjustmentBehavior.never
         } else {
             // Fallback on earlier versions
         }
         view.addSubview(collectionView)
         
         collectionView.register(HoverCollectionViewCell.self, forCellWithReuseIdentifier: "HoverCollectionViewCell")
-        collectionView.register(HoverCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HoverCollectionReusableView")
+        collectionView.register(HoverCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HoverCollectionReusableView")
         
         collectionView.snp.makeConstraints { make in
             make.edges.equalTo(self.view).inset(UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0))
         }
     }
 
-
-    override func setNavigationItemsIsInEditMode(_ isInEditMode: Bool, animated: Bool) {
-        super.setNavigationItemsIsInEditMode(isEditing, animated: animated)
-        self.titleView.title = "HoverCollection"
-    }
 }
 
 extension HoverCollectionController : UICollectionViewDataSource {
@@ -84,7 +80,7 @@ extension HoverCollectionController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "HoverCollectionReusableView", for: indexPath) as? HoverCollectionReusableView else {
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HoverCollectionReusableView", for: indexPath) as? HoverCollectionReusableView else {
             fatalError()
         }
         

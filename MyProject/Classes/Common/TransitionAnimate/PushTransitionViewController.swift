@@ -11,7 +11,7 @@ import UIKit
 class PushTransitionViewController: UIViewController {
     
     var dismissButton: UIButton = {
-        let button = UIButton.init(type: UIButtonType.system)
+        let button = UIButton.init(type: UIButton.ButtonType.system)
         button.setTitle("Dimiss", for: .normal)
         button.backgroundColor = .black
         button.setTitleColor(.white, for: .normal)
@@ -20,7 +20,7 @@ class PushTransitionViewController: UIViewController {
     }()
     
     var pushButton: UIButton = {
-        let button = UIButton.init(type: UIButtonType.system)
+        let button = UIButton.init(type: UIButton.ButtonType.system)
         button.setTitle("Push", for: .normal)
         button.backgroundColor = .black
         button.setTitleColor(.white, for: .normal)

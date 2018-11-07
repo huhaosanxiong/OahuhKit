@@ -24,3 +24,5 @@ import Foundation
 @_exported import Result
 @_exported import SVProgressHUD
 @_exported import RxDataSources
+@_exported import FoldingCell
+

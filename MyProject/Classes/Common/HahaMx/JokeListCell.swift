@@ -17,7 +17,7 @@ class JokeListCell: UITableViewCell {
     let avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .lightGray
-        imageView.contentMode = UIViewContentMode.scaleAspectFill
+        imageView.contentMode = UIView.ContentMode.scaleAspectFill
         imageView.layer.cornerRadius = 2
         imageView.layer.masksToBounds = true
         return imageView
@@ -51,7 +51,7 @@ class JokeListCell: UITableViewCell {
     let contentImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .lightGray
-        imageView.contentMode = UIViewContentMode.scaleAspectFill
+        imageView.contentMode = UIView.ContentMode.scaleAspectFill
         imageView.layer.masksToBounds = true
         return imageView
     }()
@@ -71,7 +71,7 @@ class JokeListCell: UITableViewCell {
     }
     
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         contentView.addSubview(avatarImageView)

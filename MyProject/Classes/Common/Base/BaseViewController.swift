@@ -37,7 +37,7 @@ class BaseViewController: QMUICommonViewController {
         
         if (navigationController != nil) && (navigationController?.viewControllers.count)! > 1 {
             self.navigationItem.hidesBackButton = true;
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: Icon.arrowBack, style: UIBarButtonItemStyle.plain, target: self, action: #selector(goback(button:)))
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: Icon.arrowBack, style: UIBarButtonItem.Style.plain, target: self, action: #selector(goback(button:)))
             self.navigationItem.leftItemsSupplementBackButton = true;
             
             self.navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate

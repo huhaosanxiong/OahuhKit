@@ -21,7 +21,7 @@ class PopTransitionViewController: UIViewController {
     }()
     
     var popButton: UIButton = {
-        let button = UIButton.init(type: UIButtonType.system)
+        let button = UIButton.init(type: UIButton.ButtonType.system)
         button.setTitle("Pop", for: .normal)
         button.backgroundColor = .black
         button.setTitleColor(.white, for: .normal)

@@ -52,11 +52,6 @@ class WebViewController: BaseViewController {
     }
     
     
-    override func setNavigationItemsIsInEditMode(_ isInEditMode: Bool, animated: Bool) {
-        super.setNavigationItemsIsInEditMode(isInEditMode, animated: animated)
-        self.titleView.title = "Webview"
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

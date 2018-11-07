@@ -99,7 +99,7 @@ class HahaListViewModel: NSObject, RefreshProtocol {
         
         let font = UIFont.systemFont(ofSize: fontSize)
         
-        let att = [NSAttributedStringKey.font:font]
+        let att = [NSAttributedString.Key.font:font]
         
         var content = ""
         

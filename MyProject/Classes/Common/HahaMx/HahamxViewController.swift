@@ -8,6 +8,7 @@
 
 import UIKit
 
+//TODO ： Gif的很多第三方报错，先这样
 class HahamxViewController: BaseViewController, Refreshable {
     
     let disposeBag = DisposeBag()
@@ -19,7 +20,6 @@ class HahamxViewController: BaseViewController, Refreshable {
     
     lazy var tableView: UITableView = {
         let table = UITableView()
-        table.estimatedRowHeight = 100
         table.registerCell(ofType: JokeListCell.self)
         return table
     }()
