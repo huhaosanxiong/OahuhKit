@@ -4,6 +4,7 @@ PODS:
     - Charts/Core (= 3.2.1)
   - Charts/Core (3.2.1)
   - Differentiator (3.1.0)
+  - FLAnimatedImage (1.0.12)
   - FoldingCell (4.0.2)
   - HandyJSON (4.2.0)
   - Hero (1.4.0)
@@ -297,12 +298,19 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - SDWebImage/GIF (4.4.2):
+    - FLAnimatedImage (~> 1.0)
+    - SDWebImage/Core
   - SnapKit (4.2.0)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - Alamofire
   - Charts
+  - FLAnimatedImage
   - FoldingCell
   - HandyJSON
   - Hero
@@ -316,6 +324,8 @@ DEPENDENCIES:
   - RxCocoa
   - RxDataSources
   - RxSwift
+  - SDWebImage
+  - SDWebImage/GIF
   - SnapKit
   - SVProgressHUD
 
@@ -324,6 +334,7 @@ SPEC REPOS:
     - Alamofire
     - Charts
     - Differentiator
+    - FLAnimatedImage
     - FoldingCell
     - HandyJSON
     - Hero
@@ -340,6 +351,7 @@ SPEC REPOS:
     - RxCocoa
     - RxDataSources
     - RxSwift
+    - SDWebImage
     - SnapKit
     - SVProgressHUD
 
@@ -347,6 +359,7 @@ SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   Charts: f122fb70b19847fa5817d018b77d6c5a2296ab25
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FoldingCell: 352f0211a53f957b885a1b37d5ffa875da90bca5
   HandyJSON: 9dfc026c7d7adc1f0f8ba8b181495f0e0763b0f4
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
@@ -363,9 +376,10 @@ SPEC CHECKSUMS:
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: a505be45d5676a028e1a9b88a12812de0f1fbdac
+PODFILE CHECKSUM: dc1ca4ffa0bc9048c5b6685a6b48b2ade992f5c6
 
 COCOAPODS: 1.6.0.beta.2

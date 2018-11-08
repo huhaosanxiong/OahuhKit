@@ -11,5 +11,7 @@
 
 #import <QMUIKit/QMUIKit.h>
 #import <Lottie/Lottie.h>
+#import <FLAnimatedImage/FLAnimatedImage.h>
+#import <FLAnimatedImageView+WebCache.h>
 
 #endif /* MyProject_Bridging_Header_h */

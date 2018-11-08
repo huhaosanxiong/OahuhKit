@@ -14,7 +14,8 @@ enum HahaMxAPIService {
      new 最新
      pic 趣图
      */
-    case joke_list(type:String, page: Int, pagesize: Int, read: String)
+    case joke_list(type:String, page: Int, pagesize: Int, id: Int)
+    case topic(page: Int)
 }
 
 let HahaMxAPIProvider = MoyaProvider<HahaMxAPIService>()
@@ -50,14 +51,14 @@ extension HahaMxAPIService: TargetType {
     
     var path: String {
         switch self {
-        case .joke_list:
+        case .joke_list, .topic:
             return "/mobile_app_data_api.php"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .joke_list:
+        case .joke_list, .topic:
             return .post
         }
     }
@@ -68,13 +69,20 @@ extension HahaMxAPIService: TargetType {
     
     var task: Task {
         switch self {
-        case .joke_list(let type, let page, let pagesize, let read):
+        case .joke_list(let type, let page, let pagesize, let id):
             var parameter: [String: Any] = [:]
             parameter["r"] = "joke_list"
             parameter["type"] = type
             parameter["offset"] = pagesize
             parameter["page"] = page
-            parameter["read"] = read
+            parameter["id"] = id
+            return .requestParameters(parameters: parameter, encoding: URLEncoding.default)
+            
+        case .topic(let page):
+            var parameter: [String: Any] = [:]
+            parameter["r"] = "topic"
+            parameter["type"] = "update"
+            parameter["page"] = page
             return .requestParameters(parameters: parameter, encoding: URLEncoding.default)
         }
     }

@@ -14,23 +14,21 @@ class HahaListViewModel: NSObject, RefreshProtocol {
     
     let rxDataSource: Variable<[JokeListSection]> = Variable([])
     
+    let rxTopicDataSource: Variable<[HahaTopicModel]> = Variable([])
+    
     var cellHeightArray: [CGFloat] = []
     
     let disposeBag = DisposeBag()
     
     var page = 1
     
-    var read: String = ""
     
-    
-    func loadData(pullDown: Bool, type: String = "good") {
+    func loadData(pullDown: Bool, type: String = "web_good", topicID: Int) {
         
         page = pullDown ? 1 : page
         
-        DLog(self.read)
-        
         HahaMxAPIProvider.rx
-            .request(.joke_list(type: type, page: page, pagesize: 20, read: read))
+            .request(.joke_list(type: type, page: page, pagesize: 20, id: topicID))
             .filterSuccessfulStatusCodes()
             .asObservable()
             .mapObject(type: JokeListModel.self)
@@ -40,11 +38,17 @@ class HahaListViewModel: NSObject, RefreshProtocol {
                 var heightArray: [CGFloat] = []
                 for mod in model.joke {
                     
-                    let aspectRatio = (mod.pic.width == 0 || mod.pic.height == 0) ? 1 : mod.pic.width / mod.pic.height
+                    var picModel: JokePicModel
+                    if mod.pic.width > 0 {
+                        picModel = mod.pic
+                    }else{
+                        picModel = mod.root.pic
+                    }
+                    
+                    let aspectRatio = (picModel.width == 0 || picModel.height == 0) ? 1 : picModel.width / picModel.height
                     let avatarHeight = 30.0
                     let contentHeight = self?.getlabelHeight(fontSize: 14, text: mod.content, maxWidth: Float(SCREENWIDTH-10*2)).height
                     let imageHeight = (Float(JokeListCell.widthRatio) * Float(SCREENWIDTH)) / aspectRatio
-                    
                     let cellHeight = 10 + CGFloat(avatarHeight) + 15 + contentHeight! + 15 + CGFloat(imageHeight) + 15
                     heightArray.append(CGFloat(cellHeight))
                 }
@@ -58,9 +62,6 @@ class HahaListViewModel: NSObject, RefreshProtocol {
                 
                 //更改数据源
                 self?.rxDataSource.value = pullDown ? [JokeListSection(items: model.joke)] : [JokeListSection(items: (self?.rxDataSource.value.first?.items ?? []) + model.joke)]
-                
-            
-                self?.read = (self?.read)! + "," + model.page
                 
                 self?.refreshStatus.value = pullDown ? .endHeaderRefresh : .endFooterRefresh
                 
@@ -93,6 +94,42 @@ class HahaListViewModel: NSObject, RefreshProtocol {
                     }
                     
             }).disposed(by: disposeBag)
+    }
+    
+    
+    private func loadTopic(page: Int) -> Observable<[HahaTopicModel]>{
+        
+        return HahaMxAPIProvider.rx
+            .request(.topic(page: page))
+            .filterSuccessfulStatusCodes()
+            .asObservable()
+            .mapArray(type: HahaTopicModel.self)
+        
+    }
+    
+    func loadDataWithTopic()  {
+        
+        Observable.zip(loadTopic(page: 1),loadTopic(page: 2),loadTopic(page: 3),loadTopic(page: 4))
+            .subscribe(onNext: {
+                self.rxTopicDataSource.value = $0.0 + $0.1 + $0.2 + $0.3
+            }, onError: { error in
+                
+            }).disposed(by: disposeBag)
+        /*
+        loadTopic(page: 1)
+            .flatMap{
+                Observable.zip(Observable.just($0),self.loadTopic(page: 2))
+            }.flatMap{
+                Observable.zip(Observable.just($0.0),Observable.just($0.1),self.loadTopic(page: 3))
+            }.flatMap{
+                Observable.zip(Observable.just($0.0),Observable.just($0.1),Observable.just($0.2),self.loadTopic(page: 4))
+            }.subscribe(onNext: {
+                let arr1 = $0.0 + $0.1
+                let arr2 = $0.2 + $0.3
+                self.rxTopicDataSource.value = arr1 + arr2
+            }).disposed(by: disposeBag)
+        */
+        
     }
     
     func getlabelHeight(fontSize: CGFloat, text: String, maxWidth: Float) -> CGSize {

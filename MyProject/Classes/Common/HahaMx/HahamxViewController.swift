@@ -15,8 +15,9 @@ class HahamxViewController: BaseViewController, Refreshable {
     
     var hahaViewModel = HahaListViewModel()
     
-    var type: String = "good"
+    var type: String = "web_good"
     
+    var topicID: Int = 0
     
     lazy var tableView: UITableView = {
         let table = UITableView()
@@ -30,6 +31,7 @@ class HahamxViewController: BaseViewController, Refreshable {
         // Do any additional setup after loading the view.
         
         self.navigationItem.title = "搞笑"
+        self.rightBarButtonImage = Icon.menu!
         
         view.addSubview(tableView)
         
@@ -38,6 +40,31 @@ class HahamxViewController: BaseViewController, Refreshable {
         }
         
         tableView.mj_header.beginRefreshing()
+        
+        SDWebImageManager.shared().imageCache?.config.shouldDecompressImages = false
+        SDWebImageManager.shared().imageCache?.config.maxCacheSize = 1024*1024*100
+    }
+    
+    override func rightButtonAction(button: UIButton) {
+        
+        let arr = hahaViewModel.rxTopicDataSource.value
+        
+        let alert: UIAlertController = UIAlertController.init(title: "选择标签", message: "#话题#", preferredStyle: UIAlertController.Style.actionSheet)
+        arr.forEach({ model in
+            let action = UIAlertAction.init(title: model.content, style: UIAlertAction.Style.default, handler: { act in
+                self.type = "topic"
+                self.topicID = model.id
+                self.navigationItem.title = "#"+model.content+"#"
+                self.tableView.mj_header.beginRefreshing()
+            })
+            alert.addAction(action)
+        })
+        let cancel = UIAlertAction.init(title: "取消", style: UIAlertAction.Style.cancel, handler: nil)
+        alert.addAction(cancel)
+        
+        self.present(alert, animated: true, completion: nil)
+        
+        
     }
     
     
@@ -45,10 +72,13 @@ class HahamxViewController: BaseViewController, Refreshable {
         
         self.hahaViewModel.autoSetRefreshControlStatus(header: initRefreshHeader(tableView, { [weak self] in
             //下拉刷新
-            self?.hahaViewModel.loadData(pullDown: true, type: (self?.type)!)
-        }), footer: initAutoRefreshFooter(tableView, { [weak self] in
+            self?.hahaViewModel.loadData(pullDown: true, type: (self?.type)!, topicID: (self?.topicID)!)
+            
+            self?.hahaViewModel.loadDataWithTopic()
+            
+        }), footer: initRefreshFooter(tableView, { [weak self] in
             //上拉加载更多
-            self?.hahaViewModel.loadData(pullDown: false, type: (self?.type)!)
+            self?.hahaViewModel.loadData(pullDown: false, type: (self?.type)!, topicID: (self?.topicID)!)
         })).disposed(by: disposeBag)
         
         //Configure
@@ -66,10 +96,18 @@ class HahamxViewController: BaseViewController, Refreshable {
             .disposed(by: disposeBag)
         
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
+        
+        
     }
     
     deinit {
         DLog("dealloc")
+        SDWebImageManager.shared().imageCache?.clearMemory()
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        SDWebImageManager.shared().imageCache?.clearMemory()
     }
     
     /*

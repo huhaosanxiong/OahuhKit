@@ -10,6 +10,13 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    var rightBarButtonImage: UIImage = UIImage(){
+        didSet{
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: rightBarButtonImage, style: UIBarButtonItem.Style.plain, target: self, action: #selector(rightButtonAction(button:)))
+        }
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if #available(iOS 11.0, *) {
@@ -77,6 +84,10 @@ class BaseViewController: UIViewController {
             navigationController?.popViewController(animated: true)
         }
         print("back")
+    }
+    
+    @objc func rightButtonAction(button : UIButton){
+        print("right")
     }
     
     override func didReceiveMemoryWarning() {

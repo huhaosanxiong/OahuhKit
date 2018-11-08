@@ -22,14 +22,23 @@ struct JokeModel: HandyJSON {
     var pic: JokePicModel = JokePicModel()
     var user_name: String = ""
     var user_pic: String = ""
+    var root: JokeRootPicModel = JokeRootPicModel()
+    
 }
 
 struct JokePicModel: HandyJSON {
     var path: String = ""
     var name: String = ""
-    var width: Float = 0
-    var height: Float = 0
+    var width: Float = -1
+    var height: Float = -1
     var animated: Bool = false
+}
+
+struct JokeRootPicModel: HandyJSON {
+    var content: String = ""
+    var user_name: String = ""
+    var id: Int = -1
+    var pic: JokePicModel = JokePicModel()
 }
 
 
@@ -47,4 +56,17 @@ extension JokeListSection: SectionModelType {
         self = original
         self.items = items
     }
+}
+
+
+
+
+
+struct HahaTopicModel: HandyJSON {
+    var id: Int = 0
+    var content: String = ""
+    var number: Int = 0
+    var follower: Int = 0
+    var hot: Int = 0
+    var recommend: Int = 0
 }

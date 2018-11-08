@@ -28,5 +28,8 @@ target 'MyProject' do
     pod 'QMUIKit'
     pod 'SVProgressHUD'
     pod 'MJRefresh'
+    pod 'FLAnimatedImage'
+    pod 'SDWebImage'
+    pod 'SDWebImage/GIF'
     
 end

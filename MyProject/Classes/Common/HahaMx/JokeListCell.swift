@@ -16,7 +16,7 @@ class JokeListCell: UITableViewCell {
     
     let avatarImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .lightGray
+        imageView.backgroundColor = UIColor.qmui_color(withHexString: "#ffdddddd")
         imageView.contentMode = UIView.ContentMode.scaleAspectFill
         imageView.layer.cornerRadius = 2
         imageView.layer.masksToBounds = true
@@ -27,7 +27,11 @@ class JokeListCell: UITableViewCell {
         
         let label = UILabel()
         label.textColor = UIColor.black
-        label.font = UIFont.systemFont(ofSize: 12)
+        if #available(iOS 8.2, *) {
+            label.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.thin)
+        } else {
+            label.font = UIFont.systemFont(ofSize: 12)
+        }
         return label
     }()
     
@@ -35,38 +39,58 @@ class JokeListCell: UITableViewCell {
         
         let label = UILabel()
         label.textColor = UIColor.lightGray
-        label.font = UIFont.systemFont(ofSize: 10)
+        if #available(iOS 8.2, *) {
+            label.font = UIFont.systemFont(ofSize: 10, weight: UIFont.Weight.thin)
+        } else {
+            label.font = UIFont.systemFont(ofSize: 10)
+        }
         return label
     }()
     
     let contentLabel: UILabel = {
         
         let label = UILabel()
-        label.textColor = UIColor.black
+        label.textColor = UIColor.qmui_color(withHexString: "#ff333333")
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 14)
+        if #available(iOS 8.2, *) {
+            label.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.thin)
+        } else {
+            label.font = UIFont.systemFont(ofSize: 14)
+        }
         return label
     }()
     
-    let contentImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.backgroundColor = .lightGray
+    let contentGIFView: FLAnimatedImageView = {
+        let imageView = FLAnimatedImageView()
+        imageView.backgroundColor = UIColor.qmui_color(withHexString: "#ffdddddd")
         imageView.contentMode = UIView.ContentMode.scaleAspectFill
         imageView.layer.masksToBounds = true
         return imageView
     }()
     
+    
     var model: JokeModel = JokeModel(){
         
         didSet{
+
+            var imagePath = ""
+            var content = ""
             
-            let imagePath = imageDomain + model.pic.path + imageQuality.middle.quality + model.pic.name
+            if model.pic.width > 0 {
+                imagePath = imageDomain + model.pic.path + imageQuality.middle.quality + model.pic.name
+                content = model.content
+            }else{
+                imagePath = imageDomain + model.root.pic.path + imageQuality.middle.quality + model.root.pic.name
+                content = model.content+"//@"+model.root.user_name+":"+model.root.content
+            }
+
             
             avatarImageView.kf.setImage(with: URL(string: model.user_pic))
             usernameLabel.text = model.user_name
             publishTimeLabel.text = model.time
-            contentLabel.text = model.content
-            contentImageView.kf.setImage(with: URL(string: imagePath))
+            contentLabel.text = content
+            
+            contentGIFView.sd_setImage(with: URL(string: imagePath), placeholderImage: nil)
         }
     }
     
@@ -78,7 +102,7 @@ class JokeListCell: UITableViewCell {
         contentView.addSubview(usernameLabel)
         contentView.addSubview(publishTimeLabel)
         contentView.addSubview(contentLabel)
-        contentView.addSubview(contentImageView)
+        contentView.addSubview(contentGIFView)
         
         avatarImageView.snp.makeConstraints { make in
             make.left.top.equalTo(contentView).offset(10)
@@ -101,7 +125,7 @@ class JokeListCell: UITableViewCell {
             make.right.equalTo(contentView.snp.right).offset(-10)
         }
         
-        contentImageView.snp.makeConstraints { make in
+        contentGIFView.snp.makeConstraints { make in
             make.top.equalTo(contentLabel.snp.bottom).offset(15)
             make.left.equalTo(contentView.snp.left).offset(10)
             make.width.equalTo(contentView.snp.width).multipliedBy(JokeListCell.widthRatio)
@@ -115,6 +139,8 @@ class JokeListCell: UITableViewCell {
     
     override func prepareForReuse() {
         DLog("prepareForReuse")
+        
+        contentGIFView.stopAnimating()
     }
 
 }

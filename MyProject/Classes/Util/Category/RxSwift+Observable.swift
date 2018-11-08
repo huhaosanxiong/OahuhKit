@@ -100,9 +100,28 @@ public extension Observable {
                 throw RxSwiftMoyaError.RequestFailed
             }
             
+            guard let json = try? JSONSerialization.jsonObject(with: response.data, options: JSONSerialization.ReadingOptions(rawValue: 0))  as! [Any] else {
+                throw RxSwiftMoyaError.NoResponse
+            }
+            
+            DLog(json)
+            
+            if let modelArray = JSONDeserializer<H>.deserializeModelArrayFrom(array: json) {
+                if let modelArr = modelArray as? [H] {
+                    return modelArr
+                }else{
+                    throw RxSwiftMoyaError.ParseJSONError
+                }
+            }else{
+                throw RxSwiftMoyaError.ParseJSONError
+            }
+            
+            /*
             guard let json = try? JSONSerialization.jsonObject(with: response.data, options: JSONSerialization.ReadingOptions(rawValue: 0))  as! [String : Any] else {
                 throw RxSwiftMoyaError.NoResponse
             }
+            
+            
             
             //判断返回code
             if let code = json[RESP_CODE] as? Int {
@@ -126,6 +145,7 @@ public extension Observable {
             }else{
                 throw RxSwiftMoyaError.ParseJSONError
             }
+ */
         }
     }
 }
