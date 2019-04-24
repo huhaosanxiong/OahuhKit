@@ -17,6 +17,8 @@
 		E12C576A218FF60A00CFE480 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C5769218FF60A00CFE480 /* Resource.swift */; };
 		E12C576C2192866400CFE480 /* FoldingCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C576B2192866400CFE480 /* FoldingCellViewController.swift */; };
 		E12C576F21928CCE00CFE480 /* FoldingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C576E21928CCE00CFE480 /* FoldingListCell.swift */; };
+		E14BC3F3227055F8008BF05B /* ForceLandscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14BC3F2227055F8008BF05B /* ForceLandscapeViewController.swift */; };
+		E14BC3F522705644008BF05B /* AutoRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14BC3F422705644008BF05B /* AutoRotationViewController.swift */; };
 		E1801EF0218C64D40065366E /* HahaMxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1801EEB218C64D40065366E /* HahaMxViewModel.swift */; };
 		E1801EF1218C64D40065366E /* HahaMxAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1801EEC218C64D40065366E /* HahaMxAPIService.swift */; };
 		E1801EF2218C64D40065366E /* HahaMaxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1801EED218C64D40065366E /* HahaMaxModel.swift */; };
@@ -69,6 +71,8 @@
 		E12C5769218FF60A00CFE480 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		E12C576B2192866400CFE480 /* FoldingCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldingCellViewController.swift; sourceTree = "<group>"; };
 		E12C576E21928CCE00CFE480 /* FoldingListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldingListCell.swift; sourceTree = "<group>"; };
+		E14BC3F2227055F8008BF05B /* ForceLandscapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceLandscapeViewController.swift; sourceTree = "<group>"; };
+		E14BC3F422705644008BF05B /* AutoRotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRotationViewController.swift; sourceTree = "<group>"; };
 		E1801EEB218C64D40065366E /* HahaMxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HahaMxViewModel.swift; sourceTree = "<group>"; };
 		E1801EEC218C64D40065366E /* HahaMxAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HahaMxAPIService.swift; sourceTree = "<group>"; };
 		E1801EED218C64D40065366E /* HahaMaxModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HahaMaxModel.swift; sourceTree = "<group>"; };
@@ -156,6 +160,15 @@
 				E12C576E21928CCE00CFE480 /* FoldingListCell.swift */,
 			);
 			path = FoldingCell;
+			sourceTree = "<group>";
+		};
+		E14BC3F6227057A4008BF05B /* RotationInterfaceOrientations */ = {
+			isa = PBXGroup;
+			children = (
+				E14BC3F2227055F8008BF05B /* ForceLandscapeViewController.swift */,
+				E14BC3F422705644008BF05B /* AutoRotationViewController.swift */,
+			);
+			path = RotationInterfaceOrientations;
 			sourceTree = "<group>";
 		};
 		E1801EEA218C64D40065366E /* HahaMx */ = {
@@ -277,6 +290,7 @@
 				E1A77D9E2187091200B6117D /* TransitionAnimate */,
 				E1801EEA218C64D40065366E /* HahaMx */,
 				E12C576D2192866C00CFE480 /* FoldingCell */,
+				E14BC3F6227057A4008BF05B /* RotationInterfaceOrientations */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -579,6 +593,7 @@
 				E1CDE31920B27786009E04D1 /* HomeTableViewController.swift in Sources */,
 				E1801EF1218C64D40065366E /* HahaMxAPIService.swift in Sources */,
 				E1801EF3218C64D40065366E /* JokeListCell.swift in Sources */,
+				E14BC3F3227055F8008BF05B /* ForceLandscapeViewController.swift in Sources */,
 				E1A0FED220B273C400044403 /* ImageAsset.swift in Sources */,
 				E1801EF4218C64D40065366E /* HahamxViewController.swift in Sources */,
 				E1A77DA021870A9000B6117D /* PopTransitionViewController.swift in Sources */,
@@ -590,6 +605,7 @@
 				E1007B892182F31800E72898 /* RepoListViewModel.swift in Sources */,
 				E1A77DA221870EF000B6117D /* TransitionProcotol.swift in Sources */,
 				E1007B842182EF6F00E72898 /* GithubRepoListRefreshController.swift in Sources */,
+				E14BC3F522705644008BF05B /* AutoRotationViewController.swift in Sources */,
 				E1CDE33520BD03EE009E04D1 /* GithubSearchService.swift in Sources */,
 				E1CDE32420B2BA2D009E04D1 /* HoverCollectionFlowLayout.swift in Sources */,
 				E1007B872182F28000E72898 /* MJRefreshableTool.swift in Sources */,

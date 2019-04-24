@@ -29,7 +29,9 @@ class HomeTableViewController: BaseViewController {
                                             "6.RxSwift+List+Refresh",
                                             "7.ViewControllerMaskTransitionAnimate",
                                             "8.https://www.haha.mx",
-                                            "9.FoldingCell"])
+                                            "9.FoldingCell",
+                                            "10.屏幕自动旋转",
+                                            "11.屏幕强制横屏"])
             ])
         
         let className = ["HoverCollectionController",
@@ -40,7 +42,9 @@ class HomeTableViewController: BaseViewController {
                          "GithubRepoListRefreshController",
                          "PushTransitionViewController",
                          "HahamxViewController",
-                         "FoldingCellViewController"]
+                         "FoldingCellViewController",
+                         "AutoRotationViewController",
+                         "ForceLandscapeViewController"]
         
         
         //Config

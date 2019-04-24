@@ -6,7 +6,7 @@ PODS:
   - Differentiator (3.1.0)
   - FLAnimatedImage (1.0.12)
   - FoldingCell (4.0.2)
-  - HandyJSON (4.2.0)
+  - HandyJSON (5.0.0-beta.1)
   - Hero (1.4.0)
   - Kingfisher (4.6.4)
   - lottie-ios (2.5.2)
@@ -312,7 +312,7 @@ DEPENDENCIES:
   - Charts
   - FLAnimatedImage
   - FoldingCell
-  - HandyJSON
+  - HandyJSON (= 5.0.0-beta.1)
   - Hero
   - Kingfisher (~> 4.6.0)
   - lottie-ios
@@ -361,7 +361,7 @@ SPEC CHECKSUMS:
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FoldingCell: 352f0211a53f957b885a1b37d5ffa875da90bca5
-  HandyJSON: 9dfc026c7d7adc1f0f8ba8b181495f0e0763b0f4
+  HandyJSON: 582477127ab3ab65bd2e471815f1a7b846856978
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
   Kingfisher: 68498a706e46c2a050b0c9572f100e5db407f6e0
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
@@ -380,6 +380,6 @@ SPEC CHECKSUMS:
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: dc1ca4ffa0bc9048c5b6685a6b48b2ade992f5c6
+PODFILE CHECKSUM: e183d034cba25af203dc800e5849575486dc6503
 
-COCOAPODS: 1.6.0.beta.2
+COCOAPODS: 1.6.1

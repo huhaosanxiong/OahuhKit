@@ -13,7 +13,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    //当前界面支持的方向（默认情况下只能竖屏，不能横屏显示）
+    var interfaceOrientations: UIInterfaceOrientationMask = .portrait {
+        
+        didSet {
+            
+            if interfaceOrientations == .portrait {
+                //强制设为竖屏
+                UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+                
+            }else if !interfaceOrientations.contains(.portrait){
+                //强制设置成横屏
+                UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue,
+                                          forKey: "orientation")
+            }
+        }
+    }
+    
+    //返回当前界面支持的旋转方向
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return interfaceOrientations
+    }
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
