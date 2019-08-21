@@ -31,7 +31,9 @@ class HomeTableViewController: BaseViewController {
                                             "8.https://www.haha.mx",
                                             "9.FoldingCell",
                                             "10.屏幕自动旋转",
-                                            "11.屏幕强制横屏"])
+                                            "11.屏幕强制横屏",
+                                            "12.DispatchSemaphore"
+                ])
             ])
         
         let className = ["HoverCollectionController",
@@ -44,7 +46,9 @@ class HomeTableViewController: BaseViewController {
                          "HahamxViewController",
                          "FoldingCellViewController",
                          "AutoRotationViewController",
-                         "ForceLandscapeViewController"]
+                         "ForceLandscapeViewController",
+                         "GCDController"
+        ]
         
         
         //Config

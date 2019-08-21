@@ -60,22 +60,7 @@ class BaseViewController: UIViewController {
     }
 
     func bindViewModel() {
-        /*
-        //async 0->9 在同一个线程上
-        //sync 0->9 在main主线程上执行
-        let serQueue = DispatchQueue.init(label: "name")
-        
-        //async 随机 每个线程地址不一样
-        //sync 0->9 在main主线程上执行
-        let conQueue = DispatchQueue.init(label: "name", attributes: .concurrent)
-        
-        for i in 0..<10 {
-            serQueue.async {
-                let thread = Thread.current
-                DLog("\(i), \(thread)")
-            }
-        }
-        */
+
     }
     
     @objc func goback(button : UIButton){

@@ -18,10 +18,10 @@ PODS:
   - Motion (1.4.3):
     - Motion/Core (= 1.4.3)
   - Motion/Core (1.4.3)
-  - Moya/Core (11.0.2):
+  - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
-    - Result (~> 3.0)
-  - Moya/RxSwift (11.0.2):
+    - Result (~> 4.1)
+  - Moya/RxSwift (13.0.1):
     - Moya/Core
     - RxSwift (~> 4.0)
   - QMUIKit (2.9.0):
@@ -285,7 +285,7 @@ PODS:
     - QMUIKit/QMUILog
   - QMUIKit/QMUIResources (2.9.0)
   - QMUIKit/QMUIWeakObjectContainer (2.9.0)
-  - Result (3.2.4)
+  - Result (4.1.0)
   - RxAtomic (4.4.0)
   - RxBlocking (4.4.0):
     - RxAtomic (~> 4.4)
@@ -304,6 +304,7 @@ PODS:
   - SDWebImage/GIF (4.4.2):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
+  - SkeletonView (1.6)
   - SnapKit (4.2.0)
   - SVProgressHUD (2.2.5)
 
@@ -318,7 +319,7 @@ DEPENDENCIES:
   - lottie-ios
   - Material
   - MJRefresh
-  - Moya/RxSwift (~> 11.0)
+  - Moya/RxSwift (~> 13.0.1)
   - QMUIKit
   - RxBlocking
   - RxCocoa
@@ -326,6 +327,7 @@ DEPENDENCIES:
   - RxSwift
   - SDWebImage
   - SDWebImage/GIF
+  - SkeletonView
   - SnapKit
   - SVProgressHUD
 
@@ -352,6 +354,7 @@ SPEC REPOS:
     - RxDataSources
     - RxSwift
     - SDWebImage
+    - SkeletonView
     - SnapKit
     - SVProgressHUD
 
@@ -368,18 +371,19 @@ SPEC CHECKSUMS:
   Material: 4ed78690b09ffd148b5ffab6b4367fb1d8da1cd3
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   Motion: 153ba49692997888556c7a95207278a8b1f8be95
-  Moya: a725035953bc1c0eb1be505ab903984501d82440
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   QMUIKit: 11bb452c3968bd45faa38d4f579d73d2ff97d82c
-  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxBlocking: 138ad53217434444d6eeeb4fb406a45431d92e31
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SkeletonView: 6c2bf622c352c7e36b4f3c8d73afc46d6c9360d6
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: e183d034cba25af203dc800e5849575486dc6503
+PODFILE CHECKSUM: 900cfc887496028bfe3bae669daf0db878162eec
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.5
