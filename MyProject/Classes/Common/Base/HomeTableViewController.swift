@@ -32,7 +32,8 @@ class HomeTableViewController: BaseViewController {
                                             "9.FoldingCell",
                                             "10.屏幕自动旋转",
                                             "11.屏幕强制横屏",
-                                            "12.DispatchSemaphore"
+                                            "12.DispatchSemaphore",
+                                            "13.DashBoard仪表盘"
                 ])
             ])
         
@@ -47,7 +48,8 @@ class HomeTableViewController: BaseViewController {
                          "FoldingCellViewController",
                          "AutoRotationViewController",
                          "ForceLandscapeViewController",
-                         "GCDController"
+                         "GCDController",
+                         "DashBoardController"
         ]
         
         
