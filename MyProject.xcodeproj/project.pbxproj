@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,7 @@
 		E147860822DECC5C00BAB405 /* GCDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E147860722DECC5C00BAB405 /* GCDController.swift */; };
 		E14BC3F3227055F8008BF05B /* ForceLandscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14BC3F2227055F8008BF05B /* ForceLandscapeViewController.swift */; };
 		E14BC3F522705644008BF05B /* AutoRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14BC3F422705644008BF05B /* AutoRotationViewController.swift */; };
+		E14C8C022328C656000D0FC6 /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C8C012328C656000D0FC6 /* DashBoardView.swift */; };
 		E1801EF0218C64D40065366E /* HahaMxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1801EEB218C64D40065366E /* HahaMxViewModel.swift */; };
 		E1801EF1218C64D40065366E /* HahaMxAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1801EEC218C64D40065366E /* HahaMxAPIService.swift */; };
 		E1801EF2218C64D40065366E /* HahaMaxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1801EED218C64D40065366E /* HahaMaxModel.swift */; };
@@ -75,6 +76,7 @@
 		E147860722DECC5C00BAB405 /* GCDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDController.swift; sourceTree = "<group>"; };
 		E14BC3F2227055F8008BF05B /* ForceLandscapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceLandscapeViewController.swift; sourceTree = "<group>"; };
 		E14BC3F422705644008BF05B /* AutoRotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRotationViewController.swift; sourceTree = "<group>"; };
+		E14C8C012328C656000D0FC6 /* DashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
 		E1801EEB218C64D40065366E /* HahaMxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HahaMxViewModel.swift; sourceTree = "<group>"; };
 		E1801EEC218C64D40065366E /* HahaMxAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HahaMxAPIService.swift; sourceTree = "<group>"; };
 		E1801EED218C64D40065366E /* HahaMaxModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HahaMaxModel.swift; sourceTree = "<group>"; };
@@ -179,6 +181,14 @@
 				E14BC3F422705644008BF05B /* AutoRotationViewController.swift */,
 			);
 			path = RotationInterfaceOrientations;
+			sourceTree = "<group>";
+		};
+		E14C8C032328C65B000D0FC6 /* DashBoard */ = {
+			isa = PBXGroup;
+			children = (
+				E14C8C012328C656000D0FC6 /* DashBoardView.swift */,
+			);
+			path = DashBoard;
 			sourceTree = "<group>";
 		};
 		E1801EEA218C64D40065366E /* HahaMx */ = {
@@ -302,6 +312,7 @@
 				E12C576D2192866C00CFE480 /* FoldingCell */,
 				E14BC3F6227057A4008BF05B /* RotationInterfaceOrientations */,
 				E147860922DECC5F00BAB405 /* GCD */,
+				E14C8C032328C65B000D0FC6 /* DashBoard */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -545,6 +556,7 @@
 				E1AB80992100357200C24D7D /* ChartsViewController.swift in Sources */,
 				E12C5766218FF5AF00CFE480 /* QMUIConfigurationTemplate.m in Sources */,
 				E1CDE31F20B2B8DD009E04D1 /* HoverCollectionController.swift in Sources */,
+				E14C8C022328C656000D0FC6 /* DashBoardView.swift in Sources */,
 				E1A77D9D2187090C00B6117D /* PushTransitionViewController.swift in Sources */,
 				E1CDE31320B27499009E04D1 /* BaseViewController.swift in Sources */,
 				E1A805B3214B5C740027AE5A /* LottieViewController.swift in Sources */,
