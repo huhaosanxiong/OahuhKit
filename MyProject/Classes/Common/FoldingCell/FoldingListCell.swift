@@ -63,7 +63,7 @@ class FoldingListCell: FoldingCell {
         foregroundView.layer.masksToBounds = true
         
         //设置折叠时的背景颜色
-        backViewColor = UIColor.qmui_color(withHexString: "#ffdddddd")
+        backViewColor = UIColor.qmui_color(withHexString: "#ffdddddd")!
         
         setupSubviews()
         

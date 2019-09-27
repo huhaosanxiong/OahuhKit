@@ -32,6 +32,13 @@ class AutoRotationViewController: BaseViewController {
         appdelegate.interfaceOrientations = .portrait
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return .none
+    }
 
     /*
     // MARK: - Navigation

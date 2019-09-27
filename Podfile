@@ -8,14 +8,14 @@ target 'MyProject' do
     #Swift
     pod 'Alamofire'
     pod 'Kingfisher' , '~> 4.6.0'
-    pod 'HandyJSON', '5.0.0-beta.1'
+    pod 'HandyJSON', '~> 5.0.0-beta.1'
     
     #rx
     pod 'RxSwift'
     pod 'RxCocoa'
     pod 'RxBlocking'
     pod 'RxDataSources'
-    pod 'Moya/RxSwift', '~> 13.0.1
+    pod 'Moya/RxSwift', '~> 13.0.1'
     
     pod 'Hero'
     pod 'Material'
@@ -26,7 +26,7 @@ target 'MyProject' do
     pod "SkeletonView"
     
     #Objective-C
-    pod 'QMUIKit'
+    pod 'QMUIKit', '~> 4.0.0-beta'
     pod 'SVProgressHUD'
     pod 'MJRefresh'
     pod 'FLAnimatedImage'
