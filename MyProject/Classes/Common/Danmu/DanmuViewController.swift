@@ -25,7 +25,7 @@ class DanmuViewController: BaseViewController {
         view.backgroundColor = .black
         
         // 需要写在addOperation之前
-        queue.maxConcurrentOperationCount = 5
+        queue.maxConcurrentOperationCount = 20
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -35,9 +35,15 @@ class DanmuViewController: BaseViewController {
         timer = nil
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        queue.cancelAllOperations()
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
     }
     
     @objc func timerAction() {
@@ -46,18 +52,18 @@ class DanmuViewController: BaseViewController {
 //        operation.index = i
 //        queue.addOperation(operation)
         
-        if arc4random()%4 == 0 {
+        if arc4random()%3 == 0 {
             return
         }
         
-        queue.addOperation { [unowned self] in
+        queue.addOperation { [weak self] in
             
             DLog(Thread.current)
             
-            self.count += 1
+            self?.count += 1
             
             DispatchQueue.main.async {
-                self.labelAnimation(text: "第\(self.count)条弹幕")
+                self?.labelAnimation(text: "第\(self?.count ?? -1)条弹幕")
             }
             
             Thread.sleep(forTimeInterval: 3)
@@ -74,7 +80,7 @@ class DanmuViewController: BaseViewController {
         
         view.addSubview(label)
         
-        let original = CGRect(x: view.bounds.size.width, y: 100.0 + CGFloat(arc4random()%400), width: label.bounds.size.width, height: label.bounds.size.height)
+        let original = CGRect(x: view.bounds.size.width, y: 100.0 + CGFloat(arc4random()%500), width: label.bounds.size.width, height: label.bounds.size.height)
         let end = CGRect(x: -label.bounds.size.width, y: original.origin.y, width: label.bounds.size.width, height: label.bounds.size.height)
         
         label.frame = original
@@ -88,6 +94,10 @@ class DanmuViewController: BaseViewController {
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         
         label.layer.add(animation, forKey: "move")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            label.removeFromSuperview()
+        }
     }
     
 }
