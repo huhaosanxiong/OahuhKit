@@ -33,7 +33,8 @@ class HomeTableViewController: BaseViewController {
                                             "10.屏幕自动旋转",
                                             "11.屏幕强制横屏",
                                             "12.DispatchSemaphore",
-                                            "13.DashBoard仪表盘"
+                                            "13.DashBoard仪表盘",
+                                            "14.TwitterLaunchView"
                 ])
             ])
         
@@ -49,7 +50,8 @@ class HomeTableViewController: BaseViewController {
                          "AutoRotationViewController",
                          "ForceLandscapeViewController",
                          "GCDController",
-                         "DashBoardController"
+                         "DashBoardController",
+                         "TwitterViewController"
         ]
         
         

@@ -22,6 +22,8 @@
 		E14BC3F522705644008BF05B /* AutoRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14BC3F422705644008BF05B /* AutoRotationViewController.swift */; };
 		E14C8C022328C656000D0FC6 /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C8C012328C656000D0FC6 /* DashBoardView.swift */; };
 		E14C8C052328C72E000D0FC6 /* DashBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C8C042328C72E000D0FC6 /* DashBoardController.swift */; };
+		E17C4B99249358DD005134E7 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C4B98249358DD005134E7 /* LaunchView.swift */; };
+		E17C4B9B24935AEF005134E7 /* TwitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C4B9A24935AEF005134E7 /* TwitterViewController.swift */; };
 		E1801EF0218C64D40065366E /* HahaMxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1801EEB218C64D40065366E /* HahaMxViewModel.swift */; };
 		E1801EF1218C64D40065366E /* HahaMxAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1801EEC218C64D40065366E /* HahaMxAPIService.swift */; };
 		E1801EF2218C64D40065366E /* HahaMaxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1801EED218C64D40065366E /* HahaMaxModel.swift */; };
@@ -79,6 +81,8 @@
 		E14BC3F422705644008BF05B /* AutoRotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRotationViewController.swift; sourceTree = "<group>"; };
 		E14C8C012328C656000D0FC6 /* DashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
 		E14C8C042328C72E000D0FC6 /* DashBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardController.swift; sourceTree = "<group>"; };
+		E17C4B98249358DD005134E7 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		E17C4B9A24935AEF005134E7 /* TwitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterViewController.swift; sourceTree = "<group>"; };
 		E1801EEB218C64D40065366E /* HahaMxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HahaMxViewModel.swift; sourceTree = "<group>"; };
 		E1801EEC218C64D40065366E /* HahaMxAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HahaMxAPIService.swift; sourceTree = "<group>"; };
 		E1801EED218C64D40065366E /* HahaMaxModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HahaMaxModel.swift; sourceTree = "<group>"; };
@@ -192,6 +196,15 @@
 				E14C8C042328C72E000D0FC6 /* DashBoardController.swift */,
 			);
 			path = DashBoard;
+			sourceTree = "<group>";
+		};
+		E17C4B97249358A7005134E7 /* TwitterLaunch */ = {
+			isa = PBXGroup;
+			children = (
+				E17C4B98249358DD005134E7 /* LaunchView.swift */,
+				E17C4B9A24935AEF005134E7 /* TwitterViewController.swift */,
+			);
+			path = TwitterLaunch;
 			sourceTree = "<group>";
 		};
 		E1801EEA218C64D40065366E /* HahaMx */ = {
@@ -316,6 +329,7 @@
 				E14BC3F6227057A4008BF05B /* RotationInterfaceOrientations */,
 				E147860922DECC5F00BAB405 /* GCD */,
 				E14C8C032328C65B000D0FC6 /* DashBoard */,
+				E17C4B97249358A7005134E7 /* TwitterLaunch */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -577,10 +591,12 @@
 				E1801EF1218C64D40065366E /* HahaMxAPIService.swift in Sources */,
 				E1801EF3218C64D40065366E /* JokeListCell.swift in Sources */,
 				E14BC3F3227055F8008BF05B /* ForceLandscapeViewController.swift in Sources */,
+				E17C4B9B24935AEF005134E7 /* TwitterViewController.swift in Sources */,
 				E1A0FED220B273C400044403 /* ImageAsset.swift in Sources */,
 				E1801EF4218C64D40065366E /* HahamxViewController.swift in Sources */,
 				E1A77DA021870A9000B6117D /* PopTransitionViewController.swift in Sources */,
 				E1CDE32620B2BA82009E04D1 /* HoverCollectionReusableView.swift in Sources */,
+				E17C4B99249358DD005134E7 /* LaunchView.swift in Sources */,
 				E12C5768218FF5F100CFE480 /* APIProvider.swift in Sources */,
 				E1CDE33320BCFC9F009E04D1 /* GithubModel.swift in Sources */,
 				E12C576F21928CCE00CFE480 /* FoldingListCell.swift in Sources */,
@@ -746,7 +762,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.huhsx.MyProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyProject/Classes/Util/Reference/MyProject-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -767,7 +783,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.huhsx.MyProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyProject/Classes/Util/Reference/MyProject-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

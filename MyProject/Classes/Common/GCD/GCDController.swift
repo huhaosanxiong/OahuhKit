@@ -33,9 +33,6 @@ class GCDController: BaseViewController {
         textView.snp.makeConstraints { make in
             make.edges.equalTo(self.view).inset(UIEdgeInsets.zero)
         }
-
-        
-        
         
         let queue1 = DispatchQueue(label: "1")
         

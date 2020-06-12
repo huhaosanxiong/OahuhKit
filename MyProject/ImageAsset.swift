@@ -15,6 +15,8 @@ return result
 enum Asset {
   static let img1125 = ImageAsset(name: "IMG_1125")
   static let img1145 = ImageAsset(name: "IMG_1145")
+  static let img1619 = ImageAsset(name: "IMG_1619")
+  static let twitterLogoWhite = ImageAsset(name: "TwitterLogo_white")
   static let background = ImageAsset(name: "background")
   static let netspeedPointer = ImageAsset(name: "netspeed_pointer")
   static let wallhaven578223 = ImageAsset(name: "wallhaven-578223")
