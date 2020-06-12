@@ -24,6 +24,7 @@
 		E14C8C052328C72E000D0FC6 /* DashBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C8C042328C72E000D0FC6 /* DashBoardController.swift */; };
 		E17C4B99249358DD005134E7 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C4B98249358DD005134E7 /* LaunchView.swift */; };
 		E17C4B9B24935AEF005134E7 /* TwitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C4B9A24935AEF005134E7 /* TwitterViewController.swift */; };
+		E17C4B9E24937FAD005134E7 /* DanmuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C4B9D24937FAD005134E7 /* DanmuViewController.swift */; };
 		E1801EF0218C64D40065366E /* HahaMxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1801EEB218C64D40065366E /* HahaMxViewModel.swift */; };
 		E1801EF1218C64D40065366E /* HahaMxAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1801EEC218C64D40065366E /* HahaMxAPIService.swift */; };
 		E1801EF2218C64D40065366E /* HahaMaxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1801EED218C64D40065366E /* HahaMaxModel.swift */; };
@@ -83,6 +84,7 @@
 		E14C8C042328C72E000D0FC6 /* DashBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardController.swift; sourceTree = "<group>"; };
 		E17C4B98249358DD005134E7 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		E17C4B9A24935AEF005134E7 /* TwitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterViewController.swift; sourceTree = "<group>"; };
+		E17C4B9D24937FAD005134E7 /* DanmuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanmuViewController.swift; sourceTree = "<group>"; };
 		E1801EEB218C64D40065366E /* HahaMxViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HahaMxViewModel.swift; sourceTree = "<group>"; };
 		E1801EEC218C64D40065366E /* HahaMxAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HahaMxAPIService.swift; sourceTree = "<group>"; };
 		E1801EED218C64D40065366E /* HahaMaxModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HahaMaxModel.swift; sourceTree = "<group>"; };
@@ -201,10 +203,18 @@
 		E17C4B97249358A7005134E7 /* TwitterLaunch */ = {
 			isa = PBXGroup;
 			children = (
-				E17C4B98249358DD005134E7 /* LaunchView.swift */,
 				E17C4B9A24935AEF005134E7 /* TwitterViewController.swift */,
+				E17C4B98249358DD005134E7 /* LaunchView.swift */,
 			);
 			path = TwitterLaunch;
+			sourceTree = "<group>";
+		};
+		E17C4B9C24937F88005134E7 /* Danmu */ = {
+			isa = PBXGroup;
+			children = (
+				E17C4B9D24937FAD005134E7 /* DanmuViewController.swift */,
+			);
+			path = Danmu;
 			sourceTree = "<group>";
 		};
 		E1801EEA218C64D40065366E /* HahaMx */ = {
@@ -330,6 +340,7 @@
 				E147860922DECC5F00BAB405 /* GCD */,
 				E14C8C032328C65B000D0FC6 /* DashBoard */,
 				E17C4B97249358A7005134E7 /* TwitterLaunch */,
+				E17C4B9C24937F88005134E7 /* Danmu */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -576,6 +587,7 @@
 				E14C8C022328C656000D0FC6 /* DashBoardView.swift in Sources */,
 				E1A77D9D2187090C00B6117D /* PushTransitionViewController.swift in Sources */,
 				E1CDE31320B27499009E04D1 /* BaseViewController.swift in Sources */,
+				E17C4B9E24937FAD005134E7 /* DanmuViewController.swift in Sources */,
 				E1A805B3214B5C740027AE5A /* LottieViewController.swift in Sources */,
 				E1A77DA421870F7200B6117D /* PushAnimation.swift in Sources */,
 				E1801EF0218C64D40065366E /* HahaMxViewModel.swift in Sources */,

@@ -15,6 +15,8 @@ class GCDController: BaseViewController {
     
     let semaphore = DispatchSemaphore(value: 1)
     
+//    let lock = NSLock()
+    
     let textView: UITextView = {
         
         let view = UITextView()
@@ -34,17 +36,38 @@ class GCDController: BaseViewController {
             make.edges.equalTo(self.view).inset(UIEdgeInsets.zero)
         }
         
-        let queue1 = DispatchQueue(label: "1")
+//        let queue1 = DispatchQueue(label: "1")
+//
+//        queue1.async {
+//            self.soldTicket(station: "sz")
+//        }
+//
+//        let queue2 = DispatchQueue(label: "2")
+//
+//        queue2.async {
+//            self.soldTicket(station: "gz")
+//        }
         
-        queue1.async {
+        
+        let operation1 = BlockOperation {
             self.soldTicket(station: "sz")
         }
         
-        let queue2 = DispatchQueue(label: "2")
-        
-        queue2.async {
+        let operation2 = BlockOperation {
             self.soldTicket(station: "gz")
         }
+        
+        let operation3 = BlockOperation {
+            self.soldTicket(station: "bj")
+        }
+        
+        let queue = OperationQueue()
+        queue.addOperation(operation1)
+        queue.addOperation(operation2)
+        queue.addOperation(operation3)
+        
+        queue.maxConcurrentOperationCount = 1
+        
     }
     
     
@@ -54,6 +77,7 @@ class GCDController: BaseViewController {
         while count > 0 {
             
             semaphore.wait()
+//            lock.lock()
             
             var log = ""
             
@@ -76,6 +100,8 @@ class GCDController: BaseViewController {
             }
             
             semaphore.signal()
+//            lock.unlock()
+
         }
     }
 

@@ -34,7 +34,8 @@ class HomeTableViewController: BaseViewController {
                                             "11.屏幕强制横屏",
                                             "12.DispatchSemaphore",
                                             "13.DashBoard仪表盘",
-                                            "14.TwitterLaunchView"
+                                            "14.TwitterLaunchView",
+                                            "15.弹幕"
                 ])
             ])
         
@@ -51,7 +52,8 @@ class HomeTableViewController: BaseViewController {
                          "ForceLandscapeViewController",
                          "GCDController",
                          "DashBoardController",
-                         "TwitterViewController"
+                         "TwitterViewController",
+                         "DanmuViewController"
         ]
         
         
