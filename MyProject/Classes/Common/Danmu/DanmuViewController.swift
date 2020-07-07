@@ -10,11 +10,15 @@ import UIKit
 
 class DanmuViewController: BaseViewController {
     
+    let disposeBag = DisposeBag()
+    
     var timer: Timer?
     
     var queue = OperationQueue()
     
     var count = 0
+    
+    var contentView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,32 +26,58 @@ class DanmuViewController: BaseViewController {
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Danmu"
         
-        view.backgroundColor = .black
+        view.backgroundColor = randomColor(hue: .blue, luminosity: .bright)
         
         // 需要写在addOperation之前
         queue.maxConcurrentOperationCount = 20
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
         
-        timer?.invalidate()
-        timer = nil
+        // 安全区高度
+        var topInset: CGFloat = 0.0
+        if #available(iOS 11.0, *) {
+            topInset = CGFloat(UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0.0)
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        contentView = UIView(frame: CGRect(x: 0, y: topInset + 44, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - topInset - 44))
+        contentView.backgroundColor = .clear
+        view.addSubview(contentView)
+        
+        let switchButton = UISwitch()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: switchButton)
+
+        switchButton.rx.isOn.asObservable()
+            .subscribe(onNext: {[weak self] (status) in
+
+                guard let s = self else { return }
+                
+                DLog("switch status = \(status)")
+                
+                if status {
+                    
+                    if s.timer != nil {
+                        return
+                    }
+                    
+                    s.timer = Timer.scheduledTimer(timeInterval: 0.1, target: s, selector: #selector(s.timerAction), userInfo: nil, repeats: true)
+                }else {
+                    
+                    s.timer?.invalidate()
+                    s.timer = nil
+                }
+                
+            }).disposed(by: disposeBag)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        timer?.invalidate()
+        timer = nil
+        
         queue.cancelAllOperations()
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        if timer != nil {
-            return
-        }
-        
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
+        contentView.removeFromSuperview()
     }
     
     @objc func timerAction() {
@@ -82,9 +112,9 @@ class DanmuViewController: BaseViewController {
         label.text = text
         label.sizeToFit()
         
-        view.addSubview(label)
+        contentView.addSubview(label)
         
-        let original = CGRect(x: view.bounds.size.width, y: 100.0 + CGFloat(arc4random()%500), width: label.bounds.size.width, height: label.bounds.size.height)
+        let original = CGRect(x: view.bounds.size.width + 100, y: 100.0 + CGFloat(arc4random()%500), width: label.bounds.size.width, height: label.bounds.size.height)
         let end = CGRect(x: -label.bounds.size.width, y: original.origin.y, width: label.bounds.size.width, height: label.bounds.size.height)
         
         label.frame = original
