@@ -24,16 +24,10 @@ class HomeTableViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navigationItem.title = "ProjectList"
+        self.navigationItem.title = "Awesome"
         
         let dataArray = Observable.just([
-            SectionModel(model: "UI", items: [
-                SectionDataModel(title: "UICollectionView组头悬停", vcName: "HoverCollectionController"),
-                SectionDataModel(title: "Charts", vcName: "ChartsViewController"),
-                SectionDataModel(title: "蚂蚁森林能量收取", vcName: "BubbleViewController"),
-                SectionDataModel(title: "Lottie", vcName: "LottieViewController"),
-                SectionDataModel(title: "FoldingCell", vcName: "FoldingCellViewController")
-            ]),
+            
             SectionModel(model: "Animation", items: [
                 SectionDataModel(title: "PushTransitionAnimate", vcName: "PushTransitionViewController"),
                 SectionDataModel(title: "屏幕自动旋转", vcName: "AutoRotationViewController"),
@@ -41,6 +35,13 @@ class HomeTableViewController: BaseViewController {
                 SectionDataModel(title: "DashBoard仪表盘", vcName: "DashBoardController"),
                 SectionDataModel(title: "TwitterLaunchView", vcName: "TwitterViewController"),
                 SectionDataModel(title: "WaveLodingView", vcName: "WaveLodingViewController"),
+            ]),
+            SectionModel(model: "UI", items: [
+                SectionDataModel(title: "Charts", vcName: "ChartsViewController"),
+                SectionDataModel(title: "Lottie", vcName: "LottieViewController"),
+                SectionDataModel(title: "FoldingCell", vcName: "FoldingCellViewController"),
+                SectionDataModel(title: "蚂蚁森林能量收取", vcName: "BubbleViewController"),
+                SectionDataModel(title: "UICollectionView组头悬停", vcName: "HoverCollectionController"),
             ]),
             SectionModel(model: "多线程", items: [
                 SectionDataModel(title: "DispatchSemaphore", vcName: "GCDController"),
@@ -69,6 +70,9 @@ class HomeTableViewController: BaseViewController {
         //绑定
         dataArray.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         
+        //导航栏转场动画代理（写在下面block中不起作用）
+        let delegate = TransitionProcotol()
+        
         //点击
         Observable.zip(tableView.rx.modelSelected(SectionDataModel.self),tableView.rx.itemSelected)
             .subscribe(onNext: {[unowned self] model, indexPath in
@@ -88,10 +92,7 @@ class HomeTableViewController: BaseViewController {
                 }
                 
                 if model.vcName == "PushTransitionViewController" {
-                    
-                    //导航栏转场动画代理
-                    let delegate = TransitionProcotol()
-                    
+
                     let vc = myClassType.init()
                     let nav = UINavigationController(rootViewController: vc)
                     nav.delegate = delegate
