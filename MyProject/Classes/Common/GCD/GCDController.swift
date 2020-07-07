@@ -15,7 +15,7 @@ class GCDController: BaseViewController {
     
     let semaphore = DispatchSemaphore(value: 1)
     
-//    let lock = NSLock()
+    let lock = NSLock()
     
     let textView: UITextView = {
         
@@ -23,6 +23,10 @@ class GCDController: BaseViewController {
         
         return view
     }()
+    
+    let queue = OperationQueue()
+    
+    var shutdown = false
     
     
     override func viewDidLoad() {
@@ -35,18 +39,6 @@ class GCDController: BaseViewController {
         textView.snp.makeConstraints { make in
             make.edges.equalTo(self.view).inset(UIEdgeInsets.zero)
         }
-        
-//        let queue1 = DispatchQueue(label: "1")
-//
-//        queue1.async {
-//            self.soldTicket(station: "sz")
-//        }
-//
-//        let queue2 = DispatchQueue(label: "2")
-//
-//        queue2.async {
-//            self.soldTicket(station: "gz")
-//        }
         
         
         let operation1 = BlockOperation {
@@ -61,22 +53,33 @@ class GCDController: BaseViewController {
             self.soldTicket(station: "bj")
         }
         
-        let queue = OperationQueue()
+        
         queue.addOperation(operation1)
         queue.addOperation(operation2)
         queue.addOperation(operation3)
         
-        queue.maxConcurrentOperationCount = 1
+        queue.maxConcurrentOperationCount = 0
         
     }
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        queue.cancelAllOperations()
+        
+        shutdown = true
+    }
     
     func soldTicket(station: String) {
         
         while count > 0 {
             
+            if shutdown {
+                return
+            }
+            
             semaphore.wait()
+            // lock 也能起到一样的效果
 //            lock.lock()
             
             var log = ""

@@ -13,6 +13,12 @@ class HomeTableViewController: BaseViewController {
     var disposeBag : DisposeBag = DisposeBag()
     
     var tableView : UITableView = UITableView()
+    
+    struct SectionDataModel {
+        
+        let title: String
+        let vcName: String
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,80 +27,77 @@ class HomeTableViewController: BaseViewController {
         self.navigationItem.title = "ProjectList"
         
         let dataArray = Observable.just([
-            SectionModel(model: "", items: ["1.UICollectionView组头悬停",
-                                            "2.Github搜寻仓库",
-                                            "3.Charts",
-                                            "4.蚂蚁森林能量收取",
-                                            "5.Lottie",
-                                            "6.RxSwift+List+Refresh",
-                                            "7.ViewControllerMaskTransitionAnimate",
-                                            "8.https://www.haha.mx",
-                                            "9.FoldingCell",
-                                            "10.屏幕自动旋转",
-                                            "11.屏幕强制横屏",
-                                            "12.DispatchSemaphore",
-                                            "13.DashBoard仪表盘",
-                                            "14.TwitterLaunchView",
-                                            "15.弹幕"
-                ])
+            SectionModel(model: "UI", items: [
+                SectionDataModel(title: "UICollectionView组头悬停", vcName: "HoverCollectionController"),
+                SectionDataModel(title: "Charts", vcName: "ChartsViewController"),
+                SectionDataModel(title: "蚂蚁森林能量收取", vcName: "BubbleViewController"),
+                SectionDataModel(title: "Lottie", vcName: "LottieViewController"),
+                SectionDataModel(title: "FoldingCell", vcName: "FoldingCellViewController")
+            ]),
+            SectionModel(model: "Animation", items: [
+                SectionDataModel(title: "PushTransitionAnimate", vcName: "PushTransitionViewController"),
+                SectionDataModel(title: "屏幕自动旋转", vcName: "AutoRotationViewController"),
+                SectionDataModel(title: "屏幕强制横屏", vcName: "ForceLandscapeViewController"),
+                SectionDataModel(title: "DashBoard仪表盘", vcName: "DashBoardController"),
+                SectionDataModel(title: "TwitterLaunchView", vcName: "TwitterViewController"),
+                SectionDataModel(title: "WaveLodingView", vcName: "WaveLodingViewController"),
+            ]),
+            SectionModel(model: "多线程", items: [
+                SectionDataModel(title: "DispatchSemaphore", vcName: "GCDController"),
+                SectionDataModel(title: "弹幕(OperationQueue)", vcName: "DanmuViewController")
+            ]),
+            SectionModel(model: "RxSwift网络请求", items: [
+                SectionDataModel(title: "Github搜寻仓库", vcName: "GithubRepoListController"),
+                SectionDataModel(title: "RxSwift+List+Refresh", vcName: "GithubRepoListRefreshController"),
+                SectionDataModel(title: "https://www.haha.mx(接口已失效)", vcName: "HahamxViewController")
             ])
-        
-        let className = ["HoverCollectionController",
-                         "GithubRepoListController",
-                         "ChartsViewController",
-                         "BubbleViewController",
-                         "LottieViewController",
-                         "GithubRepoListRefreshController",
-                         "PushTransitionViewController",
-                         "HahamxViewController",
-                         "FoldingCellViewController",
-                         "AutoRotationViewController",
-                         "ForceLandscapeViewController",
-                         "GCDController",
-                         "DashBoardController",
-                         "TwitterViewController",
-                         "DanmuViewController"
-        ]
+        ])
         
         
         //Config
-        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, String>>(configureCell: { (dataSource, tableView, indexPath, model) -> UITableViewCell in
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, SectionDataModel>>(configureCell: { (dataSource, tableView, indexPath, model) -> UITableViewCell in
             
             let cell = tableView.cell(ofType: UITableViewCell.self)
             cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-            cell.textLabel?.text = model
+            cell.textLabel?.text = model.title
             return cell
+        }, titleForHeaderInSection: { dataSource, index in
+            // 返回标题
+            return dataSource.sectionModels[index].model
         })
+        
         //绑定
         dataArray.bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         
-        //导航栏转场动画代理
-        let delegate = TransitionProcotol()
-        
         //点击
-        Observable.zip(tableView.rx.modelSelected(String.self),tableView.rx.itemSelected)
+        Observable.zip(tableView.rx.modelSelected(SectionDataModel.self),tableView.rx.itemSelected)
             .subscribe(onNext: {[unowned self] model, indexPath in
                 
                 self.tableView.deselectRow(at: indexPath, animated: true)
                 
-                DLog("indexPath = \(indexPath),title = \(model)")
+                DLog("indexPath = \(indexPath),title = \(model.title)")
                 
                 let nameSpace = Bundle.main.infoDictionary!["CFBundleExecutable"]
                 guard let ns = nameSpace as? String else{
                     return
                 }
                 
-                let myClass: AnyClass? = NSClassFromString(ns + "." + className[indexPath.row])
+                let myClass: AnyClass? = NSClassFromString(ns + "." + model.vcName)
                 guard let myClassType = myClass as? UIViewController.Type else {
                     return
                 }
                 
-                if className[indexPath.row] == "PushTransitionViewController" {
+                if model.vcName == "PushTransitionViewController" {
+                    
+                    //导航栏转场动画代理
+                    let delegate = TransitionProcotol()
+                    
                     let vc = myClassType.init()
-                    let nav = UINavigationController.init(rootViewController: vc)
+                    let nav = UINavigationController(rootViewController: vc)
                     nav.delegate = delegate
                     nav.isNavigationBarHidden = true
                     self.present(nav, animated: true, completion: nil)
+                    
                     return
                 }
                 

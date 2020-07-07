@@ -21,6 +21,9 @@
 		E14BC3F522705644008BF05B /* AutoRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14BC3F422705644008BF05B /* AutoRotationViewController.swift */; };
 		E14C8C022328C656000D0FC6 /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C8C012328C656000D0FC6 /* DashBoardView.swift */; };
 		E14C8C052328C72E000D0FC6 /* DashBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14C8C042328C72E000D0FC6 /* DashBoardController.swift */; };
+		E1794E1424B44C2C00230680 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1794E1324B44C2B00230680 /* CircleView.swift */; };
+		E1794E1624B457DF00230680 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1794E1524B457DF00230680 /* WaveView.swift */; };
+		E1794E1824B45B7700230680 /* WaveLodingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1794E1724B45B7700230680 /* WaveLodingViewController.swift */; };
 		E17C4B99249358DD005134E7 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C4B98249358DD005134E7 /* LaunchView.swift */; };
 		E17C4B9B24935AEF005134E7 /* TwitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C4B9A24935AEF005134E7 /* TwitterViewController.swift */; };
 		E17C4B9E24937FAD005134E7 /* DanmuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C4B9D24937FAD005134E7 /* DanmuViewController.swift */; };
@@ -80,6 +83,9 @@
 		E14BC3F422705644008BF05B /* AutoRotationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRotationViewController.swift; sourceTree = "<group>"; };
 		E14C8C012328C656000D0FC6 /* DashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
 		E14C8C042328C72E000D0FC6 /* DashBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardController.swift; sourceTree = "<group>"; };
+		E1794E1324B44C2B00230680 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		E1794E1524B457DF00230680 /* WaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
+		E1794E1724B45B7700230680 /* WaveLodingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveLodingViewController.swift; sourceTree = "<group>"; };
 		E17C4B98249358DD005134E7 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		E17C4B9A24935AEF005134E7 /* TwitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterViewController.swift; sourceTree = "<group>"; };
 		E17C4B9D24937FAD005134E7 /* DanmuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanmuViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +195,16 @@
 				E14C8C042328C72E000D0FC6 /* DashBoardController.swift */,
 			);
 			path = DashBoard;
+			sourceTree = "<group>";
+		};
+		E1794E1224B44C0300230680 /* CircleWave */ = {
+			isa = PBXGroup;
+			children = (
+				E1794E1324B44C2B00230680 /* CircleView.swift */,
+				E1794E1524B457DF00230680 /* WaveView.swift */,
+				E1794E1724B45B7700230680 /* WaveLodingViewController.swift */,
+			);
+			path = CircleWave;
 			sourceTree = "<group>";
 		};
 		E17C4B97249358A7005134E7 /* TwitterLaunch */ = {
@@ -334,6 +350,7 @@
 				E14C8C032328C65B000D0FC6 /* DashBoard */,
 				E17C4B97249358A7005134E7 /* TwitterLaunch */,
 				E17C4B9C24937F88005134E7 /* Danmu */,
+				E1794E1224B44C0300230680 /* CircleWave */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -577,6 +594,7 @@
 				E1CDE31F20B2B8DD009E04D1 /* HoverCollectionController.swift in Sources */,
 				E14C8C022328C656000D0FC6 /* DashBoardView.swift in Sources */,
 				E1A77D9D2187090C00B6117D /* PushTransitionViewController.swift in Sources */,
+				E1794E1624B457DF00230680 /* WaveView.swift in Sources */,
 				E1CDE31320B27499009E04D1 /* BaseViewController.swift in Sources */,
 				E17C4B9E24937FAD005134E7 /* DanmuViewController.swift in Sources */,
 				E1A805B3214B5C740027AE5A /* LottieViewController.swift in Sources */,
@@ -593,6 +611,7 @@
 				E1CDE31920B27786009E04D1 /* HomeTableViewController.swift in Sources */,
 				E1801EF1218C64D40065366E /* HahaMxAPIService.swift in Sources */,
 				E1801EF3218C64D40065366E /* JokeListCell.swift in Sources */,
+				E1794E1824B45B7700230680 /* WaveLodingViewController.swift in Sources */,
 				E14BC3F3227055F8008BF05B /* ForceLandscapeViewController.swift in Sources */,
 				E17C4B9B24935AEF005134E7 /* TwitterViewController.swift in Sources */,
 				E1A0FED220B273C400044403 /* ImageAsset.swift in Sources */,
@@ -616,6 +635,7 @@
 				E1CDE31B20B27BCF009E04D1 /* UITableView+Extension.swift in Sources */,
 				E1A77DA621870FD700B6117D /* PopAnimation.swift in Sources */,
 				E12C576C2192866400CFE480 /* FoldingCellViewController.swift in Sources */,
+				E1794E1424B44C2C00230680 /* CircleView.swift in Sources */,
 				E1CDE32220B2B96D009E04D1 /* HoverCollectionViewCell.swift in Sources */,
 				E18E4C2D2112FCAC00743420 /* BubbleViewController.swift in Sources */,
 				E1CDE33120BCF7F4009E04D1 /* GithubViewModel.swift in Sources */,
