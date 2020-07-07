@@ -10,31 +10,22 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
-    var rightBarButtonImage: UIImage = UIImage(){
+    var rightBarButtonImage: UIImage = UIImage() {
         didSet{
             self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: rightBarButtonImage, style: UIBarButtonItem.Style.plain, target: self, action: #selector(rightButtonAction(button:)))
         }
     }
     
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if #available(iOS 11.0, *) {
-            self.navigationController?.navigationBar.prefersLargeTitles = (self.navigationController?.viewControllers.count)! > 1 ? false:true
-            self.navigationItem.largeTitleDisplayMode = UINavigationItem.LargeTitleDisplayMode.automatic
-        } else {
-            // Fallback on earlier versions
+    var showLargeTitles = false {
+        
+        didSet {
+            
+            if #available(iOS 11.0, *) {
+                self.navigationController?.navigationBar.prefersLargeTitles = showLargeTitles
+                self.navigationItem.largeTitleDisplayMode = showLargeTitles ? .automatic : .never
+            }
         }
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        if #available(iOS 11.0, *) {
-            self.navigationController?.navigationBar.prefersLargeTitles = (self.navigationController?.viewControllers.count)! > 1 ? true:false
-            self.navigationItem.largeTitleDisplayMode = UINavigationItem.LargeTitleDisplayMode.automatic
-        } else {
-            // Fallback on earlier versions
-        }
-    }
+    }    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +37,7 @@ class BaseViewController: UIViewController {
             self.navigationItem.hidesBackButton = true;
             self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: Icon.arrowBack, style: UIBarButtonItem.Style.plain, target: self, action: #selector(goback(button:)))
             self.navigationItem.leftItemsSupplementBackButton = true;
-            
+
             self.navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
         }
         
@@ -65,7 +56,7 @@ class BaseViewController: UIViewController {
     
     @objc func goback(button : UIButton){
         
-        if (navigationController?.viewControllers.count)!>1 {
+        if (navigationController?.viewControllers.count)! > 1 {
             navigationController?.popViewController(animated: true)
         }
         print("back")

@@ -17,7 +17,7 @@ class HoverCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         imgView = UIImageView()
-        imgView.backgroundColor = UIColor.qmui_random()
+        imgView.backgroundColor = randomColor()
         self.addSubview(imgView)
         imgView.snp.makeConstraints { make in
             make.edges.equalTo(self.contentView)

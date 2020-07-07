@@ -21,7 +21,7 @@ class RepoListViewModel: NSObject, RefreshProtocol{
     //网络请求
     func loadData(pullDown: Bool) {
         
-        page = pullDown ? 1:page
+        page = pullDown ? 1 : page
         
         DLog("page = \(page)")
         

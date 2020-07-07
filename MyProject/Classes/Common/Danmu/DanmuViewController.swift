@@ -43,6 +43,10 @@ class DanmuViewController: BaseViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
+        if timer != nil {
+            return
+        }
+        
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
     }
     

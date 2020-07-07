@@ -25,4 +25,5 @@ import Foundation
 @_exported import SVProgressHUD
 @_exported import RxDataSources
 @_exported import FoldingCell
+@_exported import RandomColorSwift
 

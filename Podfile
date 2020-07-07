@@ -24,9 +24,9 @@ target 'MyProject' do
     pod 'FoldingCell'
     pod 'lottie-ios'
     pod "SkeletonView"
+    pod 'RandomColorSwift'
     
     #Objective-C
-    pod 'QMUIKit', '~> 4.0.0-beta'
     pod 'SVProgressHUD'
     pod 'MJRefresh'
     pod 'FLAnimatedImage'

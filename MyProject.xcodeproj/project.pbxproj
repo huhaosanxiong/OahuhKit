@@ -12,7 +12,6 @@
 		E1007B872182F28000E72898 /* MJRefreshableTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1007B862182F28000E72898 /* MJRefreshableTool.swift */; };
 		E1007B892182F31800E72898 /* RepoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1007B882182F31800E72898 /* RepoListViewModel.swift */; };
 		E1007B8B218305FA00E72898 /* GithubRepoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1007B8A218305FA00E72898 /* GithubRepoListCell.swift */; };
-		E12C5766218FF5AF00CFE480 /* QMUIConfigurationTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = E12C5765218FF5AF00CFE480 /* QMUIConfigurationTemplate.m */; };
 		E12C5768218FF5F100CFE480 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C5767218FF5F100CFE480 /* APIProvider.swift */; };
 		E12C576A218FF60A00CFE480 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C5769218FF60A00CFE480 /* Resource.swift */; };
 		E12C576C2192866400CFE480 /* FoldingCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C576B2192866400CFE480 /* FoldingCellViewController.swift */; };
@@ -47,6 +46,7 @@
 		E1A805B7214B5E070027AE5A /* TwitterHeart.json in Resources */ = {isa = PBXBuildFile; fileRef = E1A805B5214B5E070027AE5A /* TwitterHeart.json */; };
 		E1A805B8214B5E070027AE5A /* Switch.json in Resources */ = {isa = PBXBuildFile; fileRef = E1A805B6214B5E070027AE5A /* Switch.json */; };
 		E1AB80992100357200C24D7D /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB80982100357200C24D7D /* ChartsViewController.swift */; };
+		E1B70ACB24B409AD00E8200B /* ToolObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B70ACA24B409AD00E8200B /* ToolObject.swift */; };
 		E1CDE31320B27499009E04D1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE31220B27499009E04D1 /* BaseViewController.swift */; };
 		E1CDE31620B27747009E04D1 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE31520B27747009E04D1 /* NavigationController.swift */; };
 		E1CDE31920B27786009E04D1 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CDE31820B27786009E04D1 /* HomeTableViewController.swift */; };
@@ -71,8 +71,6 @@
 		E1007B862182F28000E72898 /* MJRefreshableTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshableTool.swift; sourceTree = "<group>"; };
 		E1007B882182F31800E72898 /* RepoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoListViewModel.swift; sourceTree = "<group>"; };
 		E1007B8A218305FA00E72898 /* GithubRepoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoListCell.swift; sourceTree = "<group>"; };
-		E12C5764218FF5AF00CFE480 /* QMUIConfigurationTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMUIConfigurationTemplate.h; sourceTree = "<group>"; };
-		E12C5765218FF5AF00CFE480 /* QMUIConfigurationTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMUIConfigurationTemplate.m; sourceTree = "<group>"; };
 		E12C5767218FF5F100CFE480 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		E12C5769218FF60A00CFE480 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		E12C576B2192866400CFE480 /* FoldingCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldingCellViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +107,8 @@
 		E1A805B5214B5E070027AE5A /* TwitterHeart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TwitterHeart.json; sourceTree = "<group>"; };
 		E1A805B6214B5E070027AE5A /* Switch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Switch.json; sourceTree = "<group>"; };
 		E1AB80982100357200C24D7D /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
+		E1B70AA624B3206500E8200B /* MyProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyProject.entitlements; sourceTree = "<group>"; };
+		E1B70ACA24B409AD00E8200B /* ToolObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolObject.swift; sourceTree = "<group>"; };
 		E1CDE31220B27499009E04D1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E1CDE31420B274D8009E04D1 /* MyProject-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		E1CDE31520B27747009E04D1 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -154,15 +154,6 @@
 				E1007B8A218305FA00E72898 /* GithubRepoListCell.swift */,
 			);
 			path = GithubListRefresh;
-			sourceTree = "<group>";
-		};
-		E12C5763218FF5AF00CFE480 /* QMUIConfigurationTemplate */ = {
-			isa = PBXGroup;
-			children = (
-				E12C5764218FF5AF00CFE480 /* QMUIConfigurationTemplate.h */,
-				E12C5765218FF5AF00CFE480 /* QMUIConfigurationTemplate.m */,
-			);
-			path = QMUIConfigurationTemplate;
 			sourceTree = "<group>";
 		};
 		E12C576D2192866C00CFE480 /* FoldingCell */ = {
@@ -259,6 +250,7 @@
 		E1A0FEA520B26E9700044403 /* MyProject */ = {
 			isa = PBXGroup;
 			children = (
+				E1B70AA624B3206500E8200B /* MyProject.entitlements */,
 				E1A0FEA620B26E9700044403 /* AppDelegate.swift */,
 				E1A0FEBB20B272F500044403 /* Classes */,
 				E1A0FED420B273D300044403 /* Support Files */,
@@ -311,6 +303,7 @@
 			children = (
 				E1007B862182F28000E72898 /* MJRefreshableTool.swift */,
 				E1A0FEC120B272F500044403 /* Log.swift */,
+				E1B70ACA24B409AD00E8200B /* ToolObject.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -356,7 +349,6 @@
 		E1A0FEC520B272F500044403 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
-				E12C5763218FF5AF00CFE480 /* QMUIConfigurationTemplate */,
 			);
 			path = ThirdParty;
 			sourceTree = "<group>";
@@ -582,7 +574,6 @@
 				E12C576A218FF60A00CFE480 /* Resource.swift in Sources */,
 				E1CDE33920BD46DA009E04D1 /* GithubRepoListController.swift in Sources */,
 				E1AB80992100357200C24D7D /* ChartsViewController.swift in Sources */,
-				E12C5766218FF5AF00CFE480 /* QMUIConfigurationTemplate.m in Sources */,
 				E1CDE31F20B2B8DD009E04D1 /* HoverCollectionController.swift in Sources */,
 				E14C8C022328C656000D0FC6 /* DashBoardView.swift in Sources */,
 				E1A77D9D2187090C00B6117D /* PushTransitionViewController.swift in Sources */,
@@ -618,6 +609,7 @@
 				E1007B842182EF6F00E72898 /* GithubRepoListRefreshController.swift in Sources */,
 				E14BC3F522705644008BF05B /* AutoRotationViewController.swift in Sources */,
 				E1CDE33520BD03EE009E04D1 /* GithubSearchService.swift in Sources */,
+				E1B70ACB24B409AD00E8200B /* ToolObject.swift in Sources */,
 				E1CDE32420B2BA2D009E04D1 /* HoverCollectionFlowLayout.swift in Sources */,
 				E1007B872182F28000E72898 /* MJRefreshableTool.swift in Sources */,
 				E1A0FEC620B272F600044403 /* ThirdReference.swift in Sources */,
@@ -763,6 +755,8 @@
 			baseConfigurationReference = AC02DA62A7FADD8A7DE0839E /* Pods-MyProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MyProject/MyProject.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XJHRVPW773;
 				INFOPLIST_FILE = MyProject/Info.plist;
@@ -773,6 +767,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.huhsx.MyProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyProject/Classes/Util/Reference/MyProject-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -784,6 +779,8 @@
 			baseConfigurationReference = 17208B5683E5E7FA2E692542 /* Pods-MyProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MyProject/MyProject.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XJHRVPW773;
 				INFOPLIST_FILE = MyProject/Info.plist;
@@ -794,6 +791,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.huhsx.MyProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyProject/Classes/Util/Reference/MyProject-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

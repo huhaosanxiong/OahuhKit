@@ -9,7 +9,6 @@
 #ifndef MyProject_Bridging_Header_h
 #define MyProject_Bridging_Header_h
 
-#import <QMUIKit/QMUIKit.h>
 #import <Lottie/Lottie.h>
 #import <FLAnimatedImage/FLAnimatedImage.h>
 #import <FLAnimatedImageView+WebCache.h>

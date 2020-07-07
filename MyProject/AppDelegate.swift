@@ -80,6 +80,11 @@ extension AppDelegate {
         
         let nav = NavigationController.init(rootViewController: vc)
         
+        if #available(iOS 11.0, *) {
+            nav.navigationBar.prefersLargeTitles = true
+            vc.navigationItem.largeTitleDisplayMode = .automatic
+        }
+        
         window?.rootViewController = nav
         
         window?.makeKeyAndVisible()

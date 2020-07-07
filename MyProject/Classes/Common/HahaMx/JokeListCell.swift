@@ -16,7 +16,7 @@ class JokeListCell: UITableViewCell {
     
     let avatarImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = UIColor.qmui_color(withHexString: "#ffdddddd")
+        imageView.backgroundColor = ColorHex("#ffdddddd")
         imageView.contentMode = UIView.ContentMode.scaleAspectFill
         imageView.layer.cornerRadius = 2
         imageView.layer.masksToBounds = true
@@ -50,7 +50,7 @@ class JokeListCell: UITableViewCell {
     let contentLabel: UILabel = {
         
         let label = UILabel()
-        label.textColor = UIColor.qmui_color(withHexString: "#ff333333")
+        label.textColor = ColorHex("#ff333333")
         label.numberOfLines = 0
         if #available(iOS 8.2, *) {
             label.font = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.thin)
@@ -62,7 +62,7 @@ class JokeListCell: UITableViewCell {
     
     let contentGIFView: FLAnimatedImageView = {
         let imageView = FLAnimatedImageView()
-        imageView.backgroundColor = UIColor.qmui_color(withHexString: "#ffdddddd")
+        imageView.backgroundColor = ColorHex("#ffdddddd")
         imageView.contentMode = UIView.ContentMode.scaleAspectFill
         imageView.layer.masksToBounds = true
         return imageView

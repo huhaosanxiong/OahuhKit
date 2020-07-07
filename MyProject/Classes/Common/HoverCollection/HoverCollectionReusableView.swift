@@ -16,7 +16,7 @@ class HoverCollectionReusableView: UICollectionReusableView {
         
         super.init(frame: frame)
         
-        self.backgroundColor = UIColor.qmui_random()
+        self.backgroundColor = randomColor()
         
         textLabel = UILabel()
         textLabel.textColor = UIColor.white

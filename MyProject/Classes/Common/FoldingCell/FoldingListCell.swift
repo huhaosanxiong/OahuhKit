@@ -27,7 +27,7 @@ class FoldingListCell: FoldingCell {
     let usernameLabel: UILabel = {
         
         let label = UILabel()
-        label.textColor = UIColor.qmui_color(withHexString: "#ff666666")
+        label.textColor = ColorHex("#ff6666")
         if #available(iOS 8.2, *) {
             label.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.thin)
         } else {
@@ -40,7 +40,7 @@ class FoldingListCell: FoldingCell {
     let subTitleLabel: UILabel = {
         
         let label = UILabel()
-        label.textColor = UIColor.qmui_color(withHexString: "#ff999999")
+        label.textColor = ColorHex("#ff9999")
         if #available(iOS 8.2, *) {
             label.font = UIFont.systemFont(ofSize: 10, weight: UIFont.Weight.thin)
         } else {
@@ -63,7 +63,7 @@ class FoldingListCell: FoldingCell {
         foregroundView.layer.masksToBounds = true
         
         //设置折叠时的背景颜色
-        backViewColor = UIColor.qmui_color(withHexString: "#ffdddddd")!
+        backViewColor = ColorHex("#ffdddd")
         
         setupSubviews()
         
@@ -220,7 +220,7 @@ class FoldingCellContainerView: UIView {
     let usernameLabel: UILabel = {
         
         let label = UILabel()
-        label.textColor = UIColor.qmui_color(withHexString: "#ff666666")
+        label.textColor = ColorHex("#ff666666")
         if #available(iOS 8.2, *) {
             label.font = UIFont.systemFont(ofSize: 12, weight: UIFont.Weight.thin)
         } else {
@@ -233,7 +233,7 @@ class FoldingCellContainerView: UIView {
     let subTitleLabel: UILabel = {
         
         let label = UILabel()
-        label.textColor = UIColor.qmui_color(withHexString: "#ff999999")
+        label.textColor = ColorHex("#ff999999")
         if #available(iOS 8.2, *) {
             label.font = UIFont.systemFont(ofSize: 10, weight: UIFont.Weight.thin)
         } else {

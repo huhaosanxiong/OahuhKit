@@ -85,7 +85,7 @@ class HomeTableViewController: BaseViewController {
                 }
                 
                 let myClass: AnyClass? = NSClassFromString(ns + "." + className[indexPath.row])
-                guard let myClassType = myClass as? UIViewController.Type else{
+                guard let myClassType = myClass as? UIViewController.Type else {
                     return
                 }
                 
@@ -99,7 +99,13 @@ class HomeTableViewController: BaseViewController {
                 }
                 
                 let vc = myClassType.init()
-                self.navigationController?.pushViewController(vc, animated: true)
+                
+                if let base = vc as? BaseViewController {
+                    base.showLargeTitles = false
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }
+                
+                
 
             }).disposed(by: disposeBag)
         
