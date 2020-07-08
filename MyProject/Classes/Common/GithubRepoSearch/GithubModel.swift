@@ -38,7 +38,7 @@ extension GithubListSection: SectionModelType {
     
     typealias Item = GithubRepository
     
-    init(original: GithubListSection, items: [Item]) {
+    init(original: GithubListSection, items: [GithubRepository]) {
         self = original
         self.items = items
     }
