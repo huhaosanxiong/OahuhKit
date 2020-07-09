@@ -24,6 +24,7 @@
 		E1794E1424B44C2C00230680 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1794E1324B44C2B00230680 /* CircleView.swift */; };
 		E1794E1624B457DF00230680 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1794E1524B457DF00230680 /* WaveView.swift */; };
 		E1794E1824B45B7700230680 /* WaveLodingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1794E1724B45B7700230680 /* WaveLodingViewController.swift */; };
+		E1794E1C24B71D5200230680 /* LeastCoinProblemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1794E1B24B71D5100230680 /* LeastCoinProblemViewController.swift */; };
 		E17C4B99249358DD005134E7 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C4B98249358DD005134E7 /* LaunchView.swift */; };
 		E17C4B9B24935AEF005134E7 /* TwitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C4B9A24935AEF005134E7 /* TwitterViewController.swift */; };
 		E17C4B9E24937FAD005134E7 /* DanmuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17C4B9D24937FAD005134E7 /* DanmuViewController.swift */; };
@@ -86,6 +87,7 @@
 		E1794E1324B44C2B00230680 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		E1794E1524B457DF00230680 /* WaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 		E1794E1724B45B7700230680 /* WaveLodingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveLodingViewController.swift; sourceTree = "<group>"; };
+		E1794E1B24B71D5100230680 /* LeastCoinProblemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeastCoinProblemViewController.swift; sourceTree = "<group>"; };
 		E17C4B98249358DD005134E7 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		E17C4B9A24935AEF005134E7 /* TwitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterViewController.swift; sourceTree = "<group>"; };
 		E17C4B9D24937FAD005134E7 /* DanmuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanmuViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +207,14 @@
 				E1794E1724B45B7700230680 /* WaveLodingViewController.swift */,
 			);
 			path = CircleWave;
+			sourceTree = "<group>";
+		};
+		E1794E1A24B71CD700230680 /* LeastCoin */ = {
+			isa = PBXGroup;
+			children = (
+				E1794E1B24B71D5100230680 /* LeastCoinProblemViewController.swift */,
+			);
+			path = LeastCoin;
 			sourceTree = "<group>";
 		};
 		E17C4B97249358A7005134E7 /* TwitterLaunch */ = {
@@ -351,6 +361,7 @@
 				E17C4B97249358A7005134E7 /* TwitterLaunch */,
 				E17C4B9C24937F88005134E7 /* Danmu */,
 				E1794E1224B44C0300230680 /* CircleWave */,
+				E1794E1A24B71CD700230680 /* LeastCoin */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -613,6 +624,7 @@
 				E1801EF3218C64D40065366E /* JokeListCell.swift in Sources */,
 				E1794E1824B45B7700230680 /* WaveLodingViewController.swift in Sources */,
 				E14BC3F3227055F8008BF05B /* ForceLandscapeViewController.swift in Sources */,
+				E1794E1C24B71D5200230680 /* LeastCoinProblemViewController.swift in Sources */,
 				E17C4B9B24935AEF005134E7 /* TwitterViewController.swift in Sources */,
 				E1A0FED220B273C400044403 /* ImageAsset.swift in Sources */,
 				E1801EF4218C64D40065366E /* HahamxViewController.swift in Sources */,

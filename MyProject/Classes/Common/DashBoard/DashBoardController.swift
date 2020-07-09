@@ -27,7 +27,6 @@ class DashBoardController: BaseViewController {
         button.setTitleColor(.black, for: .selected)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         button.layer.cornerRadius = 25
-        button.layer.masksToBounds = true
         button.addTarget(self, action: #selector(actionButtonClick(button:)), for: .touchUpInside)
         
         return button

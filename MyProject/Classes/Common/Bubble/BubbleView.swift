@@ -32,7 +32,6 @@ class BubbleView: UIView {
         
         button = UIButton()
         button.layer.cornerRadius = self.bounds.size.width/2.0
-        button.layer.masksToBounds = true
         button.backgroundColor = UIColor.green
         button.setTitle(value+"g", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14)

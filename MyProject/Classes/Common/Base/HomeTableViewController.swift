@@ -51,6 +51,9 @@ class HomeTableViewController: BaseViewController {
                 SectionDataModel(title: "Github搜寻仓库", vcName: "GithubRepoListController"),
                 SectionDataModel(title: "RxSwift+List+Refresh", vcName: "GithubRepoListRefreshController"),
                 SectionDataModel(title: "https://www.haha.mx(接口已失效)", vcName: "HahamxViewController")
+            ]),
+            SectionModel(model: "初级算法", items: [
+                SectionDataModel(title: "动态规划 最少钱币数（凑硬币）", vcName: "LeastCoinProblemViewController"),
             ])
         ])
         
