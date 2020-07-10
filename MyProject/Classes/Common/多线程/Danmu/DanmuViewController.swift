@@ -29,7 +29,7 @@ class DanmuViewController: BaseViewController {
         view.backgroundColor = randomColor(hue: .blue, luminosity: .bright)
         
         // 需要写在addOperation之前
-        queue.maxConcurrentOperationCount = 20
+        queue.maxConcurrentOperationCount = 4
         
         // 安全区高度
         var topInset: CGFloat = 0.0
@@ -42,6 +42,29 @@ class DanmuViewController: BaseViewController {
         contentView = UIView(frame: CGRect(x: 0, y: topInset + 44, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - topInset - 44))
         contentView.backgroundColor = .clear
         view.addSubview(contentView)
+        
+        // Danmu点击事件
+        let tap = UITapGestureRecognizer()
+        contentView.addGestureRecognizer(tap)
+        
+        tap.rx.event
+            .subscribe(onNext: {[weak self] (tap) in
+            
+                guard let s = self else { return }
+                
+                let point = tap.location(in: s.contentView)
+                
+                // 因为弹幕在执行UIView动画过程中，实际frame已经超出了屏幕范围，所以无法点击
+                // 因此通过点击父视图获取point来知道点击的是哪个视图
+                for subview in s.contentView.subviews {
+                    if ((subview.layer.presentation()?.hitTest(point)) != nil) {
+                        if let label = subview as? UILabel {
+                            DLog("点击了\(label.text ?? "")")
+                        }
+                    }
+                }
+                
+            }).disposed(by: disposeBag)
         
         let switchButton = UISwitch()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: switchButton)
@@ -59,7 +82,7 @@ class DanmuViewController: BaseViewController {
                         return
                     }
                     
-                    s.timer = Timer.scheduledTimer(timeInterval: 0.1, target: s, selector: #selector(s.timerAction), userInfo: nil, repeats: true)
+                    s.timer = Timer.scheduledTimer(timeInterval: 1, target: s, selector: #selector(s.timerAction), userInfo: nil, repeats: true)
                 }else {
                     
                     s.timer?.invalidate()
@@ -86,10 +109,6 @@ class DanmuViewController: BaseViewController {
 //        operation.index = i
 //        queue.addOperation(operation)
         
-        if arc4random()%3 == 0 {
-            return
-        }
-        
         queue.addOperation { [weak self] in
             
             DLog(Thread.current)
@@ -104,6 +123,8 @@ class DanmuViewController: BaseViewController {
         }
     }
     
+    /// 弹幕动画
+    /// - Parameter text: 文本
     func labelAnimation(text: String) {
         
         let label = UILabel()
@@ -111,7 +132,7 @@ class DanmuViewController: BaseViewController {
         label.textColor = .black
         label.text = text
         label.sizeToFit()
-        
+        // 触摸contentView的时候会导致崩溃，原因未知
         contentView.addSubview(label)
         
         let original = CGRect(x: view.bounds.size.width + 100, y: 100.0 + CGFloat(arc4random()%500), width: label.bounds.size.width, height: label.bounds.size.height)
@@ -119,19 +140,28 @@ class DanmuViewController: BaseViewController {
         
         label.frame = original
         
-        let animation = CABasicAnimation(keyPath: "position")
-        animation.fromValue = NSValue(cgRect: original)
-        animation.toValue = NSValue(cgRect: end)
-        animation.duration = 3
-        animation.isRemovedOnCompletion = false
-        animation.fillMode = .forwards
-        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
-        
-        label.layer.add(animation, forKey: "move")
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        UIView.animate(withDuration: 3.0, delay: 0, options: [.curveLinear, .allowUserInteraction], animations: {
+            
+            label.frame = end
+        }) { _ in
             label.removeFromSuperview()
         }
+        
+#warning("用CABasicAnimation做动画时，点击contentView会导致崩溃 \"Cannot get value with size 16. The type encoded as {CGRect={CGPoint=dd}{CGSize=dd}} is expected to be 32 bytes\"，用UIView.animate 显示动画则不会。")
+        
+//        let animation = CABasicAnimation(keyPath: "position")
+//        animation.fromValue = NSValue(cgRect: original)
+//        animation.toValue = NSValue(cgRect: end)
+//        animation.duration = 3
+//        animation.isRemovedOnCompletion = false
+//        animation.fillMode = .forwards
+//        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+//
+//        label.layer.add(animation, forKey: "move")
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            label.removeFromSuperview()
+//        }
     }
     
 }
