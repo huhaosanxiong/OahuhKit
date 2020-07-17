@@ -54,6 +54,8 @@ class HomeTableViewController: BaseViewController {
             ]),
             SectionModel(model: "初级算法", items: [
                 SectionDataModel(title: "动态规划 最少钱币数（凑硬币）", vcName: "LeastCoinProblemViewController"),
+                SectionDataModel(title: "两数之和(LeetCode.No2)", vcName: "LeetCode_2_Controller"),
+                SectionDataModel(title: "盛最多水的容器(LeetCode.No11)", vcName: "LeetCode_11_Controller"),
             ])
         ])
         

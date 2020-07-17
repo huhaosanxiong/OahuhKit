@@ -50,6 +50,8 @@
 		E1794E9724B724A700230680 /* HoverCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1794E8D24B724A700230680 /* HoverCollectionViewCell.swift */; };
 		E1794E9824B724A700230680 /* HoverCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1794E8E24B724A700230680 /* HoverCollectionReusableView.swift */; };
 		E1794E9924B724A700230680 /* HoverCollectionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1794E8F24B724A700230680 /* HoverCollectionFlowLayout.swift */; };
+		E17A1EF924C1A5BA0087834E /* LeetCode_2_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A1EF824C1A5BA0087834E /* LeetCode_2_Controller.swift */; };
+		E17A1EFB24C1B9450087834E /* LeetCode_11_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A1EFA24C1B9450087834E /* LeetCode_11_Controller.swift */; };
 		E1A0FEA720B26E9700044403 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0FEA620B26E9700044403 /* AppDelegate.swift */; };
 		E1A0FEC620B272F600044403 /* ThirdReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0FEBF20B272F500044403 /* ThirdReference.swift */; };
 		E1A0FEC720B272F600044403 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0FEC120B272F500044403 /* Log.swift */; };
@@ -113,6 +115,8 @@
 		E1794E8D24B724A700230680 /* HoverCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoverCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1794E8E24B724A700230680 /* HoverCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoverCollectionReusableView.swift; sourceTree = "<group>"; };
 		E1794E8F24B724A700230680 /* HoverCollectionFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoverCollectionFlowLayout.swift; sourceTree = "<group>"; };
+		E17A1EF824C1A5BA0087834E /* LeetCode_2_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetCode_2_Controller.swift; sourceTree = "<group>"; };
+		E17A1EFA24C1B9450087834E /* LeetCode_11_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetCode_11_Controller.swift; sourceTree = "<group>"; };
 		E1A0FEA320B26E9700044403 /* MyProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A0FEA620B26E9700044403 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1A0FEBF20B272F500044403 /* ThirdReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdReference.swift; sourceTree = "<group>"; };
@@ -252,6 +256,8 @@
 			isa = PBXGroup;
 			children = (
 				E1794E4824B7247F00230680 /* LeastCoinProblemViewController.swift */,
+				E17A1EF824C1A5BA0087834E /* LeetCode_2_Controller.swift */,
+				E17A1EFA24C1B9450087834E /* LeetCode_11_Controller.swift */,
 			);
 			path = LeastCoin;
 			sourceTree = "<group>";
@@ -646,6 +652,7 @@
 				E1794E7E24B7247F00230680 /* JokeListCell.swift in Sources */,
 				E12C576A218FF60A00CFE480 /* Resource.swift in Sources */,
 				E1CDE31320B27499009E04D1 /* BaseViewController.swift in Sources */,
+				E17A1EFB24C1B9450087834E /* LeetCode_11_Controller.swift in Sources */,
 				E1CDE31D20B29C01009E04D1 /* WebViewController.swift in Sources */,
 				E1794E5924B7247F00230680 /* DanmuViewController.swift in Sources */,
 				E1794E6424B7247F00230680 /* PushTransitionViewController.swift in Sources */,
@@ -673,6 +680,7 @@
 				E1794E9624B724A700230680 /* HoverCollectionController.swift in Sources */,
 				E1794E5D24B7247F00230680 /* DashBoardView.swift in Sources */,
 				E1794E9524B724A700230680 /* LottieViewController.swift in Sources */,
+				E17A1EF924C1A5BA0087834E /* LeetCode_2_Controller.swift in Sources */,
 				E1794E9824B724A700230680 /* HoverCollectionReusableView.swift in Sources */,
 				E1007B872182F28000E72898 /* MJRefreshableTool.swift in Sources */,
 				E1794E7A24B7247F00230680 /* RepoListViewModel.swift in Sources */,
