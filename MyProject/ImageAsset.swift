@@ -13,6 +13,13 @@ return result
 }
 }
 enum Asset {
+  enum ChatBar {
+    static let messageAddN = ImageAsset(name: "message_add_n")
+    static let messageAddS = ImageAsset(name: "message_add_s")
+    static let messageExpressionN = ImageAsset(name: "message_expression_n")
+    static let messageExpressionS = ImageAsset(name: "message_expression_s")
+    static let messageKeyboardN = ImageAsset(name: "message_keyboard_n")
+  }
   static let img1125 = ImageAsset(name: "IMG_1125")
   static let img1145 = ImageAsset(name: "IMG_1145")
   static let img1619 = ImageAsset(name: "IMG_1619")

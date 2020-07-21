@@ -8,11 +8,47 @@
 
 import UIKit
 
+protocol ChatBarFaceViewDelegate: class {
+    
+    func clickFace(name: String)
+    func clickDeleteButton()
+    func clickSendButton()
+}
+
 class ChatBarFaceView: UIView {
     
     private lazy var faceCollectionView: UICollectionView = {
         
         let view = UICollectionView()
+        return view
+    }()
+    
+    private lazy var bottomView: UIView = {
+        
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }()
+    
+    private lazy var deleteButton: UIButton = {
+        
+        let button = UIButton()
+        let imageName = "\(manager.bundleName)/\(manager.emojiPath)/emoji_del_normal.png"
+        button.setImage(UIImage(named: imageName), for: .normal)
+        button.addTarget(self, action: #selector(deleteAction(sender:)), for: .touchUpInside)
+
+        return button
+    }()
+    
+    private lazy var sendButton: UIButton = {
+        
+        let view = UIButton()
+        view.backgroundColor = .blue
+        view.setTitle("发送", for: .normal)
+        view.setTitleColor(.white, for: .normal)
+        view.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        view.addTarget(self, action: #selector(sendAction(sender:)), for: .touchUpInside)
+        
         return view
     }()
     
@@ -22,6 +58,8 @@ class ChatBarFaceView: UIView {
             setEmojiDataArray()
         }
     }
+    
+    weak var delegate: ChatBarFaceViewDelegate?
     
     let manager = ChatBarDataManager.shared
     
@@ -34,6 +72,7 @@ class ChatBarFaceView: UIView {
         
         backgroundColor = .white
         
+        //CollectionView
         let layout = UICollectionViewFlowLayout()
         faceCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         faceCollectionView.delegate = self
@@ -46,11 +85,39 @@ class ChatBarFaceView: UIView {
         } else {
             // Fallback on earlier versions
         }
+        
+        //bottomView
+        bottomView.addSubview(deleteButton)
+        bottomView.addSubview(sendButton)
+        
+        addSubview(bottomView)
         addSubview(faceCollectionView)
         
         faceCollectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 0))
         }
+        
+        bottomView.snp.makeConstraints { make in
+            make.left.right.bottom.equalToSuperview()
+            make.height.equalTo(40)
+        }
+        
+        sendButton.snp.makeConstraints { make in
+            make.top.right.bottom.equalToSuperview()
+            make.width.equalTo(sendButton.snp.height).multipliedBy(1.5)
+        }
+        
+        deleteButton.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.right.equalTo(sendButton.snp.left)
+            make.width.equalTo(deleteButton.snp.height).multipliedBy(1.5)
+        }
+        
+        let lineLayer = CALayer()
+        lineLayer.frame = CGRect(x: 0, y: 0, width: bounds.width, height: 0.5)
+        lineLayer.backgroundColor = UIColor.gray.cgColor
+        bottomView.layer.addSublayer(lineLayer)
+        
 
     }
     
@@ -65,6 +132,14 @@ class ChatBarFaceView: UIView {
         
         faceCollectionView.reloadData()
 
+    }
+    
+    /// 设置发送按钮状态
+    /// - Parameter enable: 是否可用
+    public func setSendButtonEnable(enable: Bool) {
+        
+        sendButton.alpha = enable ? 1 : 0.4
+        sendButton.isEnabled = enable
     }
     
     required init?(coder: NSCoder) {
@@ -99,7 +174,9 @@ extension ChatBarFaceView: UICollectionViewDelegate, UICollectionViewDataSource,
         
         let model = emojiDataArray[indexPath.row]
         
-        DLog(model.id)
+        if let delegate = delegate {
+            delegate.clickFace(name: model.tag)
+        }
     }
     
     //返回单元格大小
@@ -127,6 +204,23 @@ extension ChatBarFaceView: UICollectionViewDelegate, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: space, left: space, bottom: space, right: space)
     }
+    
+}
+
+extension ChatBarFaceView {
+    
+    @objc func deleteAction(sender: UIButton) {
+        if let delegate = delegate {
+            delegate.clickDeleteButton()
+        }
+    }
+    
+    @objc func sendAction(sender: UIButton) {
+        if let delegate = delegate {
+            delegate.clickSendButton()
+        }
+    }
+    
     
 }
 

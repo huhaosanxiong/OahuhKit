@@ -17,19 +17,16 @@ class CharBarViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         self.title = "CharBar"
+        
+        view.backgroundColor = ColorHex("#E0E0E0")
     }
     
     override func initSubviews() {
         
-        let faceView = ChatBarFaceView(frame: CGRect(x: 0, y: SCREEN_HEIGHT-240, width: SCREEN_WIDTH, height: 240))
-        faceView.emojiDataArray = manager.emojiDataArray
+        let charBar = ChatBarView(frame: CGRect(x: 0, y: SCREEN_HEIGHT - ChatBarHeight, width: SCREEN_WIDTH, height: ChatBarHeight))
         
-        view.addSubview(faceView)
-        faceView.snp.makeConstraints { make in
-            make.left.right.bottom.equalToSuperview()
-            make.height.equalTo(240)
-        }
-
+        
+        view.addSubview(charBar)
     }
     
 
