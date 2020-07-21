@@ -9,6 +9,7 @@ target 'MyProject' do
     pod 'Alamofire'
     pod 'Kingfisher' , '~> 4.6.0'
     pod 'HandyJSON', '~> 5.0.0-beta.1'
+    pod 'KakaJSON'
     
     #rx
     pod 'RxSwift'

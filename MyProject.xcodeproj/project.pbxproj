@@ -52,6 +52,12 @@
 		E1794E9924B724A700230680 /* HoverCollectionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1794E8F24B724A700230680 /* HoverCollectionFlowLayout.swift */; };
 		E17A1EF924C1A5BA0087834E /* LeetCode_2_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A1EF824C1A5BA0087834E /* LeetCode_2_Controller.swift */; };
 		E17A1EFB24C1B9450087834E /* LeetCode_11_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A1EFA24C1B9450087834E /* LeetCode_11_Controller.swift */; };
+		E17A1EFE24C683840087834E /* ChatBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A1EFD24C683840087834E /* ChatBarView.swift */; };
+		E17A1F0024C683B60087834E /* ChatBarFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A1EFF24C683B60087834E /* ChatBarFaceView.swift */; };
+		E17A1F0224C683C70087834E /* ChatBarMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A1F0124C683C70087834E /* ChatBarMoreView.swift */; };
+		E17A1F0424C6865F0087834E /* NIMKitResouce.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E17A1F0324C6865F0087834E /* NIMKitResouce.bundle */; };
+		E17A1F0624C6869D0087834E /* ChatBarDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A1F0524C6869D0087834E /* ChatBarDataManager.swift */; };
+		E17A1F0824C68E790087834E /* CharBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A1F0724C68E790087834E /* CharBarViewController.swift */; };
 		E1A0FEA720B26E9700044403 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0FEA620B26E9700044403 /* AppDelegate.swift */; };
 		E1A0FEC620B272F600044403 /* ThirdReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0FEBF20B272F500044403 /* ThirdReference.swift */; };
 		E1A0FEC720B272F600044403 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0FEC120B272F500044403 /* Log.swift */; };
@@ -117,6 +123,12 @@
 		E1794E8F24B724A700230680 /* HoverCollectionFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoverCollectionFlowLayout.swift; sourceTree = "<group>"; };
 		E17A1EF824C1A5BA0087834E /* LeetCode_2_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetCode_2_Controller.swift; sourceTree = "<group>"; };
 		E17A1EFA24C1B9450087834E /* LeetCode_11_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetCode_11_Controller.swift; sourceTree = "<group>"; };
+		E17A1EFD24C683840087834E /* ChatBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBarView.swift; sourceTree = "<group>"; };
+		E17A1EFF24C683B60087834E /* ChatBarFaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBarFaceView.swift; sourceTree = "<group>"; };
+		E17A1F0124C683C70087834E /* ChatBarMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBarMoreView.swift; sourceTree = "<group>"; };
+		E17A1F0324C6865F0087834E /* NIMKitResouce.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NIMKitResouce.bundle; sourceTree = "<group>"; };
+		E17A1F0524C6869D0087834E /* ChatBarDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBarDataManager.swift; sourceTree = "<group>"; };
+		E17A1F0724C68E790087834E /* CharBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharBarViewController.swift; sourceTree = "<group>"; };
 		E1A0FEA320B26E9700044403 /* MyProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A0FEA620B26E9700044403 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1A0FEBF20B272F500044403 /* ThirdReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdReference.swift; sourceTree = "<group>"; };
@@ -308,6 +320,7 @@
 		E1794E8024B724A700230680 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E17A1EFC24C683490087834E /* ChatBar */,
 				E1794E8124B724A700230680 /* Charts */,
 				E1794E8324B724A700230680 /* Bubble */,
 				E1794E8624B724A700230680 /* FoldingCell */,
@@ -360,6 +373,19 @@
 				E1794E8F24B724A700230680 /* HoverCollectionFlowLayout.swift */,
 			);
 			path = HoverCollection;
+			sourceTree = "<group>";
+		};
+		E17A1EFC24C683490087834E /* ChatBar */ = {
+			isa = PBXGroup;
+			children = (
+				E17A1F0724C68E790087834E /* CharBarViewController.swift */,
+				E17A1EFD24C683840087834E /* ChatBarView.swift */,
+				E17A1EFF24C683B60087834E /* ChatBarFaceView.swift */,
+				E17A1F0124C683C70087834E /* ChatBarMoreView.swift */,
+				E17A1F0524C6869D0087834E /* ChatBarDataManager.swift */,
+				E17A1F0324C6865F0087834E /* NIMKitResouce.bundle */,
+			);
+			path = ChatBar;
 			sourceTree = "<group>";
 		};
 		E1A0FE9A20B26E9700044403 = {
@@ -580,6 +606,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1A805B8214B5E070027AE5A /* Switch.json in Resources */,
+				E17A1F0424C6865F0087834E /* NIMKitResouce.bundle in Resources */,
 				E1A805B7214B5E070027AE5A /* TwitterHeart.json in Resources */,
 				E1A0FED020B273C400044403 /* Assets.xcassets in Resources */,
 				E1A0FED120B273C400044403 /* LaunchScreen.storyboard in Resources */,
@@ -664,12 +691,15 @@
 				E1794E7624B7247F00230680 /* GithubRepoListController.swift in Sources */,
 				E1794E7924B7247F00230680 /* GithubRepoListRefreshController.swift in Sources */,
 				E1794E7C24B7247F00230680 /* HahaMxAPIService.swift in Sources */,
+				E17A1EFE24C683840087834E /* ChatBarView.swift in Sources */,
 				E1CDE33720BD07A2009E04D1 /* RxSwift+Observable.swift in Sources */,
 				E1794E5C24B7247F00230680 /* ForceLandscapeViewController.swift in Sources */,
 				E1A0FEC720B272F600044403 /* Log.swift in Sources */,
 				E1794E7F24B7247F00230680 /* HahamxViewController.swift in Sources */,
 				E1CDE31920B27786009E04D1 /* HomeTableViewController.swift in Sources */,
 				E1794E9724B724A700230680 /* HoverCollectionViewCell.swift in Sources */,
+				E17A1F0624C6869D0087834E /* ChatBarDataManager.swift in Sources */,
+				E17A1F0224C683C70087834E /* ChatBarMoreView.swift in Sources */,
 				E1794E9924B724A700230680 /* HoverCollectionFlowLayout.swift in Sources */,
 				E1794E9224B724A700230680 /* BubbleView.swift in Sources */,
 				E1A0FED220B273C400044403 /* ImageAsset.swift in Sources */,
@@ -687,6 +717,7 @@
 				E1794E5B24B7247F00230680 /* AutoRotationViewController.swift in Sources */,
 				E1A0FEC620B272F600044403 /* ThirdReference.swift in Sources */,
 				E1794E7724B7247F00230680 /* GithubViewModel.swift in Sources */,
+				E17A1F0024C683B60087834E /* ChatBarFaceView.swift in Sources */,
 				E1794E6124B7247F00230680 /* PopAnimation.swift in Sources */,
 				E1794E6624B7247F00230680 /* WaveView.swift in Sources */,
 				E1794E7D24B7247F00230680 /* HahaMaxModel.swift in Sources */,
@@ -696,6 +727,7 @@
 				E1794E7524B7247F00230680 /* GithubSearchService.swift in Sources */,
 				E1794E7824B7247F00230680 /* GithubRepoListCell.swift in Sources */,
 				E1794E6824B7247F00230680 /* WaveLodingViewController.swift in Sources */,
+				E17A1F0824C68E790087834E /* CharBarViewController.swift in Sources */,
 				E1794E6224B7247F00230680 /* PopTransitionViewController.swift in Sources */,
 				E1794E9324B724A700230680 /* FoldingCellViewController.swift in Sources */,
 				E1794E9424B724A700230680 /* FoldingListCell.swift in Sources */,

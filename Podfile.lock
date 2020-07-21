@@ -8,6 +8,7 @@ PODS:
   - FoldingCell (4.0.2)
   - HandyJSON (5.0.0-beta.1)
   - Hero (1.4.0)
+  - KakaJSON (1.1.2)
   - Kingfisher (4.6.4)
   - lottie-ios (2.5.2)
   - Material (2.16.4):
@@ -55,6 +56,7 @@ DEPENDENCIES:
   - FoldingCell
   - HandyJSON (~> 5.0.0-beta.1)
   - Hero
+  - KakaJSON
   - Kingfisher (~> 4.6.0)
   - lottie-ios
   - Material
@@ -97,6 +99,7 @@ SPEC REPOS:
     - SnapKit
     - SVProgressHUD
   trunk:
+    - KakaJSON
     - RandomColorSwift
 
 SPEC CHECKSUMS:
@@ -107,6 +110,7 @@ SPEC CHECKSUMS:
   FoldingCell: 352f0211a53f957b885a1b37d5ffa875da90bca5
   HandyJSON: 582477127ab3ab65bd2e471815f1a7b846856978
   Hero: bac92350d7201a1a940003e0767c7b52ce7c99a1
+  KakaJSON: cc5ff50a8c1cfbb09413db8496cb709a209e6137
   Kingfisher: 68498a706e46c2a050b0c9572f100e5db407f6e0
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   Material: 4ed78690b09ffd148b5ffab6b4367fb1d8da1cd3
@@ -125,6 +129,6 @@ SPEC CHECKSUMS:
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 89f156876699b3beb257002374d3788b4795f5e6
+PODFILE CHECKSUM: 4db3c341ac438f2588b72669d91b3be0d84cea7b
 
 COCOAPODS: 1.8.3

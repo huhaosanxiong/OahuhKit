@@ -1,5 +1,5 @@
 //
-//  CharBarDataManager.swift
+//  ChatBarDataManager.swift
 //  MyProject
 //
 //  Created by huhsx on 2020/7/21.
@@ -16,9 +16,9 @@ struct ChatBarFaceItem {
     var tag = ""
 }
 
-class CharBarDataManager {
+class ChatBarDataManager {
     
-    static let shared = CharBarDataManager()
+    static let shared = ChatBarDataManager()
 
     let bundleName = "NIMKitResouce.bundle"
     let emojiPath = "Emoticon/Emoji"
@@ -28,7 +28,10 @@ class CharBarDataManager {
     
     init() {
         
-        parseData()
+        DispatchQueue.global().async {
+            self.parseData()
+        }
+        
     }
     
     /// 解析emoji

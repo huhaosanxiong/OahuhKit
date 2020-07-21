@@ -1,5 +1,5 @@
 //
-//  CharBarMoreView.swift
+//  ChatBarMoreView.swift
 //  MyProject
 //
 //  Created by huhsx on 2020/7/21.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CharBarMoreView: UIView {
+class ChatBarMoreView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.
