@@ -51,6 +51,18 @@ class ChatBarView: UIView {
     
     private let manager = ChatBarDataManager.shared
     
+    // 安全区高度
+    lazy var bottomInset: CGFloat = {
+        
+        if #available(iOS 11.0, *) {
+            return CGFloat(UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0.0)
+        } else {
+            // Fallback on earlier versions
+            return 0.0
+        }
+    }()
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -114,13 +126,15 @@ class ChatBarView: UIView {
             make.bottom.equalToSuperview().offset(-space)
             make.width.height.equalTo(40)
         }
-
+        
+        
         //表情键盘
-        emojiBoardView = ChatBarFaceView(frame: CGRect(x: 0, y: SCREEN_HEIGHT - FunctionViewHeight, width: SCREEN_WIDTH, height: FunctionViewHeight))
+        emojiBoardView = ChatBarFaceView(frame: CGRect(x: 0, y: SCREEN_HEIGHT - FunctionViewHeight - bottomInset, width: SCREEN_WIDTH, height: FunctionViewHeight))
         emojiBoardView.emojiDataArray = manager.emojiDataArray
+        emojiBoardView.delegate = self
 
         //更多view
-        moreBoardView = ChatBarMoreView(frame: CGRect(x: 0, y: SCREEN_HEIGHT - FunctionViewHeight, width: SCREEN_WIDTH, height: FunctionViewHeight))
+        moreBoardView = ChatBarMoreView(frame: CGRect(x: 0, y: SCREEN_HEIGHT - FunctionViewHeight - bottomInset, width: SCREEN_WIDTH, height: FunctionViewHeight))
 
     }
 
@@ -156,7 +170,7 @@ class ChatBarView: UIView {
         
         switch showType {
         case .emoji, .more:
-            setViewFrame(frame: CGRect(x: 0, y: SCREEN_HEIGHT - FunctionViewHeight - bounds.height, width: SCREEN_WIDTH, height: bounds.height))
+            setViewFrame(frame: CGRect(x: 0, y: SCREEN_HEIGHT - FunctionViewHeight - bounds.height - bottomInset, width: SCREEN_WIDTH, height: bounds.height))
             textView.resignFirstResponder()
         case .keyboard:
             textView.becomeFirstResponder()
@@ -169,7 +183,7 @@ class ChatBarView: UIView {
         
         if show {
             superview?.addSubview(view)
-            view.frame = CGRect(x: 0, y: SCREEN_HEIGHT - FunctionViewHeight, width: SCREEN_WIDTH, height: FunctionViewHeight)
+            view.frame = CGRect(x: 0, y: SCREEN_HEIGHT - FunctionViewHeight - bottomInset, width: SCREEN_WIDTH, height: FunctionViewHeight)
         }else {
             view.removeFromSuperview()
         }
@@ -221,7 +235,7 @@ class ChatBarView: UIView {
         
         if size.height > textView.bounds.height {
             // 文字的实际高度已经超过了输入框，需要变大
-            if size.height < maxHeight {
+            if size.height <= maxHeight {
                 //如果还没到达最大行数
                 textView.isScrollEnabled = false
                 DLog("高度改变 刷新")
@@ -245,6 +259,7 @@ class ChatBarView: UIView {
             }else {
                 //已经到达最大行数
                 textView.isScrollEnabled = true
+                textView.scrollRangeToVisible(NSRange(location: textView.text.count - 1, length: 1))
             }
             
         }else if textView.frame.size.height > size.height {
@@ -301,6 +316,37 @@ extension ChatBarView: UITextViewDelegate {
         refreshTextViewSize(textView: textView)
         
         emojiBoardView.setSendButtonEnable(enable: textView.text.count > 0)
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        
+        if text == "\n" {
+            // 点击回车
+            DLog("发送文字：\(textView.text ?? "")")
+            return false
+        }
+        
+        if text == "" {
+            //删除
+            let range = delRangeForEmoticon()
+            if range.length == 1 {
+                //删的不是表情，可能是@
+                let item = false
+                if item {
+                    
+                }else {
+                    // 删除普通文字
+                    return true
+                }
+            }
+            
+            //删除表情和@ ，退格删除键开放限制
+            deleteTextRange(range: range)
+            return false
+        }
+        
+        
+        return true
     }
 }
 
@@ -375,7 +421,7 @@ extension ChatBarView {
                 var newTextViewFrame = s.frame
                 
                 if s.emojiButton.isSelected || s.moreButton.isSelected {
-                    newTextViewFrame.origin.y = SCREEN_HEIGHT - FunctionViewHeight - s.bounds.height
+                    newTextViewFrame.origin.y = SCREEN_HEIGHT - FunctionViewHeight - s.bounds.height - s.bottomInset
                 }else {
                     newTextViewFrame.origin.y = SCREEN_HEIGHT - s.bounds.height
                 }
@@ -428,6 +474,99 @@ extension ChatBarView {
         
         return adjustSize
     }
+    
+    
+    /// 删除表情
+    /// - Returns: 返回表情range
+    func delRangeForEmoticon() -> NSRange {
+
+        var range = rangeForPrefix(prefix: "[", suffix: "]")
+        let selectedRange = textView.selectedRange
+        if range.length > 1 {
+            let tag = NSString(string: textView.text).substring(with: range)
+            let exist = manager.checkEmojiInSystem(tag: tag)
+            
+            range = exist ? range : NSRange(location: selectedRange.location - 1, length: 1)
+        }
+        
+        return range
+    }
+    
+    func deleteTextRange(range: NSRange) {
+        
+        let text = textView.text ?? ""
+        
+        if (range.location + range.length <= text.count) &&
+            (range.location != NSNotFound && range.length != 0) {
+            
+            let newText = NSString(string: text).replacingCharacters(in: range, with: "")
+            let newSelectRange = NSRange(location: range.location, length: 0)
+            
+            textView.text = newText
+            textView.selectedRange = newSelectRange
+            textViewDidChange(textView)
+        }
+    }
+    
+    /// 匹配出字符串的range
+    /// - Parameters:
+    ///   - prefix: prefix 前缀
+    ///   - suffix: suffix 后缀
+    /// - Returns: range
+    func rangeForPrefix(prefix: String, suffix: String) -> NSRange {
+        
+        let text = NSString(string: textView.text)
+        let range = textView.selectedRange
+        let selectedText = range.length > 0 ? text.substring(with: range) as NSString : text
+        let endLocation = range.location
+        
+        if endLocation < 0 {
+            return NSRange(location: NSNotFound, length: 0)
+        }
+        
+        var index = -1
+        if selectedText.hasSuffix(suffix) {
+            //往前搜最多20个字符，一般来讲是够了...
+            let p = 20
+            var i = endLocation
+            
+            while (i >= endLocation - p) && (i >= 1) {
+                
+                let subRange = NSRange(location: i - 1, length: 1)
+                let subString = text.substring(with: subRange)
+                if subString.compare(prefix) == .orderedSame {
+                    index = i - 1
+                    break
+                }
+                
+                i -= 1
+            }
+        }
+        
+        return index == -1 ? NSRange(location: endLocation - 1, length: 1) : NSRange(location: index, length: endLocation - index)
+    }
+    
+}
+
+extension ChatBarView: ChatBarFaceViewDelegate {
+    
+    func clickFace(name: String) {
+        
+        textView.text = textView.text + name
+        
+        textViewDidChange(textView)
+    }
+    
+    func clickDeleteButton() {
+        // 删除
+        let _ = textView(textView, shouldChangeTextIn: NSRange(location: textView.text.count - 1, length: 1), replacementText: "")
+    }
+    
+    func clickSendButton() {
+        
+        DLog("发送: \(textView.text ?? "")")
+    }
+    
     
     
 }

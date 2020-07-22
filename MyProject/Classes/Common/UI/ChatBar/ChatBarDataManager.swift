@@ -26,6 +26,9 @@ class ChatBarDataManager {
     //Emoji对象数组
     var emojiDataArray: [ChatBarFaceItem] = []
     
+    //Emoji tag数组
+    var emojiTagArray: [String] = []
+    
     init() {
         
         DispatchQueue.global().async {
@@ -51,8 +54,19 @@ class ChatBarDataManager {
                                        id: dic["id"] ?? "",
                                        tag: dic["tag"] ?? "")
             emojiDataArray.append(item)
+            
+            if let tag = dic["tag"] {
+                emojiTagArray.append(tag)
+            }
+            
         }
     }
     
+    /// 根据tag判断是否属于表情中的字段
+    /// - Parameter tag: [可爱]
+    func checkEmojiInSystem(tag: String) -> Bool {
+        
+        return emojiTagArray.contains(tag)
+    }
 }
 

@@ -23,7 +23,15 @@ class CharBarViewController: BaseViewController {
     
     override func initSubviews() {
         
-        let charBar = ChatBarView(frame: CGRect(x: 0, y: SCREEN_HEIGHT - ChatBarHeight, width: SCREEN_WIDTH, height: ChatBarHeight))
+        // 安全区高度
+        var bottomInset: CGFloat = 0.0
+        if #available(iOS 11.0, *) {
+            bottomInset = CGFloat(UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0.0)
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        let charBar = ChatBarView(frame: CGRect(x: 0, y: SCREEN_HEIGHT - ChatBarHeight - bottomInset, width: SCREEN_WIDTH, height: ChatBarHeight))
         
         
         view.addSubview(charBar)
