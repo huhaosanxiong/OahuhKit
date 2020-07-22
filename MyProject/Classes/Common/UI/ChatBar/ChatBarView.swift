@@ -220,26 +220,26 @@ class ChatBarView: UIView {
         let size = getStringRectInTextView(string: textView.text, textView: textView)
         let maxHeight = primeTextHeight + CGFloat(maxLineCount - 1) * textLineHeight
         
-        //复制文字时的处理，先直接改textview
+        //超过最大高度
         if size.height > maxHeight {
             
             let frame = textView.frame
             textView.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width, height: maxHeight)
-            
+
             let chatBarHeight = textView.bounds.height + 2 * space
-            
+
             if emojiButton.isSelected {
                 //如果是点击表情键盘输入的情况下
-                self.frame = CGRect(x: 0, y: SCREEN_HEIGHT - FunctionViewHeight - chatBarHeight, width: SCREEN_WIDTH, height: chatBarHeight)
+                self.frame = CGRect(x: 0, y: SCREEN_HEIGHT - FunctionViewHeight - chatBarHeight - bottomInset, width: SCREEN_WIDTH, height: chatBarHeight)
             }else {
                 self.frame = CGRect(x: 0, y: SCREEN_HEIGHT - keyboardFrame.size.height - chatBarHeight, width: SCREEN_WIDTH, height: chatBarHeight)
             }
-            
+
             textView.isScrollEnabled = true
-            
+
             setNeedsLayout()
             layoutIfNeeded()
-            
+
             if let delegate = delegate {
                 delegate.chatBarFrameDidChanged(frame: self.frame)
             }

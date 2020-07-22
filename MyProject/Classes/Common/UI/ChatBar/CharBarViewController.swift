@@ -17,6 +17,7 @@ class CharBarViewController: BaseViewController {
         let tableview = UITableView()
         tableview.delegate = self
         tableview.dataSource = self
+        tableview.estimatedRowHeight = 40
         tableview.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
         return tableview
     }()
@@ -106,7 +107,7 @@ extension CharBarViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        
+        cell.textLabel?.numberOfLines = 0
         cell.textLabel?.text = dataSource[indexPath.row]
         
         return cell
