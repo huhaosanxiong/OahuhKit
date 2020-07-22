@@ -25,6 +25,17 @@ public let FunctionViewHeight: CGFloat = 240.0
 //输入框bar高度
 public let ChatBarHeight: CGFloat = 54.0
 
+protocol ChatBarViewDelegate: AnyObject {
+    
+    /// 发送消息
+    /// - Parameter text: text
+    func sendMessage(text: String)
+    
+    /// chatBar frame变化
+    /// - Parameter frame: frame
+    func chatBarFrameDidChanged(frame: CGRect)
+}
+
 class ChatBarView: UIView {
 
     public var textView: UITextView!
@@ -50,6 +61,8 @@ class ChatBarView: UIView {
     private let disposeBag = DisposeBag()
     
     private let manager = ChatBarDataManager.shared
+    
+    public weak var delegate: ChatBarViewDelegate?
     
     // 安全区高度
     lazy var bottomInset: CGFloat = {
@@ -193,8 +206,9 @@ class ChatBarView: UIView {
         
         self.frame = frame
         
-        //回调
-        //...
+        if let delegate = delegate {
+            delegate.chatBarFrameDidChanged(frame: self.frame)
+        }
     }
     
     /**
@@ -226,8 +240,9 @@ class ChatBarView: UIView {
             setNeedsLayout()
             layoutIfNeeded()
             
-            //回调
-            //...
+            if let delegate = delegate {
+                delegate.chatBarFrameDidChanged(frame: self.frame)
+            }
         }
         
         DLog("textView.bounds.height = \(textView.bounds.height)")
@@ -253,8 +268,9 @@ class ChatBarView: UIView {
                     self.layoutIfNeeded()
                     
                 }) { _ in
-                    //回调
-                    //...
+                    if let delegate = self.delegate {
+                        delegate.chatBarFrameDidChanged(frame: self.frame)
+                    }
                 }
             }else {
                 //已经到达最大行数
@@ -277,8 +293,9 @@ class ChatBarView: UIView {
                 self.layoutIfNeeded()
                 
             }) { _ in
-                //回调
-                //...
+                if let delegate = self.delegate {
+                    delegate.chatBarFrameDidChanged(frame: self.frame)
+                }
             }
         }
     }
@@ -322,7 +339,8 @@ extension ChatBarView: UITextViewDelegate {
         
         if text == "\n" {
             // 点击回车
-            DLog("发送文字：\(textView.text ?? "")")
+            sendTextMessage(text: textView.text)
+            
             return false
         }
         
@@ -423,7 +441,7 @@ extension ChatBarView {
                 if s.emojiButton.isSelected || s.moreButton.isSelected {
                     newTextViewFrame.origin.y = SCREEN_HEIGHT - FunctionViewHeight - s.bounds.height - s.bottomInset
                 }else {
-                    newTextViewFrame.origin.y = SCREEN_HEIGHT - s.bounds.height
+                    newTextViewFrame.origin.y = SCREEN_HEIGHT - s.bounds.height - s.bottomInset
                 }
                 
                 UIView.beginAnimations(nil, context: nil)
@@ -546,10 +564,37 @@ extension ChatBarView {
         return index == -1 ? NSRange(location: endLocation - 1, length: 1) : NSRange(location: index, length: endLocation - index)
     }
     
+    /// 发送文本消息
+    /// - Parameter text: text
+    func sendTextMessage(text: String) {
+        
+        if text.count == 0 { return }
+        
+        DLog("发送message: \(text)")
+        
+        if let delegate = delegate {
+            delegate.sendMessage(text: textView.text)
+        }
+        
+        textView.text = ""
+        
+        textViewDidChange(textView)
+        
+        let bottomHeight = (emojiButton.isSelected || moreButton.isSelected) ? FunctionViewHeight + bottomInset : keyboardFrame.bounds.height
+        
+        setViewFrame(frame: CGRect(x: 0,
+                                   y: SCREEN_HEIGHT - bottomHeight - ChatBarHeight,
+                                   width: SCREEN_WIDTH,
+                                   height: ChatBarHeight))
+    }
+    
 }
 
+// MARK: - ChatBarFaceViewDelegate
 extension ChatBarView: ChatBarFaceViewDelegate {
     
+    /// 点击表情
+    /// - Parameter name: 表情tag
     func clickFace(name: String) {
         
         textView.text = textView.text + name
@@ -557,16 +602,41 @@ extension ChatBarView: ChatBarFaceViewDelegate {
         textViewDidChange(textView)
     }
     
+    /// 点击删除按钮
     func clickDeleteButton() {
-        // 删除
+        
         let _ = textView(textView, shouldChangeTextIn: NSRange(location: textView.text.count - 1, length: 1), replacementText: "")
     }
     
+    /// 点击发送按钮
     func clickSendButton() {
         
-        DLog("发送: \(textView.text ?? "")")
+        sendTextMessage(text: textView.text)
     }
+
+}
+
+// MARK: - Public
+extension ChatBarView {
     
-    
-    
+    public func chatBarDismiss() {
+        
+        if textView.isFirstResponder {
+            textView.resignFirstResponder()
+            
+        }else if emojiButton.isSelected || moreButton.isSelected {
+            
+            showFunctionView(view: emojiBoardView, show: false)
+            showFunctionView(view: moreBoardView, show: false)
+            
+            UIView.animate(withDuration: 0.25, animations: {
+                
+                self.setViewFrame(frame: CGRect(x: 0, y: SCREEN_HEIGHT - ChatBarHeight - self.bottomInset, width: SCREEN_WIDTH, height: ChatBarHeight))
+            }) { _ in
+                self.emojiButton.isSelected = false
+                self.moreButton.isSelected = false
+            }
+        }
+
+    }
 }
