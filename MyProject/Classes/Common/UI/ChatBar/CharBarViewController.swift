@@ -21,6 +21,7 @@ class CharBarViewController: BaseViewController {
         tableview.register(MessageCell.self, forCellReuseIdentifier: "MessageCell")
         tableview.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         tableview.separatorStyle = .none
+        tableview.backgroundView = UIImageView(image: Asset.background.image)
         return tableview
     }()
     

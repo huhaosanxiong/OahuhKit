@@ -21,6 +21,7 @@ extension String {
         let font = UIFont.systemFont(ofSize: 14)
         
         let attributeString = NSMutableAttributedString(string: self)
+        // emoji 😄 attributeString.length = 2 用attributeString.string.count
         attributeString.addAttribute(.font, value: font, range: NSRange(location: 0, length: attributeString.length))
         attributeString.yy_lineSpacing = 5
         attributeString.yy_font = font
@@ -31,7 +32,7 @@ extension String {
         } catch let error {
             DLog("error: \(error.localizedDescription)")
         }
-        let resultArray = re?.matches(in: self, options: [], range: NSRange(location: 0, length: count)) ?? []
+        let resultArray = re?.matches(in: self, options: [.reportProgress], range: NSRange(location: 0, length: count)) ?? []
         
         var imageArray: [NSMutableDictionary] = []
 

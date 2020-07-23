@@ -55,7 +55,8 @@ class MessageCell: BaseTableViewCell {
 
     override func configureUI() {
         
-        contentView.backgroundColor = ColorHex("#F0F0F5")
+        backgroundColor = .clear
+        contentView.backgroundColor = .clear
             
         //1.通知或者时间
         notiView = MessageNotifyContentView(frame: .zero)
