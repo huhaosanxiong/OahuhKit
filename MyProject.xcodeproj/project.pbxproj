@@ -11,6 +11,11 @@
 		E1007B872182F28000E72898 /* MJRefreshableTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1007B862182F28000E72898 /* MJRefreshableTool.swift */; };
 		E12C5768218FF5F100CFE480 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C5767218FF5F100CFE480 /* APIProvider.swift */; };
 		E12C576A218FF60A00CFE480 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C5769218FF60A00CFE480 /* Resource.swift */; };
+		E170B34F24C929BD003652C6 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E170B34E24C929BD003652C6 /* Message.swift */; };
+		E170B35124C92BA9003652C6 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E170B35024C92BA9003652C6 /* Session.swift */; };
+		E170B35324C96B22003652C6 /* String+Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = E170B35224C96B22003652C6 /* String+Emoji.swift */; };
+		E170B35D24C98412003652C6 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E170B35C24C98412003652C6 /* MessageCell.swift */; };
+		E170B35F24C986CD003652C6 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E170B35E24C986CD003652C6 /* BaseTableViewCell.swift */; };
 		E1794E5924B7247F00230680 /* DanmuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1794E1F24B7247F00230680 /* DanmuViewController.swift */; };
 		E1794E5A24B7247F00230680 /* GCDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1794E2124B7247F00230680 /* GCDController.swift */; };
 		E1794E5B24B7247F00230680 /* AutoRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1794E2424B7247F00230680 /* AutoRotationViewController.swift */; };
@@ -82,6 +87,12 @@
 		E1007B862182F28000E72898 /* MJRefreshableTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshableTool.swift; sourceTree = "<group>"; };
 		E12C5767218FF5F100CFE480 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		E12C5769218FF60A00CFE480 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		E170B34E24C929BD003652C6 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		E170B35024C92BA9003652C6 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		E170B35224C96B22003652C6 /* String+Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Emoji.swift"; sourceTree = "<group>"; };
+		E170B35724C973AB003652C6 /* MyProject-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyProject-bridging-header.h"; sourceTree = "<group>"; };
+		E170B35C24C98412003652C6 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		E170B35E24C986CD003652C6 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		E1794E1F24B7247F00230680 /* DanmuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DanmuViewController.swift; sourceTree = "<group>"; };
 		E1794E2124B7247F00230680 /* GCDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDController.swift; sourceTree = "<group>"; };
 		E1794E2424B7247F00230680 /* AutoRotationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoRotationViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +179,34 @@
 				752FA93416E6F1B96DF0B76B /* Pods_MyProject.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E170B34D24C922CB003652C6 /* InputView */ = {
+			isa = PBXGroup;
+			children = (
+				E17A1EFD24C683840087834E /* ChatBarView.swift */,
+				E17A1EFF24C683B60087834E /* ChatBarFaceView.swift */,
+				E17A1F0124C683C70087834E /* ChatBarMoreView.swift */,
+			);
+			path = InputView;
+			sourceTree = "<group>";
+		};
+		E170B35B24C983EB003652C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E170B34E24C929BD003652C6 /* Message.swift */,
+				E170B35024C92BA9003652C6 /* Session.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E170B36024C99986003652C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E170B34D24C922CB003652C6 /* InputView */,
+				E170B35C24C98412003652C6 /* MessageCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		E1794E1D24B7247F00230680 /* 多线程 */ = {
@@ -379,9 +418,8 @@
 			isa = PBXGroup;
 			children = (
 				E17A1F0724C68E790087834E /* CharBarViewController.swift */,
-				E17A1EFD24C683840087834E /* ChatBarView.swift */,
-				E17A1EFF24C683B60087834E /* ChatBarFaceView.swift */,
-				E17A1F0124C683C70087834E /* ChatBarMoreView.swift */,
+				E170B36024C99986003652C6 /* View */,
+				E170B35B24C983EB003652C6 /* Model */,
 				E17A1F0524C6869D0087834E /* ChatBarDataManager.swift */,
 				E17A1F0324C6865F0087834E /* NIMKitResouce.bundle */,
 			);
@@ -463,6 +501,8 @@
 				E1007B862182F28000E72898 /* MJRefreshableTool.swift */,
 				E1A0FEC120B272F500044403 /* Log.swift */,
 				E1B70ACA24B409AD00E8200B /* ToolObject.swift */,
+				E170B35224C96B22003652C6 /* String+Emoji.swift */,
+				E170B35724C973AB003652C6 /* MyProject-bridging-header.h */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -531,6 +571,7 @@
 				E1CDE31520B27747009E04D1 /* NavigationController.swift */,
 				E1CDE31820B27786009E04D1 /* HomeTableViewController.swift */,
 				E1CDE31C20B29C01009E04D1 /* WebViewController.swift */,
+				E170B35E24C986CD003652C6 /* BaseTableViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -672,6 +713,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1794E5E24B7247F00230680 /* DashBoardController.swift in Sources */,
+				E170B34F24C929BD003652C6 /* Message.swift in Sources */,
 				E1794E9024B724A700230680 /* ChartsViewController.swift in Sources */,
 				E1794E6024B7247F00230680 /* LaunchView.swift in Sources */,
 				E1794E7424B7247F00230680 /* GithubModel.swift in Sources */,
@@ -718,8 +760,11 @@
 				E1A0FEC620B272F600044403 /* ThirdReference.swift in Sources */,
 				E1794E7724B7247F00230680 /* GithubViewModel.swift in Sources */,
 				E17A1F0024C683B60087834E /* ChatBarFaceView.swift in Sources */,
+				E170B35324C96B22003652C6 /* String+Emoji.swift in Sources */,
+				E170B35D24C98412003652C6 /* MessageCell.swift in Sources */,
 				E1794E6124B7247F00230680 /* PopAnimation.swift in Sources */,
 				E1794E6624B7247F00230680 /* WaveView.swift in Sources */,
+				E170B35124C92BA9003652C6 /* Session.swift in Sources */,
 				E1794E7D24B7247F00230680 /* HahaMaxModel.swift in Sources */,
 				E1794E6524B7247F00230680 /* TransitionProcotol.swift in Sources */,
 				E1794E6324B7247F00230680 /* PushAnimation.swift in Sources */,
@@ -730,6 +775,7 @@
 				E17A1F0824C68E790087834E /* CharBarViewController.swift in Sources */,
 				E1794E6224B7247F00230680 /* PopTransitionViewController.swift in Sources */,
 				E1794E9324B724A700230680 /* FoldingCellViewController.swift in Sources */,
+				E170B35F24C986CD003652C6 /* BaseTableViewCell.swift in Sources */,
 				E1794E9424B724A700230680 /* FoldingListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

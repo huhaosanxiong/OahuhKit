@@ -14,6 +14,7 @@ return result
 }
 enum Asset {
   enum ChatBar {
+    static let bubbleBoxRightN = ImageAsset(name: "bubble_box_right_n")
     static let messageAddN = ImageAsset(name: "message_add_n")
     static let messageAddS = ImageAsset(name: "message_add_s")
     static let messageExpressionN = ImageAsset(name: "message_expression_n")

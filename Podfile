@@ -10,6 +10,7 @@ target 'MyProject' do
     pod 'Kingfisher' , '~> 4.6.0'
     pod 'HandyJSON', '~> 5.0.0-beta.1'
     pod 'KakaJSON'
+    pod 'SwiftDate'
     
     #rx
     pod 'RxSwift'
@@ -33,5 +34,7 @@ target 'MyProject' do
     pod 'FLAnimatedImage'
     pod 'SDWebImage'
     pod 'SDWebImage/GIF'
+    pod 'YYText'
+    pod 'YYImage'
     
 end

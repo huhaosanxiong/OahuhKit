@@ -43,3 +43,57 @@ func ColorHex(_ color: String, _ alpha: CGFloat = 1.0) -> UIColor {
     return UIColor.init(red: CGFloat(r)/255.0, green: CGFloat(g)/255.0, blue: CGFloat(b)/255.0, alpha: alpha);
 }
 
+/// 计算文字高度
+/// - Parameters:
+///   - font: 字体大小
+///   - text: 文字
+///   - maxWidth: 最大宽度
+/// - Returns: 文本高度
+func resizeLabelFrame(font: UIFont, text: String = "", maxWidth: CGFloat) -> CGSize {
+    
+    let attributes = [NSAttributedString.Key.font: font]
+    
+    let size = NSString(string: text).boundingRect(
+        with: CGSize(width: maxWidth, height: CGFloat(MAXFLOAT)),
+        options: [.truncatesLastVisibleLine, .usesLineFragmentOrigin, .usesFontLeading],
+        attributes: attributes,
+        context: nil).size
+    
+    return size
+}
+
+let PhoneRegex = "\\d{3}-\\d{8}|\\d{3}-\\d{7}|\\d{4}-\\d{8}|\\d{4}-\\d{7}|1+[34578]+\\d{9}|\\d{8}|\\d{7}"
+let WebRegex = "((http[s]{0,1}|ftp)://[a-zA-Z0-9\\.\\-]+\\.([a-zA-Z]{2,4})(:\\d+)?(/[a-zA-Z0-9\\.\\-~!@#$%^&*+,?:_/=<>]*)?)|([a-zA-Z0-9\\.\\-]+\\.([a-zA-Z]{2,4})(:\\d+)?(/[a-zA-Z0-9\\.\\-~!@#$%^&*+,?:_/=<>]*)?)"
+let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+
+/// 会话文字正则验证
+/// - Parameter string: 要验证的字符串
+/// - Returns: range数组
+func wordVerifyValidation(_ string: String) -> [NSRange] {
+
+    var regex: NSRegularExpression?
+    do {
+        regex = try NSRegularExpression(
+            pattern: "(\(PhoneRegex))|(\(WebRegex))|(\(emailRegex))",
+            options: .caseInsensitive)
+    } catch let error{
+        DLog("error = \(error.localizedDescription)")
+    }
+    
+    guard let arrayOfAllMatches = regex?.matches(in: string, options: [], range: NSRange(location: 0, length: string.count)) else {
+        return []
+    }
+
+    var arrM: [NSRange] = []
+
+    for match in arrayOfAllMatches {
+
+        let substringForMatch = (string as NSString).substring(with: match.range)
+
+        arrM.append(match.range)
+
+        DLog("匹配: \(substringForMatch)")
+    }
+    
+    return arrM
+}

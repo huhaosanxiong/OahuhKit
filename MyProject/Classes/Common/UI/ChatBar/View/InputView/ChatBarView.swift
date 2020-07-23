@@ -245,8 +245,8 @@ class ChatBarView: UIView {
             }
         }
         
-        DLog("textView.bounds.height = \(textView.bounds.height)")
-        DLog("size.height = \(size.height)")
+        //DLog("textView.bounds.height = \(textView.bounds.height)")
+        //DLog("size.height = \(size.height)")
         
         if size.height > textView.bounds.height {
             // 文字的实际高度已经超过了输入框，需要变大

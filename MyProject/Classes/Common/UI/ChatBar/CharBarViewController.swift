@@ -15,10 +15,12 @@ class CharBarViewController: BaseViewController {
     private lazy var tableView: UITableView = {
         
         let tableview = UITableView()
+        tableview.backgroundColor = ColorHex("#F0F0F5")
         tableview.delegate = self
         tableview.dataSource = self
-        tableview.estimatedRowHeight = 40
-        tableview.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        tableview.register(MessageCell.self, forCellReuseIdentifier: "MessageCell")
+        tableview.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+        tableview.separatorStyle = .none
         return tableview
     }()
     
@@ -28,7 +30,7 @@ class CharBarViewController: BaseViewController {
     var topInset: CGFloat = 0.0
     var bottomInset: CGFloat = 0.0
     
-    var dataSource: [String] = []
+    var dataSource: [MessageModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,8 @@ class CharBarViewController: BaseViewController {
         self.title = "CharBar"
         
         view.backgroundColor = ColorHex("#E0E0E0")
+        
+        loadData()
     }
     
     override func initSubviews() {
@@ -62,6 +66,32 @@ class CharBarViewController: BaseViewController {
         charBar.delegate = self
         view.addSubview(charBar)
     }
+    
+    func loadData() {
+        
+        let stringArray = ["Hello world! [可爱][可爱][可爱][可爱][可爱][可爱][可爱][汗][怒][怒][怒][怒][怒][怒]",
+        "Hello world! [可爱][可爱][可爱][可爱][可爱][可爱][可爱][汗][怒][怒][怒][怒][怒][怒]",
+        "Contact: huhsxxx@gmail.com"]
+        
+        for text in stringArray {
+            
+            // 构造Message
+            let message = MessageConverter.messageWithText(text: text)
+            message.messageId = UUID().uuidString
+            // 构造MessageModel
+            let messageModel = MessageModel(message: message)
+            
+            if let lastMessageModel = dataSource.last {
+                messageModel.hideTimeLabel = messageModel.time == lastMessageModel.time
+            }
+            
+            messageModel.getFrame()
+            
+            dataSource.append(messageModel)
+        }
+        
+        tableView.reloadData()
+    }
 
     
     func tableViewScrollToBottom(animte: Bool) {
@@ -77,9 +107,22 @@ extension CharBarViewController: ChatBarViewDelegate {
     
     func sendMessage(text: String) {
         
-        dataSource.append(text)
+        // 构造Message
+        let message = MessageConverter.messageWithText(text: text)
+        message.messageId = UUID().uuidString
         
-        tableView.insertRows(at: [IndexPath(row: dataSource.count - 1, section: 0)], with: .automatic)
+        // 构造MessageModel
+        let messageModel = MessageModel(message: message)
+        
+        if let lastMessageModel = dataSource.last {
+            messageModel.hideTimeLabel = messageModel.time == lastMessageModel.time
+        }
+        
+        messageModel.getFrame()
+        
+        dataSource.append(messageModel)
+        
+        tableView.insertRows(at: [IndexPath(row: dataSource.count - 1, section: 0)], with: .none)
     }
     
     func chatBarFrameDidChanged(frame: CGRect) {
@@ -106,11 +149,19 @@ extension CharBarViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.text = dataSource[indexPath.row]
+        let model = dataSource[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessageCell
+        cell.selectionStyle = .none
+        
+        cell.msgModel = model
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let model = dataSource[indexPath.row]
+        return model.cellHeight
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

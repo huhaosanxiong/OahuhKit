@@ -48,7 +48,7 @@ class ChartsViewController: BaseViewController {
         litmitLine.lineWidth = 2
         litmitLine.lineColor = UIColor.green
         litmitLine.lineDashLengths = [5.0,5.0] //虚线样式
-        litmitLine.labelPosition = .rightTop  // 限制线位置
+        litmitLine.labelPosition = .topRight  // 限制线位置
         litmitLine.valueTextColor = UIColor.brown
         litmitLine.valueFont = UIFont.systemFont(ofSize: 12)
         chartView.leftAxis.addLimitLine(litmitLine)
@@ -76,7 +76,7 @@ class ChartsViewController: BaseViewController {
         }
         
         //20个数据作为一条折线里的数据
-        let chartDataSet = LineChartDataSet.init(values: data, label: "line 1")
+        let chartDataSet = LineChartDataSet.init(entries: data, label: "line 1")
         chartDataSet.drawCircleHoleEnabled = false  //不绘制转折点内圆
         chartDataSet.drawCirclesEnabled = false //不绘制转折点
         //一根折线
