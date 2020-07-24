@@ -10,6 +10,27 @@ import Foundation
 import YYText
 import YYImage
 
+/*
+ let str1 = "😄"
+ let str2 = "🇵🇷"
+ let str3 = NSString(string: str1)
+ let str4 = NSString(string: str2)
+ print(str1.count) //1
+ print(str1.unicodeScalars.count) //1
+ print(str1.utf8.count) //4
+ print(str1.utf16.count) //2
+ 
+ print(str2.count) //1
+ print(str2.unicodeScalars.count) //2
+ print(str2.utf8.count) //8
+ print(str2.utf16.count) //4
+ 
+ print(str3.length) //2
+ print(str4.length) //4
+ 
+ 由此可见，NSString是由UTF-16单元构成， NSString的length返回的是UTF-16的长度
+ Swift中String.count 返回的是Unicode字符个数，要跟NSString统一则需要用String.utf16.count
+ */
 extension String {
     
     func emotionString() -> NSMutableAttributedString {
@@ -21,10 +42,11 @@ extension String {
         let font = UIFont.systemFont(ofSize: 14)
         
         let attributeString = NSMutableAttributedString(string: self)
-        // emoji 😄 attributeString.length = 2 用attributeString.string.count
+        // emoji 😄 attributeString.length = 2 
         attributeString.addAttribute(.font, value: font, range: NSRange(location: 0, length: attributeString.length))
         attributeString.yy_lineSpacing = 5
         attributeString.yy_font = font
+        
         let pattern = "\\[[\\u4e00-\\u9fa5]+\\]"
         var re: NSRegularExpression?
         do {
@@ -32,11 +54,10 @@ extension String {
         } catch let error {
             DLog("error: \(error.localizedDescription)")
         }
-        let resultArray = re?.matches(in: self, options: [.reportProgress], range: NSRange(location: 0, length: count)) ?? []
+        let resultArray = re?.matches(in: self, options: [.reportProgress], range: NSRange(location: 0, length: utf16.count)) ?? []
         
         var imageArray: [NSMutableDictionary] = []
-
-
+        
         for match in resultArray {
             let range = match.range
             let subStr = NSString(string: self).substring(with: range)

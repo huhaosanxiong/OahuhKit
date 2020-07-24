@@ -72,6 +72,8 @@ class CharBarViewController: BaseViewController {
         
         let stringArray = ["Hello world! [可爱][可爱][可爱][可爱][可爱][可爱][可爱][汗][怒][怒][怒][怒][怒][怒]",
         "Hello world! [可爱][可爱][可爱][可爱][可爱][可爱][可爱][汗][怒][怒][怒][怒][怒][怒]",
+        "😄[可爱][鬼脸]",
+        "🇨🇳[可爱][鬼脸]",
         "Contact: huhsxxx@gmail.com"]
         
         for text in stringArray {
