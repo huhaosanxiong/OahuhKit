@@ -84,6 +84,7 @@ class MessageCell: BaseTableViewCell {
 }
 
 
+/// 通知或时间view
 class MessageNotifyContentView: UIView {
     
     var notiLabel: YYLabel!
@@ -95,7 +96,7 @@ class MessageNotifyContentView: UIView {
         notiLabel.textAlignment = .center
         notiLabel.font = UIFont.systemFont(ofSize: 12)
         notiLabel.numberOfLines = 0
-        notiLabel.textColor = .white
+        notiLabel.textColor = .black
         notiLabel.backgroundColor = ColorHex("#D8D8D8")
         
         addSubview(notiLabel)
@@ -106,6 +107,7 @@ class MessageNotifyContentView: UIView {
     }
 }
 
+/// Content基类
 class MessageBaseContentView: UIView {
     
     var bubbleImageView: UIImageView!

@@ -42,7 +42,7 @@ class HomeTableViewController: BaseViewController {
                 SectionDataModel(title: "FoldingCell", vcName: "FoldingCellViewController"),
                 SectionDataModel(title: "蚂蚁森林能量收取", vcName: "BubbleViewController"),
                 SectionDataModel(title: "UICollectionView组头悬停", vcName: "HoverCollectionController"),
-                SectionDataModel(title: "ChatBar", vcName: "CharBarViewController"),
+                SectionDataModel(title: "Chat UI", vcName: "CharBarViewController"),
             ]),
             SectionModel(model: "多线程", items: [
                 SectionDataModel(title: "DispatchSemaphore", vcName: "GCDController"),

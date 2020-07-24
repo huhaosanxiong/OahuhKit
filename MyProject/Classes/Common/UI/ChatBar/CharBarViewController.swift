@@ -37,7 +37,7 @@ class CharBarViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.title = "CharBar"
+        self.title = "Chat UI"
         
         view.backgroundColor = ColorHex("#E0E0E0")
         

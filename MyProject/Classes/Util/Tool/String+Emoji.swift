@@ -42,7 +42,7 @@ extension String {
         let font = UIFont.systemFont(ofSize: 14)
         
         let attributeString = NSMutableAttributedString(string: self)
-        // emoji 😄 attributeString.length = 2 
+        // emoji 😄 attributeString.length = 2
         attributeString.addAttribute(.font, value: font, range: NSRange(location: 0, length: attributeString.length))
         attributeString.yy_lineSpacing = 5
         attributeString.yy_font = font

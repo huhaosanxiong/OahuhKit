@@ -144,7 +144,7 @@ class MessageModel {
     init(message: Message) {
         
         self.message = message
-        self.time = Date(timeIntervalSince1970: message.timestamp).convertTo(region: .current).toFormat("yyyy-MM-dd HH:mm")
+        self.time = Date(timeIntervalSince1970: message.timestamp).convertTo(region: .current).toFormat("yyyy年MM月dd日 HH:mm")
     }
     
     func setTextHighlight() {
