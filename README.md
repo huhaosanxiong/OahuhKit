@@ -1,2 +1,2 @@
-# MyProject
+# OahuhKit
 Run 'pod install'
