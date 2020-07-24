@@ -11,6 +11,10 @@
 		E1007B872182F28000E72898 /* MJRefreshableTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1007B862182F28000E72898 /* MJRefreshableTool.swift */; };
 		E12C5768218FF5F100CFE480 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C5767218FF5F100CFE480 /* APIProvider.swift */; };
 		E12C576A218FF60A00CFE480 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C5769218FF60A00CFE480 /* Resource.swift */; };
+		E13D204924CADAF80097AA31 /* MessageTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D204824CADAF70097AA31 /* MessageTextCell.swift */; };
+		E13D204B24CADC0C0097AA31 /* MessageImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D204A24CADC0C0097AA31 /* MessageImageCell.swift */; };
+		E13D204D24CADD190097AA31 /* MessageCustomObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D204C24CADD190097AA31 /* MessageCustomObject.swift */; };
+		E13D204F24CADF030097AA31 /* MessageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D204E24CADF030097AA31 /* MessageConverter.swift */; };
 		E170B34F24C929BD003652C6 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E170B34E24C929BD003652C6 /* Message.swift */; };
 		E170B35124C92BA9003652C6 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E170B35024C92BA9003652C6 /* Session.swift */; };
 		E170B35324C96B22003652C6 /* String+Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = E170B35224C96B22003652C6 /* String+Emoji.swift */; };
@@ -87,6 +91,10 @@
 		E1007B862182F28000E72898 /* MJRefreshableTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshableTool.swift; sourceTree = "<group>"; };
 		E12C5767218FF5F100CFE480 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		E12C5769218FF60A00CFE480 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		E13D204824CADAF70097AA31 /* MessageTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTextCell.swift; sourceTree = "<group>"; };
+		E13D204A24CADC0C0097AA31 /* MessageImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageImageCell.swift; sourceTree = "<group>"; };
+		E13D204C24CADD190097AA31 /* MessageCustomObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCustomObject.swift; sourceTree = "<group>"; };
+		E13D204E24CADF030097AA31 /* MessageConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageConverter.swift; sourceTree = "<group>"; };
 		E170B34E24C929BD003652C6 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E170B35024C92BA9003652C6 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		E170B35224C96B22003652C6 /* String+Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Emoji.swift"; sourceTree = "<group>"; };
@@ -195,7 +203,9 @@
 			isa = PBXGroup;
 			children = (
 				E170B34E24C929BD003652C6 /* Message.swift */,
+				E13D204C24CADD190097AA31 /* MessageCustomObject.swift */,
 				E170B35024C92BA9003652C6 /* Session.swift */,
+				E13D204E24CADF030097AA31 /* MessageConverter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +215,8 @@
 			children = (
 				E170B34D24C922CB003652C6 /* InputView */,
 				E170B35C24C98412003652C6 /* MessageCell.swift */,
+				E13D204824CADAF70097AA31 /* MessageTextCell.swift */,
+				E13D204A24CADC0C0097AA31 /* MessageImageCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -715,9 +727,11 @@
 				E1794E5E24B7247F00230680 /* DashBoardController.swift in Sources */,
 				E170B34F24C929BD003652C6 /* Message.swift in Sources */,
 				E1794E9024B724A700230680 /* ChartsViewController.swift in Sources */,
+				E13D204B24CADC0C0097AA31 /* MessageImageCell.swift in Sources */,
 				E1794E6024B7247F00230680 /* LaunchView.swift in Sources */,
 				E1794E7424B7247F00230680 /* GithubModel.swift in Sources */,
 				E1794E5A24B7247F00230680 /* GCDController.swift in Sources */,
+				E13D204924CADAF80097AA31 /* MessageTextCell.swift in Sources */,
 				E1794E7E24B7247F00230680 /* JokeListCell.swift in Sources */,
 				E12C576A218FF60A00CFE480 /* Resource.swift in Sources */,
 				E1CDE31320B27499009E04D1 /* BaseViewController.swift in Sources */,
@@ -747,6 +761,7 @@
 				E1A0FED220B273C400044403 /* ImageAsset.swift in Sources */,
 				E1794E7324B7247F00230680 /* LeastCoinProblemViewController.swift in Sources */,
 				E1794E6724B7247F00230680 /* CircleView.swift in Sources */,
+				E13D204F24CADF030097AA31 /* MessageConverter.swift in Sources */,
 				E12C5768218FF5F100CFE480 /* APIProvider.swift in Sources */,
 				E1B70ACB24B409AD00E8200B /* ToolObject.swift in Sources */,
 				E1794E9624B724A700230680 /* HoverCollectionController.swift in Sources */,
@@ -777,6 +792,7 @@
 				E1794E9324B724A700230680 /* FoldingCellViewController.swift in Sources */,
 				E170B35F24C986CD003652C6 /* BaseTableViewCell.swift in Sources */,
 				E1794E9424B724A700230680 /* FoldingListCell.swift in Sources */,
+				E13D204D24CADD190097AA31 /* MessageCustomObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -36,5 +36,6 @@ target 'MyProject' do
     pod 'SDWebImage/GIF'
     pod 'YYText'
     pod 'YYImage'
+    pod 'TZImagePickerController'
     
 end

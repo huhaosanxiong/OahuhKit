@@ -64,7 +64,7 @@ class HomeTableViewController: BaseViewController {
         //Config
         let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, SectionDataModel>>(configureCell: { (dataSource, tableView, indexPath, model) -> UITableViewCell in
             
-            let cell = tableView.cell(ofType: UITableViewCell.self)
+            let cell = tableView.cell(ofType: UITableViewCell.self, for: indexPath)
             cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
             cell.textLabel?.text = model.title
             return cell

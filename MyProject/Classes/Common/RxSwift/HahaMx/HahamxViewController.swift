@@ -84,7 +84,7 @@ class HahamxViewController: BaseViewController, Refreshable {
         //Configure
         let dataSource = RxTableViewSectionedReloadDataSource<JokeListSection>(configureCell: {(dataSource, tableView, indexPath, model) -> UITableViewCell in
             
-            let cell = tableView.cell(ofType: JokeListCell.self)
+            let cell = tableView.cell(ofType: JokeListCell.self, for: indexPath)
             cell.model = model
             return cell
         })

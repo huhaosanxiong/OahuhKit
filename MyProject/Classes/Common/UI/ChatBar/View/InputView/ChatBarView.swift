@@ -46,7 +46,7 @@ class ChatBarView: UIView {
     
     private var emojiBoardView: ChatBarFaceView!
     
-    private var moreBoardView: ChatBarMoreView!
+    public var moreBoardView: ChatBarMoreView!
     
     private var textLineHeight: CGFloat = 0.0
     

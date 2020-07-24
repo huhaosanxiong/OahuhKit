@@ -33,14 +33,6 @@ class MessageCell: BaseTableViewCell {
             
             userContentView.frame = CGRect(x: 0, y: contentViewOriginY, width: SCREEN_WIDTH, height: contentViewHeight)
             
-            switch msgModel.message.messageType {
-            case .text:
-                // 文本
-                textContentView.frame = msgModel.contentFrame
-                textContentView.msgModel = msgModel
-            default:
-                break
-            }
         }
     }
     
@@ -50,13 +42,14 @@ class MessageCell: BaseTableViewCell {
     var notiView: MessageNotifyContentView!
     var bubbleView: UIView!
     var headImageView: UIImageView!
-    var textContentView: MessageTextContentView!
     
 
     override func configureUI() {
         
         backgroundColor = .clear
         contentView.backgroundColor = .clear
+        
+        selectionStyle = .none
             
         //1.通知或者时间
         notiView = MessageNotifyContentView(frame: .zero)
@@ -71,13 +64,11 @@ class MessageCell: BaseTableViewCell {
         headImageView.isUserInteractionEnabled = true
         headImageView.contentMode = .scaleAspectFill
 
-        //4.内容
-        textContentView = MessageTextContentView(frame: .zero)
         
         contentView.addSubview(notiView)
         contentView.addSubview(userContentView)
         userContentView.addSubview(headImageView)
-        userContentView.addSubview(textContentView)
+        
         
     }
 
@@ -112,16 +103,7 @@ class MessageBaseContentView: UIView {
     
     var bubbleImageView: UIImageView!
     
-    var msgModel: MessageModel = MessageModel(message: Message()) {
-        
-        didSet {
-            
-            bubbleImageView.frame = CGRect(x: 0, y: 0, width: msgModel.contentFrame.width, height: msgModel.contentFrame.height)
-            
-            bubbleImageView.image = resizeImage(imgName: msgModel.message.isOutgoingMsg ? "bubble_box_right_n" : "bubble_box_left_n")
-        }
-    }
-    
+    var msgModel: MessageModel = MessageModel(message: Message())
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -130,6 +112,13 @@ class MessageBaseContentView: UIView {
         
         addSubview(bubbleImageView)
 
+    }
+    
+    func setBubbleFrame(msgModel: MessageModel) {
+        
+        bubbleImageView.frame = CGRect(x: 0, y: 0, width: msgModel.contentFrame.width, height: msgModel.contentFrame.height)
+        
+        bubbleImageView.image = resizeImage(imgName: msgModel.message.isOutgoingMsg ? "bubble_box_right_n" : "bubble_box_left_n")
     }
     
     func resizeImage(imgName: String) -> UIImage {
@@ -153,39 +142,3 @@ class MessageBaseContentView: UIView {
 }
 
 
-/// 文本类型view
-class MessageTextContentView: MessageBaseContentView {
-    
-    var textLabel: YYLabel!
-    
-    override var msgModel: MessageModel {
-        
-        didSet {
-            
-            super.msgModel = msgModel
-            
-            textLabel.attributedText = msgModel.attributeText
-        }
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        textLabel = YYLabel()
-        textLabel.font = UIFont.systemFont(ofSize: 14)
-        textLabel.numberOfLines = 0
-        textLabel.textColor = ColorHex("#333333")
-        textLabel.textContainerInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
-        
-        addSubview(textLabel)
-        
-        textLabel.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}

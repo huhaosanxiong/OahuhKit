@@ -49,6 +49,7 @@ PODS:
   - SnapKit (4.2.0)
   - SVProgressHUD (2.2.5)
   - SwiftDate (6.1.0)
+  - TZImagePickerController (3.4.1)
   - YYImage (1.0.4):
     - YYImage/Core (= 1.0.4)
   - YYImage/Core (1.0.4)
@@ -78,6 +79,7 @@ DEPENDENCIES:
   - SnapKit
   - SVProgressHUD
   - SwiftDate
+  - TZImagePickerController
   - YYImage
   - YYText
 
@@ -110,6 +112,7 @@ SPEC REPOS:
     - KakaJSON
     - RandomColorSwift
     - SwiftDate
+    - TZImagePickerController
     - YYImage
     - YYText
 
@@ -140,9 +143,10 @@ SPEC CHECKSUMS:
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
+  TZImagePickerController: 4e7a7b3d314f8a75f11042931dfd9d34c270c7db
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 42368b972c65ae292d4b6a1573fc44a1aaf7d380
+PODFILE CHECKSUM: b1e1998a54e0623c2e54750f96b29143ddbf1696
 
 COCOAPODS: 1.8.3

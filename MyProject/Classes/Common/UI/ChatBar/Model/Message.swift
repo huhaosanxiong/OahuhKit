@@ -50,12 +50,7 @@ enum MessageType: Int {
     case custom         = 100
 }
 
-/**
- *  消息体协议
- */
-protocol MessageObject {
-    
-}
+
 
 
 /// 消息结构
@@ -213,6 +208,22 @@ class MessageModel {
             
             contentFrame = CGRect(x: textX, y: textY, width: afterSize.width, height: afterSize.height)
             
+        case .image:
+            //图片消息
+            let size = imageContentSize(cellWidth: SCREEN_WIDTH)
+            
+            let afterSize = CGSize(width: size.width + 20, height: size.height + 20)
+            
+            if message.isOutgoingMsg {
+                // 自己发的
+                textX = SCREEN_WIDTH - 1.5 * padding - iconWidth - afterSize.width
+            }else {
+                //别人发的
+                textX = 1.5 * padding + iconWidth
+            }
+            
+            contentFrame = CGRect(x: textX, y: textY, width: afterSize.width, height: afterSize.height)
+            
         default:
             break
             
@@ -244,22 +255,93 @@ class MessageModel {
         //加个10 cell高度太小 、太挤
         cellHeight = max(iconMaxY, textMaxY) + notiHeight
     }
+    
+    
+    
 }
 
-/// 消息构造器
-class MessageConverter {
+extension MessageModel {
     
-    /// 构造文本消息
-    /// - Parameter text: text
-    /// - Returns: Message
-    class func messageWithText(text: String) -> Message {
+    func imageContentSize(cellWidth: CGFloat) -> CGSize {
         
-        let msg = Message()
-        msg.messageType = .text
-        msg.text = text
-        msg.apnsContent = text
-        msg.timestamp = Date().timeIntervalSince1970
+        let attachmentImageMinWidth  = cellWidth/2.0
+        let attachmentImageMinHeight = cellWidth/2.0
+        let attachmemtImageMaxWidth  = cellWidth/2.0
+        let attachmentImageMaxHeight = cellWidth/2.0
         
-        return msg
+        guard let imgObject = message.messageObject as? MessageImageObject else { return .zero }
+        
+        var imageSize: CGSize = .zero
+        
+        imageSize = imgObject.size
+        
+        let contentSize = resizeImage(originSize: imageSize,
+                                      imageMinSize: CGSize(width: attachmentImageMinWidth, height: attachmentImageMinHeight),
+                                      imageMaxSize: CGSize(width: attachmemtImageMaxWidth, height: attachmentImageMaxHeight))
+        
+        return contentSize
     }
+    
+    func resizeImage(originSize: CGSize, imageMinSize: CGSize, imageMaxSize: CGSize) -> CGSize{
+        
+        var size: CGSize = .zero
+        let imageWidth = originSize.width
+        let imageHeight = originSize.height
+        let imageMinWidth = imageMinSize.width
+        let imageMinHeight = imageMinSize.height
+        let imageMaxWidth = imageMaxSize.width
+        let imageMaxHeight = imageMaxSize.height
+        
+        //宽图
+        if imageWidth > imageHeight {
+            size.height = imageMinHeight //高度取最小高度
+            size.width = imageWidth * imageMinHeight / imageHeight
+            if size.width > imageMaxWidth {
+                size.width = imageMaxWidth
+
+                if imageWidth > 3 * imageHeight {
+                    //图片过宽
+                    //不按等比例缩放
+                    size.height = imageMaxWidth / 3.0
+                }else {
+                    size.height = imageMaxWidth * imageHeight / imageWidth
+                }
+            }
+        }else if imageWidth < imageHeight {
+            //高图
+            size.width = imageMinWidth
+            size.height = imageHeight * imageMinWidth / imageWidth
+            if size.height > imageMaxHeight {
+                size.height = imageMaxHeight
+
+                if imageHeight > 3 * imageWidth {
+                    //图片过高
+                    //不按等比例缩放,以防很窄
+                    size.width = imageMaxHeight / 3.0
+                } else {
+                    size.width = imageMaxHeight * imageWidth / imageHeight
+                }
+            }
+        }else {
+            //方图
+            if imageWidth > imageMaxWidth {
+                
+                size.width = imageMaxWidth
+                size.height = imageMaxHeight
+                
+            } else if imageWidth > imageMinWidth {
+                
+                size.width = imageWidth
+                size.height = imageHeight
+                
+            } else {
+                
+                size.width = imageMinWidth
+                size.height = imageMinHeight
+            }
+        }
+        
+        return size
+    }
+    
 }

@@ -27,8 +27,8 @@ extension UITableViewHeaderFooterView: Reusable {}
 
 extension UITableView {
     
-    func cell<T: UITableViewCell>(ofType cellType: T.Type = T.self, reuserIdentifier: String = T.reuserIdentifier) -> T {
-        guard let cell = self.dequeueReusableCell(withIdentifier: T.reuserIdentifier) as? T else {
+    func cell<T: UITableViewCell>(ofType cellType: T.Type = T.self, for indexPath: IndexPath, reuserIdentifier: String = T.reuserIdentifier) -> T {
+        guard let cell = self.dequeueReusableCell(withIdentifier: T.reuserIdentifier, for: indexPath) as? T else {
             fatalError()
         }
         return cell

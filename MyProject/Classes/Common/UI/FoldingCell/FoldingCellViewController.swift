@@ -71,7 +71,7 @@ extension FoldingCellViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.cell(ofType: FoldingListCell.self) 
+        let cell = tableView.cell(ofType: FoldingListCell.self, for: indexPath) 
         cell.backgroundColor = .clear
         return cell
     }

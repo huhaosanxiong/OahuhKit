@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TZImagePickerController
 
 class CharBarViewController: BaseViewController {
     
@@ -18,14 +19,15 @@ class CharBarViewController: BaseViewController {
         tableview.backgroundColor = ColorHex("#F0F0F5")
         tableview.delegate = self
         tableview.dataSource = self
-        tableview.register(MessageCell.self, forCellReuseIdentifier: "MessageCell")
+        tableview.registerCell(ofType: MessageTextViewCell.self)
+        tableview.registerCell(ofType: MessageImageCell.self)
         tableview.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         tableview.separatorStyle = .none
         tableview.backgroundView = UIImageView(image: Asset.background.image)
         return tableview
     }()
     
-    private var charBar: ChatBarView!
+    private var chatBar: ChatBarView!
     
     // 安全区高度
     var topInset: CGFloat = 0.0
@@ -60,12 +62,13 @@ class CharBarViewController: BaseViewController {
                                  height: SCREEN_HEIGHT - ChatBarHeight - topInset - bottomInset)
         view.addSubview(tableView)
 
-        charBar = ChatBarView(frame: CGRect(x: 0,
+        chatBar = ChatBarView(frame: CGRect(x: 0,
                                             y: SCREEN_HEIGHT - ChatBarHeight - bottomInset,
                                             width: SCREEN_WIDTH,
                                             height: ChatBarHeight))
-        charBar.delegate = self
-        view.addSubview(charBar)
+        chatBar.delegate = self
+        chatBar.moreBoardView.delegate = self
+        view.addSubview(chatBar)
     }
     
     func loadData() {
@@ -144,6 +147,21 @@ extension CharBarViewController: ChatBarViewDelegate {
 
 }
 
+extension CharBarViewController: ChatBarMoreViewDelegate {
+    
+    func clickFunction(type: MessageMoreFunctionType) {
+        switch type {
+        case .picture:
+            
+            let tz = TZImagePickerController(maxImagesCount: 9, columnNumber: 3, delegate: self)!
+            
+            present(tz, animated: true, completion: nil)
+        default:
+            break
+        }
+    }
+}
+
 extension CharBarViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -153,8 +171,18 @@ extension CharBarViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let model = dataSource[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell", for: indexPath) as! MessageCell
-        cell.selectionStyle = .none
+        
+        var cell: MessageCell!
+        
+        switch model.message.messageType {
+        case .text:
+            cell = tableView.cell(ofType: MessageTextViewCell.self, for: indexPath)
+        case .image:
+            cell = tableView.cell(ofType: MessageImageCell.self, for: indexPath)
+            
+        default:
+            break
+        }
         
         cell.msgModel = model
         
@@ -169,7 +197,32 @@ extension CharBarViewController: UITableViewDelegate, UITableViewDataSource {
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         
-        charBar.chatBarDismiss()
+        chatBar.chatBarDismiss()
     }
     
+}
+
+extension CharBarViewController: TZImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [Any]!, isSelectOriginalPhoto: Bool) {
+        
+        let image = photos[0]
+        
+        // 构造Message
+        let message = MessageConverter.messageWithImage(image: image)
+        message.messageId = UUID().uuidString
+        
+        // 构造MessageModel
+        let messageModel = MessageModel(message: message)
+        
+        if let lastMessageModel = dataSource.last {
+            messageModel.hideTimeLabel = messageModel.time == lastMessageModel.time
+        }
+        
+        messageModel.getFrame()
+        
+        dataSource.append(messageModel)
+        
+        tableView.insertRows(at: [IndexPath(row: dataSource.count - 1, section: 0)], with: .none)
+    }
 }

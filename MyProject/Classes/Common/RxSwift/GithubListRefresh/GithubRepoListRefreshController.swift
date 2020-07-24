@@ -48,7 +48,7 @@ class GithubRepoListRefreshController: BaseViewController, Refreshable {
         //Configure
         let dataSource = RxTableViewSectionedReloadDataSource<GithubListSection>(configureCell: {(dataSource, tableView, indexPath, model) -> UITableViewCell in
             
-            let cell = tableView.cell(ofType: GithubRepoListCell.self)
+            let cell = tableView.cell(ofType: GithubRepoListCell.self, for: indexPath)
             cell.model = model
             return cell
         })
