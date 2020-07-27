@@ -48,13 +48,7 @@ class ChatBarView: UIView {
     
     public var moreBoardView: ChatBarMoreView!
     
-    private var textLineHeight: CGFloat = 0.0
-    
-    private var primeTextHeight: CGFloat = 40.0
-    
     private var space: CGFloat = 7.0
-    
-    private let maxLineCount = 3
     
     private var keyboardFrame: CGRect = .zero
     
@@ -74,6 +68,21 @@ class ChatBarView: UIView {
             return 0.0
         }
     }()
+    
+    /// 输入框最小高度
+    let minHeight: CGFloat = 40
+    /// 输入框最大高度
+    let maxHeight: CGFloat = 100
+    /// textview内容高度
+    var contentHeight: CGFloat = 0
+    /// textview高度
+    var countedHeight: CGFloat {
+        min(max(minHeight, contentHeight), maxHeight)
+    }
+    /// bar 的高度
+    var chatBarHeight: CGFloat {
+        countedHeight + 2 * space
+    }
     
     
     override init(frame: CGRect) {
@@ -97,17 +106,9 @@ class ChatBarView: UIView {
         textView.font = UIFont.systemFont(ofSize: 16.0)
         textView.returnKeyType = .send
         textView.enablesReturnKeyAutomatically = true
-        textLineHeight = textView.font!.lineHeight
-        let height = getStringRectInTextView(string: "Hello", textView: textView).height
-        DLog("height = \(height)")
-        DLog("textView.textContainerInset = \(textView.textContainerInset)")
-        let inset = (40 - height) / 2.0 + 8
-        textView.textContainerInset = UIEdgeInsets(top: inset, left: 5, bottom: inset, right: 5)
         textView.frame = CGRect(x: space, y: space, width: bounds.width - space * 3 - 2 * 40, height: 40)
         textView.layer.cornerRadius = 3.0
         textView.layer.masksToBounds = true
-        textView.layoutManager.allowsNonContiguousLayout = false
-        textView.isScrollEnabled = false
         
         //emojiButton
         emojiButton = UIButton()
@@ -217,87 +218,19 @@ class ChatBarView: UIView {
     */
     private func refreshTextViewSize(textView: UITextView) {
         
-        let size = getStringRectInTextView(string: textView.text, textView: textView)
-        let maxHeight = primeTextHeight + CGFloat(maxLineCount - 1) * textLineHeight
+        contentHeight = textView.contentSize.height
         
-        //超过最大高度
-        if size.height > maxHeight {
+        let frame = textView.frame
+        textView.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width, height: countedHeight)
+        
+        UIView.animate(withDuration: 0.25) {
+            self.frame = CGRect(x: 0, y: SCREEN_HEIGHT - self.keyboardFrame.size.height - self.chatBarHeight, width: SCREEN_WIDTH, height: self.chatBarHeight)
             
-            let frame = textView.frame
-            textView.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width, height: maxHeight)
-
-            let chatBarHeight = textView.bounds.height + 2 * space
-
-            if emojiButton.isSelected {
-                //如果是点击表情键盘输入的情况下
-                self.frame = CGRect(x: 0, y: SCREEN_HEIGHT - FunctionViewHeight - chatBarHeight - bottomInset, width: SCREEN_WIDTH, height: chatBarHeight)
-            }else {
-                self.frame = CGRect(x: 0, y: SCREEN_HEIGHT - keyboardFrame.size.height - chatBarHeight, width: SCREEN_WIDTH, height: chatBarHeight)
-            }
-
-            textView.isScrollEnabled = true
-
-            setNeedsLayout()
-            layoutIfNeeded()
-
-            if let delegate = delegate {
+            if let delegate = self.delegate {
                 delegate.chatBarFrameDidChanged(frame: self.frame)
             }
         }
         
-        //DLog("textView.bounds.height = \(textView.bounds.height)")
-        //DLog("size.height = \(size.height)")
-        
-        if size.height > textView.bounds.height {
-            // 文字的实际高度已经超过了输入框，需要变大
-            if size.height <= maxHeight {
-                //如果还没到达最大行数
-                textView.isScrollEnabled = false
-                DLog("高度改变 刷新")
-                
-                UIView.animate(withDuration: 0.25, animations: {
-                    
-                    self.frame = CGRect(x: self.frame.origin.x,
-                                        y: self.frame.origin.y - size.height + textView.bounds.height,
-                                        width: self.bounds.width,
-                                        height: size.height + 2 * self.space)
-                    let frame = textView.frame
-                    textView.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width, height: size.height)
-                    
-                    self.setNeedsLayout()
-                    self.layoutIfNeeded()
-                    
-                }) { _ in
-                    if let delegate = self.delegate {
-                        delegate.chatBarFrameDidChanged(frame: self.frame)
-                    }
-                }
-            }else {
-                //已经到达最大行数
-                textView.isScrollEnabled = true
-                textView.scrollRangeToVisible(NSRange(location: textView.text.count - 1, length: 1))
-            }
-            
-        }else if textView.frame.size.height > size.height {
-            
-            UIView.animate(withDuration: 0.25, animations: {
-                
-                self.frame = CGRect(x: self.frame.origin.x,
-                                    y: self.frame.origin.y - size.height + textView.bounds.height,
-                                    width: self.bounds.width,
-                                    height: size.height + 2 * self.space)
-                let frame = textView.frame
-                textView.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width, height: size.height)
-                
-                self.setNeedsLayout()
-                self.layoutIfNeeded()
-                
-            }) { _ in
-                if let delegate = self.delegate {
-                    delegate.chatBarFrameDidChanged(frame: self.frame)
-                }
-            }
-        }
     }
     
     required init?(coder: NSCoder) {

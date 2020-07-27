@@ -133,7 +133,7 @@ extension CharBarViewController: ChatBarViewDelegate {
     
     func chatBarFrameDidChanged(frame: CGRect) {
         
-        DLog("chatBarFrame = \(frame)")
+        //DLog("chatBarFrame = \(frame)")
         
         let barMinY = frame.minY
         
