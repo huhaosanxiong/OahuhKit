@@ -224,5 +224,7 @@ extension CharBarViewController: TZImagePickerControllerDelegate {
         dataSource.append(messageModel)
         
         tableView.insertRows(at: [IndexPath(row: dataSource.count - 1, section: 0)], with: .none)
+        
+        chatBar.chatBarDismiss()
     }
 }

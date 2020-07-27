@@ -111,12 +111,17 @@ class MessageBaseContentView: UIView {
         bubbleImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.width, height: frame.height))
         
         addSubview(bubbleImageView)
+        
+        bubbleImageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
 
     }
     
     func setBubbleFrame(msgModel: MessageModel) {
         
-        bubbleImageView.frame = CGRect(x: 0, y: 0, width: msgModel.contentFrame.width, height: msgModel.contentFrame.height)
+//        bubbleImageView.frame = CGRect(x: 0, y: 0, width: msgModel.contentFrame.width, height: msgModel.contentFrame.height)
         
         bubbleImageView.image = resizeImage(imgName: msgModel.message.isOutgoingMsg ? "bubble_box_right_n" : "bubble_box_left_n")
     }

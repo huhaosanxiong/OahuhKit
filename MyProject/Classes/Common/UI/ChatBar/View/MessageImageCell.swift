@@ -42,7 +42,7 @@ class MessageImageContentView: MessageBaseContentView {
 
             setBubbleFrame(msgModel: msgModel)
             
-            imageView.frame = CGRect(x: 10, y: 10, width: msgModel.contentFrame.width - 20, height: msgModel.contentFrame.height - 20)
+//            imageView.frame = CGRect(x: 10, y: 10, width: msgModel.contentFrame.width - 20, height: msgModel.contentFrame.height - 20)
             
             if let messageObject = msgModel.message.messageObject as? MessageImageObject {
                 imageView.image = messageObject.image
@@ -62,7 +62,7 @@ class MessageImageContentView: MessageBaseContentView {
         addSubview(imageView)
         
         imageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
         }
 
     }
