@@ -104,6 +104,8 @@ class CharBarViewController: BaseViewController {
         
         if dataSource.count == 0 { return }
         
+        //reloadData会发生闪烁
+        //tableView.reloadData()
         tableView.scrollToRow(at: IndexPath(row: dataSource.count - 1, section: 0), at: .bottom, animated: animte)
     }
 }
@@ -142,7 +144,7 @@ extension CharBarViewController: ChatBarViewDelegate {
                                       width: SCREEN_WIDTH,
                                       height: barMinY - self.topInset)
         
-        self.tableViewScrollToBottom(animte: true)
+        tableViewScrollToBottom(animte: false)
     }
 
 }
@@ -154,7 +156,6 @@ extension CharBarViewController: ChatBarMoreViewDelegate {
         case .picture:
             
             let tz = TZImagePickerController(maxImagesCount: 9, columnNumber: 3, delegate: self)!
-            
             present(tz, animated: true, completion: nil)
         default:
             break
@@ -193,6 +194,11 @@ extension CharBarViewController: UITableViewDelegate, UITableViewDataSource {
         
         let model = dataSource[indexPath.row]
         return model.cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        chatBar.chatBarDismiss()
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

@@ -70,11 +70,11 @@ class ChatBarView: UIView {
     }()
     
     /// 输入框最小高度
-    let minHeight: CGFloat = 40
+    let minHeight: CGFloat = 40.0
     /// 输入框最大高度
-    let maxHeight: CGFloat = 100
+    let maxHeight: CGFloat = 110.0
     /// textview内容高度
-    var contentHeight: CGFloat = 0
+    var contentHeight: CGFloat = 0.0
     /// textview高度
     var countedHeight: CGFloat {
         min(max(minHeight, contentHeight), maxHeight)
@@ -109,7 +109,8 @@ class ChatBarView: UIView {
         textView.frame = CGRect(x: space, y: space, width: bounds.width - space * 3 - 2 * 40, height: 40)
         textView.layer.cornerRadius = 3.0
         textView.layer.masksToBounds = true
-        
+        textView.layoutManager.allowsNonContiguousLayout = false
+
         //emojiButton
         emojiButton = UIButton()
         emojiButton.setImage(UIImage(named: "message_expression_n"), for: .normal)
@@ -224,7 +225,18 @@ class ChatBarView: UIView {
         textView.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width, height: countedHeight)
         
         UIView.animate(withDuration: 0.25) {
-            self.frame = CGRect(x: 0, y: SCREEN_HEIGHT - self.keyboardFrame.size.height - self.chatBarHeight, width: SCREEN_WIDTH, height: self.chatBarHeight)
+            
+            var originY: CGFloat = 0
+            
+            if self.emojiButton.isSelected {
+                //如果是点击表情键盘输入的情况下
+                originY = SCREEN_HEIGHT - FunctionViewHeight - self.chatBarHeight - self.bottomInset
+            }else {
+                // 键盘输入
+                originY = SCREEN_HEIGHT - self.keyboardFrame.size.height - self.chatBarHeight
+            }
+
+            self.frame = CGRect(x: 0, y: originY, width: SCREEN_WIDTH, height: self.chatBarHeight)
             
             if let delegate = self.delegate {
                 delegate.chatBarFrameDidChanged(frame: self.frame)
@@ -512,13 +524,13 @@ extension ChatBarView {
         textView.text = ""
         
         textViewDidChange(textView)
-        
-        let bottomHeight = (emojiButton.isSelected || moreButton.isSelected) ? FunctionViewHeight + bottomInset : keyboardFrame.bounds.height
-        
-        setViewFrame(frame: CGRect(x: 0,
-                                   y: SCREEN_HEIGHT - bottomHeight - ChatBarHeight,
-                                   width: SCREEN_WIDTH,
-                                   height: ChatBarHeight))
+//        
+//        let bottomHeight = emojiButton.isSelected ? FunctionViewHeight + bottomInset : keyboardFrame.bounds.height
+//
+//        setViewFrame(frame: CGRect(x: 0,
+//                                   y: SCREEN_HEIGHT - bottomHeight - ChatBarHeight,
+//                                   width: SCREEN_WIDTH,
+//                                   height: ChatBarHeight))
     }
     
 }
@@ -533,6 +545,8 @@ extension ChatBarView: ChatBarFaceViewDelegate {
         textView.text = textView.text + name
         
         textViewDidChange(textView)
+        
+        textView.scrollRangeToVisible(NSRange(location: textView.text.count, length: 1))
     }
     
     /// 点击删除按钮
