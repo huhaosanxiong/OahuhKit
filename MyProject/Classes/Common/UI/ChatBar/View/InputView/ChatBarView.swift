@@ -524,13 +524,7 @@ extension ChatBarView {
         textView.text = ""
         
         textViewDidChange(textView)
-//        
-//        let bottomHeight = emojiButton.isSelected ? FunctionViewHeight + bottomInset : keyboardFrame.bounds.height
-//
-//        setViewFrame(frame: CGRect(x: 0,
-//                                   y: SCREEN_HEIGHT - bottomHeight - ChatBarHeight,
-//                                   width: SCREEN_WIDTH,
-//                                   height: ChatBarHeight))
+
     }
     
 }

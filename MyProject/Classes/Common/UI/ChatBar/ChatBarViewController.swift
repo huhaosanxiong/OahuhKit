@@ -1,5 +1,5 @@
 //
-//  CharBarViewController.swift
+//  ChatBarViewController.swift
 //  MyProject
 //
 //  Created by huhsx on 2020/7/21.
@@ -9,7 +9,7 @@
 import UIKit
 import TZImagePickerController
 
-class CharBarViewController: BaseViewController {
+class ChatBarViewController: BaseViewController {
     
     let manager = ChatBarDataManager.shared
     
@@ -51,7 +51,7 @@ class CharBarViewController: BaseViewController {
         
         if #available(iOS 11.0, *) {
             bottomInset = CGFloat(UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0.0)
-            topInset = CGFloat(UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0.0)
+            topInset = CGFloat(UIApplication.shared.windows.first?.safeAreaInsets.top ?? 0.0) + 44
         } else {
             // Fallback on earlier versions
         }
@@ -111,7 +111,7 @@ class CharBarViewController: BaseViewController {
 }
 
 // MARK: - ChatBarViewDelegate
-extension CharBarViewController: ChatBarViewDelegate {
+extension ChatBarViewController: ChatBarViewDelegate {
     
     func sendMessage(text: String) {
         
@@ -149,7 +149,7 @@ extension CharBarViewController: ChatBarViewDelegate {
 
 }
 
-extension CharBarViewController: ChatBarMoreViewDelegate {
+extension ChatBarViewController: ChatBarMoreViewDelegate {
     
     func clickFunction(type: MessageMoreFunctionType) {
         switch type {
@@ -163,7 +163,7 @@ extension CharBarViewController: ChatBarMoreViewDelegate {
     }
 }
 
-extension CharBarViewController: UITableViewDelegate, UITableViewDataSource {
+extension ChatBarViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
@@ -208,7 +208,7 @@ extension CharBarViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
-extension CharBarViewController: TZImagePickerControllerDelegate {
+extension ChatBarViewController: TZImagePickerControllerDelegate {
     
     func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [Any]!, isSelectOriginalPhoto: Bool) {
         

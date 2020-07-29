@@ -66,7 +66,7 @@
 		E17A1F0224C683C70087834E /* ChatBarMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A1F0124C683C70087834E /* ChatBarMoreView.swift */; };
 		E17A1F0424C6865F0087834E /* NIMKitResouce.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E17A1F0324C6865F0087834E /* NIMKitResouce.bundle */; };
 		E17A1F0624C6869D0087834E /* ChatBarDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A1F0524C6869D0087834E /* ChatBarDataManager.swift */; };
-		E17A1F0824C68E790087834E /* CharBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A1F0724C68E790087834E /* CharBarViewController.swift */; };
+		E17A1F0824C68E790087834E /* ChatBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17A1F0724C68E790087834E /* ChatBarViewController.swift */; };
 		E1A0FEA720B26E9700044403 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0FEA620B26E9700044403 /* AppDelegate.swift */; };
 		E1A0FEC620B272F600044403 /* ThirdReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0FEBF20B272F500044403 /* ThirdReference.swift */; };
 		E1A0FEC720B272F600044403 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A0FEC120B272F500044403 /* Log.swift */; };
@@ -147,7 +147,7 @@
 		E17A1F0124C683C70087834E /* ChatBarMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBarMoreView.swift; sourceTree = "<group>"; };
 		E17A1F0324C6865F0087834E /* NIMKitResouce.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NIMKitResouce.bundle; sourceTree = "<group>"; };
 		E17A1F0524C6869D0087834E /* ChatBarDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBarDataManager.swift; sourceTree = "<group>"; };
-		E17A1F0724C68E790087834E /* CharBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharBarViewController.swift; sourceTree = "<group>"; };
+		E17A1F0724C68E790087834E /* ChatBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBarViewController.swift; sourceTree = "<group>"; };
 		E1A0FEA320B26E9700044403 /* MyProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A0FEA620B26E9700044403 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1A0FEBF20B272F500044403 /* ThirdReference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdReference.swift; sourceTree = "<group>"; };
@@ -429,7 +429,7 @@
 		E17A1EFC24C683490087834E /* ChatBar */ = {
 			isa = PBXGroup;
 			children = (
-				E17A1F0724C68E790087834E /* CharBarViewController.swift */,
+				E17A1F0724C68E790087834E /* ChatBarViewController.swift */,
 				E170B36024C99986003652C6 /* View */,
 				E170B35B24C983EB003652C6 /* Model */,
 				E17A1F0524C6869D0087834E /* ChatBarDataManager.swift */,
@@ -787,7 +787,7 @@
 				E1794E7524B7247F00230680 /* GithubSearchService.swift in Sources */,
 				E1794E7824B7247F00230680 /* GithubRepoListCell.swift in Sources */,
 				E1794E6824B7247F00230680 /* WaveLodingViewController.swift in Sources */,
-				E17A1F0824C68E790087834E /* CharBarViewController.swift in Sources */,
+				E17A1F0824C68E790087834E /* ChatBarViewController.swift in Sources */,
 				E1794E6224B7247F00230680 /* PopTransitionViewController.swift in Sources */,
 				E1794E9324B724A700230680 /* FoldingCellViewController.swift in Sources */,
 				E170B35F24C986CD003652C6 /* BaseTableViewCell.swift in Sources */,
