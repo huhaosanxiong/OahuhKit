@@ -20,6 +20,8 @@
 		E170B35324C96B22003652C6 /* String+Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = E170B35224C96B22003652C6 /* String+Emoji.swift */; };
 		E170B35D24C98412003652C6 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E170B35C24C98412003652C6 /* MessageCell.swift */; };
 		E170B35F24C986CD003652C6 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E170B35E24C986CD003652C6 /* BaseTableViewCell.swift */; };
+		E177B84924D9546200C76742 /* LeetCode_7_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E177B84824D9546200C76742 /* LeetCode_7_Controller.swift */; };
+		E177B84B24D9594A00C76742 /* LeetCode_70_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E177B84A24D9594A00C76742 /* LeetCode_70_Controller.swift */; };
 		E1794E5924B7247F00230680 /* DanmuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1794E1F24B7247F00230680 /* DanmuViewController.swift */; };
 		E1794E5A24B7247F00230680 /* GCDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1794E2124B7247F00230680 /* GCDController.swift */; };
 		E1794E5B24B7247F00230680 /* AutoRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1794E2424B7247F00230680 /* AutoRotationViewController.swift */; };
@@ -101,6 +103,8 @@
 		E170B35724C973AB003652C6 /* MyProject-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyProject-bridging-header.h"; sourceTree = "<group>"; };
 		E170B35C24C98412003652C6 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		E170B35E24C986CD003652C6 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		E177B84824D9546200C76742 /* LeetCode_7_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetCode_7_Controller.swift; sourceTree = "<group>"; };
+		E177B84A24D9594A00C76742 /* LeetCode_70_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetCode_70_Controller.swift; sourceTree = "<group>"; };
 		E1794E1F24B7247F00230680 /* DanmuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DanmuViewController.swift; sourceTree = "<group>"; };
 		E1794E2124B7247F00230680 /* GCDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDController.swift; sourceTree = "<group>"; };
 		E1794E2424B7247F00230680 /* AutoRotationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoRotationViewController.swift; sourceTree = "<group>"; };
@@ -310,6 +314,10 @@
 		E1794E4624B7247F00230680 /* 算法 */ = {
 			isa = PBXGroup;
 			children = (
+				E17A1EF824C1A5BA0087834E /* LeetCode_2_Controller.swift */,
+				E177B84824D9546200C76742 /* LeetCode_7_Controller.swift */,
+				E17A1EFA24C1B9450087834E /* LeetCode_11_Controller.swift */,
+				E177B84A24D9594A00C76742 /* LeetCode_70_Controller.swift */,
 				E1794E4724B7247F00230680 /* LeastCoin */,
 			);
 			path = "算法";
@@ -319,8 +327,6 @@
 			isa = PBXGroup;
 			children = (
 				E1794E4824B7247F00230680 /* LeastCoinProblemViewController.swift */,
-				E17A1EF824C1A5BA0087834E /* LeetCode_2_Controller.swift */,
-				E17A1EFA24C1B9450087834E /* LeetCode_11_Controller.swift */,
 			);
 			path = LeastCoin;
 			sourceTree = "<group>";
@@ -730,6 +736,7 @@
 				E13D204B24CADC0C0097AA31 /* MessageImageCell.swift in Sources */,
 				E1794E6024B7247F00230680 /* LaunchView.swift in Sources */,
 				E1794E7424B7247F00230680 /* GithubModel.swift in Sources */,
+				E177B84924D9546200C76742 /* LeetCode_7_Controller.swift in Sources */,
 				E1794E5A24B7247F00230680 /* GCDController.swift in Sources */,
 				E13D204924CADAF80097AA31 /* MessageTextCell.swift in Sources */,
 				E1794E7E24B7247F00230680 /* JokeListCell.swift in Sources */,
@@ -744,6 +751,7 @@
 				E1794E9124B724A700230680 /* BubbleViewController.swift in Sources */,
 				E1794E7B24B7247F00230680 /* HahaMxViewModel.swift in Sources */,
 				E1A0FEA720B26E9700044403 /* AppDelegate.swift in Sources */,
+				E177B84B24D9594A00C76742 /* LeetCode_70_Controller.swift in Sources */,
 				E1794E7624B7247F00230680 /* GithubRepoListController.swift in Sources */,
 				E1794E7924B7247F00230680 /* GithubRepoListRefreshController.swift in Sources */,
 				E1794E7C24B7247F00230680 /* HahaMxAPIService.swift in Sources */,

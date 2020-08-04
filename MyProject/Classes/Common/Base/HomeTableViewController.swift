@@ -56,7 +56,9 @@ class HomeTableViewController: BaseViewController {
             SectionModel(model: "初级算法", items: [
                 SectionDataModel(title: "动态规划 最少钱币数（凑硬币）", vcName: "LeastCoinProblemViewController"),
                 SectionDataModel(title: "两数之和(LeetCode.No2)", vcName: "LeetCode_2_Controller"),
+                SectionDataModel(title: "整数反转(LeetCode.No7)", vcName: "LeetCode_7_Controller"),
                 SectionDataModel(title: "盛最多水的容器(LeetCode.No11)", vcName: "LeetCode_11_Controller"),
+                SectionDataModel(title: "爬楼梯(LeetCode.No70)", vcName: "LeetCode_70_Controller"),
             ])
         ])
         
@@ -112,10 +114,10 @@ class HomeTableViewController: BaseViewController {
                 
                 if let base = vc as? BaseViewController {
                     base.showLargeTitles = false
-                    self.navigationController?.pushViewController(vc, animated: true)
+                    
                 }
                 
-                
+                self.navigationController?.pushViewController(vc, animated: true)
 
             }).disposed(by: disposeBag)
         
