@@ -22,6 +22,7 @@
 		E170B35F24C986CD003652C6 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E170B35E24C986CD003652C6 /* BaseTableViewCell.swift */; };
 		E177B84924D9546200C76742 /* LeetCode_7_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E177B84824D9546200C76742 /* LeetCode_7_Controller.swift */; };
 		E177B84B24D9594A00C76742 /* LeetCode_70_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E177B84A24D9594A00C76742 /* LeetCode_70_Controller.swift */; };
+		E177B84D24D96D2200C76742 /* String+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = E177B84C24D96D2200C76742 /* String+Optional.swift */; };
 		E1794E5924B7247F00230680 /* DanmuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1794E1F24B7247F00230680 /* DanmuViewController.swift */; };
 		E1794E5A24B7247F00230680 /* GCDController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1794E2124B7247F00230680 /* GCDController.swift */; };
 		E1794E5B24B7247F00230680 /* AutoRotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1794E2424B7247F00230680 /* AutoRotationViewController.swift */; };
@@ -105,6 +106,7 @@
 		E170B35E24C986CD003652C6 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		E177B84824D9546200C76742 /* LeetCode_7_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetCode_7_Controller.swift; sourceTree = "<group>"; };
 		E177B84A24D9594A00C76742 /* LeetCode_70_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetCode_70_Controller.swift; sourceTree = "<group>"; };
+		E177B84C24D96D2200C76742 /* String+Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Optional.swift"; sourceTree = "<group>"; };
 		E1794E1F24B7247F00230680 /* DanmuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DanmuViewController.swift; sourceTree = "<group>"; };
 		E1794E2124B7247F00230680 /* GCDController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDController.swift; sourceTree = "<group>"; };
 		E1794E2424B7247F00230680 /* AutoRotationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoRotationViewController.swift; sourceTree = "<group>"; };
@@ -520,6 +522,7 @@
 				E1A0FEC120B272F500044403 /* Log.swift */,
 				E1B70ACA24B409AD00E8200B /* ToolObject.swift */,
 				E170B35224C96B22003652C6 /* String+Emoji.swift */,
+				E177B84C24D96D2200C76742 /* String+Optional.swift */,
 				E170B35724C973AB003652C6 /* MyProject-bridging-header.h */,
 			);
 			path = Tool;
@@ -746,6 +749,7 @@
 				E1CDE31D20B29C01009E04D1 /* WebViewController.swift in Sources */,
 				E1794E5924B7247F00230680 /* DanmuViewController.swift in Sources */,
 				E1794E6424B7247F00230680 /* PushTransitionViewController.swift in Sources */,
+				E177B84D24D96D2200C76742 /* String+Optional.swift in Sources */,
 				E1794E5F24B7247F00230680 /* TwitterViewController.swift in Sources */,
 				E1CDE31620B27747009E04D1 /* NavigationController.swift in Sources */,
 				E1794E9124B724A700230680 /* BubbleViewController.swift in Sources */,
