@@ -59,6 +59,7 @@ class HomeTableViewController: BaseViewController {
                 SectionDataModel(title: "整数反转(LeetCode.No7)", vcName: "LeetCode_7_Controller"),
                 SectionDataModel(title: "盛最多水的容器(LeetCode.No11)", vcName: "LeetCode_11_Controller"),
                 SectionDataModel(title: "爬楼梯(LeetCode.No70)", vcName: "LeetCode_70_Controller"),
+                SectionDataModel(title: "删除排序链表中的重复元素(LeetCode.No83)", vcName: "LeetCode_83_Controller"),
             ])
         ])
         

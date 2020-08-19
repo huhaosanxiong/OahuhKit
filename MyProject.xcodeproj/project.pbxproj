@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B404B0CE3251BA57247102DA /* Pods_MyProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 752FA93416E6F1B96DF0B76B /* Pods_MyProject.framework */; };
 		E1007B872182F28000E72898 /* MJRefreshableTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1007B862182F28000E72898 /* MJRefreshableTool.swift */; };
+		E129297624ECD84B0078A9E3 /* LeetCode_83_Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E129297524ECD84B0078A9E3 /* LeetCode_83_Controller.swift */; };
 		E12C5768218FF5F100CFE480 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C5767218FF5F100CFE480 /* APIProvider.swift */; };
 		E12C576A218FF60A00CFE480 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12C5769218FF60A00CFE480 /* Resource.swift */; };
 		E13D204924CADAF80097AA31 /* MessageTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D204824CADAF70097AA31 /* MessageTextCell.swift */; };
@@ -92,6 +93,7 @@
 		752FA93416E6F1B96DF0B76B /* Pods_MyProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC02DA62A7FADD8A7DE0839E /* Pods-MyProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyProject/Pods-MyProject.debug.xcconfig"; sourceTree = "<group>"; };
 		E1007B862182F28000E72898 /* MJRefreshableTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MJRefreshableTool.swift; sourceTree = "<group>"; };
+		E129297524ECD84B0078A9E3 /* LeetCode_83_Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetCode_83_Controller.swift; sourceTree = "<group>"; };
 		E12C5767218FF5F100CFE480 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		E12C5769218FF60A00CFE480 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		E13D204824CADAF70097AA31 /* MessageTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTextCell.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 				E177B84824D9546200C76742 /* LeetCode_7_Controller.swift */,
 				E17A1EFA24C1B9450087834E /* LeetCode_11_Controller.swift */,
 				E177B84A24D9594A00C76742 /* LeetCode_70_Controller.swift */,
+				E129297524ECD84B0078A9E3 /* LeetCode_83_Controller.swift */,
 				E1794E4724B7247F00230680 /* LeastCoin */,
 			);
 			path = "算法";
@@ -793,6 +796,7 @@
 				E1794E6624B7247F00230680 /* WaveView.swift in Sources */,
 				E170B35124C92BA9003652C6 /* Session.swift in Sources */,
 				E1794E7D24B7247F00230680 /* HahaMaxModel.swift in Sources */,
+				E129297624ECD84B0078A9E3 /* LeetCode_83_Controller.swift in Sources */,
 				E1794E6524B7247F00230680 /* TransitionProcotol.swift in Sources */,
 				E1794E6324B7247F00230680 /* PushAnimation.swift in Sources */,
 				E1CDE31B20B27BCF009E04D1 /* UITableView+Extension.swift in Sources */,
